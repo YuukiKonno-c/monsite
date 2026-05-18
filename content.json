@@ -1,0 +1,68 @@
+{
+  "entreprise": {
+    "nom": "NEXUS CORP",
+    "tagline": "// DOSSIER CONFIDENTIEL — NIVEAU ALPHA //",
+    "description": "Organisation clandestine opérant depuis 2019 dans les secteurs de la manipulation de données, du trafic d'informations sensibles et de la corruption systémique. Leurs activités s'étendent sur 47 pays. Aucun membre identifié n'a jamais été arrêté.",
+    "statut": "RECHERCHÉE",
+    "niveau_menace": "CRITIQUE",
+    "date_creation": "2019.03.14"
+  },
+  "suspects": [
+    {
+      "id": 1,
+      "nom": "\"LE FANTÔME\"",
+      "vrai_nom": "Inconnu",
+      "image": "suspect1.jpg",
+      "description": "Chef opérationnel présumé. Aucune photo officielle disponible. Dernière localisation : secteur 7, Paris. Spécialité : infiltration et effacement de traces numériques.",
+      "statut": "RECHERCHÉ",
+      "prime": "50 000 €",
+      "danger": "EXTRÊME"
+    },
+    {
+      "id": 2,
+      "nom": "\"L'ARCHITECTE\"",
+      "vrai_nom": "Inconnu",
+      "image": "suspect2.jpg",
+      "description": "Concepteur des systèmes de communication cryptés utilisés par l'organisation. Ancien ingénieur dans une agence gouvernementale non divulguée. Considéré comme le cerveau technique.",
+      "statut": "RECHERCHÉ",
+      "prime": "35 000 €",
+      "danger": "ÉLEVÉ"
+    },
+    {
+      "id": 3,
+      "nom": "\"L'OMBRE\"",
+      "vrai_nom": "Inconnu",
+      "image": "suspect3.jpg",
+      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
+      "statut": "RECHERCHÉE",
+      "prime": "42 000 €",
+      "danger": "EXTRÊME"
+    }
+  ],
+  "avis": [
+    {
+      "auteur": "Agent_X77",
+      "date": "2024.11.03 — 02:17",
+      "texte": "J'ai croisé L'Architecte dans un café de Berlin. Il portait une veste grise, cheveux courts. A payé en cash et est parti en moins de 3 minutes. Impossible à suivre.",
+      "fiabilite": "CONFIRMÉ"
+    },
+    {
+      "auteur": "Témoin anonyme",
+      "date": "2024.10.28 — 18:44",
+      "texte": "Ces gens sont partout. Mon ancien collègue travaillait pour eux sans le savoir. Quand il a compris, il a disparu. Ne faites confiance à personne.",
+      "fiabilite": "NON VÉRIFIÉ"
+    },
+    {
+      "auteur": "InspecteurGhost",
+      "date": "2024.10.15 — 11:02",
+      "texte": "NEXUS CORP utilise des façades commerciales légitimes. J'ai identifié au moins 3 entreprises écrans à Lyon. Les autorités ne veulent pas écouter.",
+      "fiabilite": "EN COURS"
+    },
+    {
+      "auteur": "Survivant_07",
+      "date": "2024.09.30 — 23:59",
+      "texte": "Ils m'ont approché en se faisant passer pour des recruteurs. Heureusement j'ai refusé. Une semaine plus tard, mon appartement a été fouillé. Coïncidence ?",
+      "fiabilite": "NON VÉRIFIÉ"
+    }
+  ]
+}
