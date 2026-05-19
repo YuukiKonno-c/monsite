@@ -693,7 +693,7 @@
   <script>
     // ── LOAD CONTENT ──────────────────────────────────────────────
     async function loadContent() {
-      const res = await fetch('/data/content.json');
+const res = await fetch('/content.json');
       const data = await res.json();
  
       // Section 1
@@ -853,7 +853,7 @@ function randomGlitch() {
   }, 60);
 }
 
-setInterval(randomGlitch, 6000);
+setInterval(randomGlitch, 10000);
   </script>
 </body>
 </html>
