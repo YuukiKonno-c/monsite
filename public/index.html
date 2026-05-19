@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>D.P.C — DOSSIER CONFIDENTIEL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet"/>
+  <title>D.P.C — ☢ Département des Pokémons Corrompus ☢</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=VT323&family=Press+Start+2P&family=Silkscreen&family=Nova+Mono&family=Audiowide&family=Oxanium:wght@700&family=Exo+2:wght@900&family=Courier+Prime:wght@700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --green: #00ff41; --green-dim: #00c832; --green-dark: #003b0f;
@@ -487,15 +487,23 @@
       // Suspects — collecte les sources pour navigation lightbox
       const grid = document.getElementById('suspects-grid');
       const suspectSrcs = data.suspects.filter(s => s.image).map(s => 'images/' + s.image);
+      // Police suspects depuis config JSON
+      const sPolice = (data.polices && data.polices.suspects_nom) ? data.polices.suspects_nom : null;
+      const sTaille = (data.polices && data.polices.suspects_taille) ? data.polices.suspects_taille : null;
+      const sDescPolice = (data.polices && data.polices.suspects_desc_nom) ? data.polices.suspects_desc_nom : null;
+      const sDescTaille = (data.polices && data.polices.suspects_desc_taille) ? data.polices.suspects_desc_taille : null;
+
       data.suspects.slice(0, 15).forEach((s) => {
         const card = document.createElement('div'); card.className = 'suspect-card reveal';
         const imgHTML = s.image ? `<img src="images/${s.image}" alt="${s.nom}" data-src="images/${s.image}" onerror="this.parentNode.innerHTML=placeholderHTML()">` : placeholderHTML();
+        const nomStyle = `${sPolice?`font-family:'${sPolice}';`:''}${sTaille?`font-size:${sTaille};`:''}`;
+        const descStyle = `${sDescPolice?`font-family:'${sDescPolice}';`:''}${sDescTaille?`font-size:${sDescTaille};`:''}`;
         card.innerHTML = `
           <div class="suspect-img-container">${imgHTML}<div class="scan-line"></div></div>
           <div class="suspect-body">
-            <div class="suspect-nom">${s.nom}</div>
+            <div class="suspect-nom" style="${nomStyle}">${s.nom}</div>
             <div class="suspect-alias">IDENTITÉ RÉELLE : ${s.vrai_nom}</div>
-            <div class="suspect-desc">${s.description}</div>
+            <div class="suspect-desc" style="${descStyle}">${s.description}</div>
             <div class="suspect-meta">
               <div><span class="prime-label">PRIME</span><span class="prime">${s.prime}</span></div>
               <span class="danger-tag ${s.danger === 'EXTRÊME' ? 'extreme' : ''}">${s.danger}</span>
@@ -510,19 +518,24 @@
 
       // Témoignages
       const avisGrid = document.getElementById('avis-grid');
+      const aPolice = (data.polices && data.polices.avis_nom) ? data.polices.avis_nom : null;
+      const aTaille = (data.polices && data.polices.avis_taille) ? data.polices.avis_taille : null;
+      const aAuteurPolice = (data.polices && data.polices.avis_auteur_nom) ? data.polices.avis_auteur_nom : null;
       data.avis.forEach((a, i) => {
         const fiabClass = a.fiabilite === 'CONFIRMÉ' ? 'confirme' : a.fiabilite === 'EN COURS' ? 'en-cours' : 'non-verifie';
         const iconeName = a.icone || `iconetemoin${i + 1}.jpg`;
+        const texteStyle = `${aPolice?`font-family:'${aPolice}';`:''}${aTaille?`font-size:${aTaille};`:''}`;
+        const auteurStyle = `${aAuteurPolice?`font-family:'${aAuteurPolice}';`:''}`;
         const card = document.createElement('div'); card.className = 'avis-card reveal';
         card.innerHTML = `
           <div class="avis-header">
             <div class="avis-header-left">
               <img class="temoin-icon" src="images/${iconeName}" alt="${a.auteur}" onerror="this.outerHTML='<div class=\\'temoin-icon-placeholder\\'>👤</div>'">
-              <div><div class="avis-auteur">${a.auteur}</div><div class="avis-date">${a.date}</div></div>
+              <div><div class="avis-auteur" style="${auteurStyle}">${a.auteur}</div><div class="avis-date">${a.date}</div></div>
             </div>
             <span class="fiabilite ${fiabClass}">${a.fiabilite}</span>
           </div>
-          <div class="avis-texte">${a.texte}</div>`;
+          <div class="avis-texte" style="${texteStyle}">${a.texte}</div>`;
         avisGrid.appendChild(card);
       });
 
@@ -532,11 +545,17 @@
 
       // Membres
       const membresList = document.getElementById('membres-list');
+      const mPolice = (data.polices && data.polices.membres_nom) ? data.polices.membres_nom : null;
+      const mTaille = (data.polices && data.polices.membres_taille) ? data.polices.membres_taille : null;
+      const mDescPolice = (data.polices && data.polices.membres_desc_nom) ? data.polices.membres_desc_nom : null;
+      const mDescTaille = (data.polices && data.polices.membres_desc_taille) ? data.polices.membres_desc_taille : null;
       if (data.membres && data.membres.length) {
         data.membres.forEach((m, i) => {
           const card = document.createElement('div'); card.className = 'membre-card reveal';
           const imgName = m.image || `profile${i + 1}.jpg`;
           const tagsHTML = (m.tags || []).map(t => `<span class="membre-tag">${t}</span>`).join('');
+          const nomStyle = `${mPolice?`font-family:'${mPolice}';`:''}${mTaille?`font-size:${mTaille};`:''}`;
+          const descStyle = `${mDescPolice?`font-family:'${mDescPolice}';`:''}${mDescTaille?`font-size:${mDescTaille};`:''}`;
           card.innerHTML = `
             <div class="membre-img-wrap">
               <img src="images/${imgName}" alt="${m.nom}" onerror="this.style.opacity='0'">
@@ -544,9 +563,9 @@
             </div>
             <div class="membre-body">
               <div class="membre-id">// AGENT_${String(i+1).padStart(3,'0')}</div>
-              <div class="membre-nom">${m.nom}</div>
+              <div class="membre-nom" style="${nomStyle}">${m.nom}</div>
               <div class="membre-role">${m.role || '—'}</div>
-              <div class="membre-desc">${m.description || '—'}</div>
+              <div class="membre-desc" style="${descStyle}">${m.description || '—'}</div>
               <div class="membre-tags">${tagsHTML}</div>
             </div>`;
           membresList.appendChild(card);
@@ -566,23 +585,45 @@
     }
     function observeAll() { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }
 
+    // ╔══════════════════════════════════════════════════════════════╗
+    // ║                     POLICES DISPONIBLES                     ║
+    // ║  1. 'Orbitron'       → futuriste, géométrique (défaut)      ║
+    // ║  2. 'Share Tech Mono'→ terminal, monospace                  ║
+    // ║  3. 'VT323'          → retro pixel, années 80               ║
+    // ║  4. 'Press Start 2P' → jeu vidéo 8-bit, pixel pur          ║
+    // ║  5. 'Silkscreen'     → pixel moderne, lisible               ║
+    // ║  6. 'Nova Mono'      → sci-fi élégant, monospace            ║
+    // ║  7. 'Audiowide'      → techno arrondi, cinéma               ║
+    // ║  8. 'Oxanium'        → cyber anguleux, HUD                  ║
+    // ╚══════════════════════════════════════════════════════════════╝
+
     // ══════════════════════════════════════════════════════════════
-    // GLITCH CONFIG — modifie ces valeurs pour ajuster l'effet titre
+    // GLITCH TITRE — 2e texte (Système instable...)
     // ══════════════════════════════════════════════════════════════
-    const GLITCH_DUREE_VISIBLE = 12;  // Durée du 2e texte visible (frames×60ms) — 4=rapide, 8=normal, 15=long
-    const GLITCH_CHAOS_AVANT   = 6;  // Chaos avant le 2e texte — moins = arrive plus vite
-    const GLITCH_CHAOS_APRES   = 6;  // Chaos après le 2e texte — moins = retour plus vite
-    // ──────────────────────────────────────────────────────────────
-    // TAGLINE CONFIG — les 4 textes qui tournent toutes les 5 sec
+    const GLITCH_POLICE        = 'Share Tech Mono'; // ← Police du 2e texte — choisir dans la liste ci-dessus
+    const GLITCH_TAILLE        = '60px';            // ← Taille du 2e texte — ex: '50px', '70px', '80px'
+    const GLITCH_DUREE_VISIBLE = 12;               // ← Durée visible (frames×60ms) — 4=court, 12=normal, 20=long
+    const GLITCH_CHAOS_AVANT   = 6;               // ← Frames chaos avant — moins = arrive plus vite
+    const GLITCH_CHAOS_APRES   = 6;               // ← Frames chaos après — moins = retour plus vite
+
     // ══════════════════════════════════════════════════════════════
+    // TAGLINE — textes en rotation sous le titre principal
+    // ══════════════════════════════════════════════════════════════
+    const TAGLINE_POLICE     = 'VT323';  // ← Police de la tagline — choisir dans la liste ci-dessus
+    const TAGLINE_TAILLE     = '22px';   // ← Taille de la tagline — ex: '18px', '24px', '30px'
+    const TAGLINE_INTERVALLE = 5000;     // ← Délai entre chaque texte en ms (5000 = 5 secondes)
     const TAGLINE_TEXTES = [
-      '☢ Département des Pokémons Corrompus ☢',  // ← TEXTE 1 — changer ici
-      '// TEXTE 2 — remplace moi //',             // ← TEXTE 2 — changer ici
-      '// TEXTE 3 — remplace moi //',             // ← TEXTE 3 — changer ici
-      '// TEXTE 4 — remplace moi //'              // ← TEXTE 4 — changer ici
+      '☢ Département des Pokémons Corrompus ☢',  // ← TEXTE 1
+      '// TEXTE 2 — remplace moi //',             // ← TEXTE 2
+      '// TEXTE 3 — remplace moi //',             // ← TEXTE 3
+      '// TEXTE 4 — remplace moi //'              // ← TEXTE 4
     ];
-    const TAGLINE_INTERVALLE = 5000; // Durée entre chaque texte en ms (5000 = 5 secondes)
     // ══════════════════════════════════════════════════════════════
+
+    // Appliquer la police/taille à la tagline au chargement
+    const taglineEl = document.getElementById('tagline');
+    taglineEl.style.fontFamily = TAGLINE_POLICE;
+    taglineEl.style.fontSize = TAGLINE_TAILLE;
 
     // Rotation tagline avec effet glitch
     let taglineIndex = 0;
@@ -595,7 +636,6 @@
       const interval = setInterval(() => {
         count++;
         if (count < 5) {
-          // Chaos sur l'ancien texte
           el.textContent = (el.textContent || nextText).split('').map(c =>
             c === ' ' ? ' ' : (Math.random() > 0.5 ? chars[Math.floor(Math.random() * chars.length)] : c)
           ).join('');
@@ -607,15 +647,18 @@
     }
     setInterval(taglineGlitch, TAGLINE_INTERVALLE);
 
-    // Glitch titre principal
+    // Glitch titre principal — 2e texte avec sa propre police
     function randomGlitch() {
       const title = document.getElementById('main-title');
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
-      const glitchText = 'S̵y̶s̷t̸è̶m̴e̷ i̷n̶s̵t̸a̴b̷l̶e̷ // a̸n̵o̷m̶a̵l̸i̷e̴ d̷é̵t̸e̶c̴t̷é̸e̶';
+      const glitchText = 'SYSTEME INSTABLE // ANOMALIE DETECTEE';  // ← Texte simple pour que la police soit lisible
       if (!title.dataset.originalText) title.dataset.originalText = title.textContent;
       const original = title.dataset.originalText;
       if (title.dataset.glitching === 'true') return;
       title.dataset.glitching = 'true';
+
+      const origFont = title.style.fontFamily;
+      const origSize = title.style.fontSize;
 
       const p1End = GLITCH_CHAOS_AVANT;
       const p2End = p1End + 4;
@@ -626,15 +669,24 @@
       const interval = setInterval(() => {
         count++;
         if (count <= p1End) {
+          // Phase 1 — chaos texte original
           title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
         } else if (count <= p2End) {
+          // Phase 2 — glitch transition, on change la police
+          title.style.fontFamily = GLITCH_POLICE;
+          title.style.fontSize = GLITCH_TAILLE;
           title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.5?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
         } else if (count <= p3End) {
+          // Phase 3 — 2e texte propre avec sa police
           title.textContent = glitchText;
         } else if (count <= p4End) {
-          title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
+          // Phase 4 — chaos retour
+          title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
         } else {
+          // Phase 5 — retour police + texte original
           clearInterval(interval);
+          title.style.fontFamily = origFont;
+          title.style.fontSize = origSize;
           title.textContent = original;
           title.dataset.glitching = 'false';
         }
