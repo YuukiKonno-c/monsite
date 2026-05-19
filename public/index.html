@@ -64,7 +64,7 @@
       top: 0; left: 0;
       width: 100%; height: 100%;
       pointer-events: none;
-      z-index: 0;
+      z-index: 1;
       opacity: 0.13;
     }
 
@@ -114,7 +114,7 @@
       min-height: 100vh;
       padding: 120px 60px 80px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     /* SECTION 1 — VISION */
@@ -136,11 +136,14 @@
       letter-spacing: 12px;
       position: relative;
       animation: glitch 4s infinite;
-      /* Hauteur fixe pour éviter le saut au glitch */
-      min-height: 1.3em;
+      /* Taille fixe pour éviter tout saut de page au glitch */
+      width: 100%;
+      height: 1.3em;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      white-space: nowrap;
     }
 
     .glitch-title::before,
@@ -277,9 +280,10 @@
 
     .suspects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(5, 1fr);
       gap: 24px;
-      max-width: 1400px;
+      max-width: 1600px;
+      width: 100%;
     }
 
     .suspect-card {
@@ -752,7 +756,7 @@
         card.style.animationDelay = `${i * 0.1}s`;
 
         const imgHTML = s.image
-          ? `<img src="images/${s.image}" alt="${s.nom}" onclick="openLightbox('images/${s.image}','${s.nom}')" onerror="this.parentNode.innerHTML=placeholderHTML()">`
+          ? `<img src="images/${s.image}" alt="${s.nom}" data-lightbox="images/${s.image}" data-alt="${s.nom}" onerror="this.parentNode.innerHTML=placeholderHTML()">`
           : placeholderHTML();
 
         card.innerHTML = `
@@ -774,6 +778,12 @@
           </div>
         `;
         grid.appendChild(card);
+
+        // Attacher le clic lightbox après injection dans le DOM
+        if (s.image) {
+          const img = card.querySelector('img[data-lightbox]');
+          if (img) img.addEventListener('click', () => openLightbox(img.dataset.lightbox, img.dataset.alt));
+        }
       });
 
       // Section 3 — Témoignages avec icônes
