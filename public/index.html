@@ -22,11 +22,10 @@
       --display: 'Orbitron', sans-serif;
       --vt: 'VT323', monospace;
     }
- 
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
- 
     html { scroll-behavior: smooth; }
- 
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -34,23 +33,20 @@
       overflow-x: hidden;
       cursor: crosshair;
     }
- 
+
     /* SCANLINE OVERLAY */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.15) 2px,
-        rgba(0,0,0,0.15) 4px
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px
       );
       pointer-events: none;
       z-index: 9999;
     }
- 
+
     /* NOISE TEXTURE */
     body::after {
       content: '';
@@ -61,7 +57,17 @@
       z-index: 9998;
       opacity: 0.6;
     }
- 
+
+    /* MATRIX RAIN */
+    #matrix-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.13;
+    }
+
     /* NAV */
     nav {
       position: fixed;
@@ -75,7 +81,7 @@
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
     }
- 
+
     .nav-logo {
       font-family: var(--display);
       font-size: 13px;
@@ -84,13 +90,9 @@
       letter-spacing: 4px;
       text-shadow: 0 0 10px var(--green);
     }
- 
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
- 
+
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+
     .nav-links a {
       color: var(--text);
       text-decoration: none;
@@ -98,22 +100,23 @@
       letter-spacing: 2px;
       transition: color 0.2s;
     }
- 
+
     .nav-links a:hover { color: var(--green); text-shadow: 0 0 8px var(--green); }
- 
+
     .nav-status {
       font-size: 10px;
       color: var(--red);
       animation: blink 1s step-end infinite;
     }
- 
+
     /* SECTIONS */
     section {
       min-height: 100vh;
       padding: 120px 60px 80px;
       position: relative;
+      z-index: 1;
     }
- 
+
     /* SECTION 1 — VISION */
     #vision {
       display: flex;
@@ -123,7 +126,7 @@
       text-align: center;
       background: radial-gradient(ellipse at center, rgba(0,50,10,0.4) 0%, var(--bg) 70%);
     }
- 
+
     .glitch-title {
       font-family: var(--display);
       font-size: clamp(48px, 10vw, 100px);
@@ -133,8 +136,13 @@
       letter-spacing: 12px;
       position: relative;
       animation: glitch 4s infinite;
+      /* Hauteur fixe pour éviter le saut au glitch */
+      min-height: 1.3em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
- 
+
     .glitch-title::before,
     .glitch-title::after {
       content: attr(data-text);
@@ -143,20 +151,23 @@
       font-family: var(--display);
       font-size: inherit;
       letter-spacing: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
- 
+
     .glitch-title::before {
       color: var(--red);
       animation: glitch-1 4s infinite;
       clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
     }
- 
+
     .glitch-title::after {
       color: #00f3ff;
       animation: glitch-2 4s infinite;
       clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
     }
- 
+
     .tagline {
       font-family: var(--vt);
       font-size: 22px;
@@ -164,8 +175,9 @@
       letter-spacing: 4px;
       margin: 20px 0;
       opacity: 0.8;
+      min-height: 1.4em;
     }
- 
+
     .vision-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -174,7 +186,7 @@
       max-width: 900px;
       width: 100%;
     }
- 
+
     .stat-box {
       border: 1px solid var(--border);
       padding: 20px;
@@ -183,12 +195,12 @@
       background: var(--green-glow);
       transition: all 0.3s;
     }
- 
+
     .stat-box:hover {
       border-color: var(--green);
       box-shadow: 0 0 20px var(--green-glow), inset 0 0 20px var(--green-glow);
     }
- 
+
     .stat-box::before {
       content: '';
       position: absolute;
@@ -196,14 +208,9 @@
       width: 30px; height: 2px;
       background: var(--bg);
     }
- 
-    .stat-label {
-      font-size: 9px;
-      letter-spacing: 3px;
-      color: var(--green-dim);
-      margin-bottom: 8px;
-    }
- 
+
+    .stat-label { font-size: 9px; letter-spacing: 3px; color: var(--green-dim); margin-bottom: 8px; }
+
     .stat-value {
       font-family: var(--display);
       font-size: 20px;
@@ -211,7 +218,7 @@
       color: var(--green);
       text-shadow: 0 0 10px var(--green);
     }
- 
+
     .description-box {
       max-width: 700px;
       border: 1px solid var(--border);
@@ -222,7 +229,7 @@
       line-height: 1.9;
       position: relative;
     }
- 
+
     .description-box::before {
       content: '> RAPPORT_CONFIDENTIEL.txt';
       display: block;
@@ -233,7 +240,7 @@
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
     }
- 
+
     .status-badge {
       display: inline-block;
       background: var(--red);
@@ -246,13 +253,10 @@
       margin-top: 20px;
       animation: pulse-red 2s ease-in-out infinite;
     }
- 
+
     /* SECTION 2 — SUSPECTS */
-    #suspects {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-    }
- 
+    #suspects { background: var(--bg2); border-top: 1px solid var(--border); }
+
     .section-header {
       font-family: var(--display);
       font-size: 11px;
@@ -260,7 +264,7 @@
       color: var(--green-dim);
       margin-bottom: 10px;
     }
- 
+
     .section-title {
       font-family: var(--display);
       font-size: clamp(28px, 5vw, 48px);
@@ -270,14 +274,14 @@
       letter-spacing: 6px;
       margin-bottom: 60px;
     }
- 
+
     .suspects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1400px;
     }
- 
+
     .suspect-card {
       border: 1px solid var(--border);
       background: rgba(0,15,5,0.8);
@@ -285,13 +289,13 @@
       overflow: hidden;
       transition: all 0.4s;
     }
- 
+
     .suspect-card:hover {
       border-color: var(--green);
       box-shadow: 0 0 30px rgba(0,255,65,0.1), inset 0 0 30px rgba(0,255,65,0.03);
       transform: translateY(-4px);
     }
- 
+
     .suspect-card::before {
       content: 'AVIS DE RECHERCHE';
       position: absolute;
@@ -303,10 +307,10 @@
       color: var(--red);
       z-index: 2;
     }
- 
+
     .suspect-img-container {
       width: 100%;
-      height: 260px;
+      height: 220px;
       background: #000;
       display: flex;
       align-items: center;
@@ -314,8 +318,9 @@
       position: relative;
       overflow: hidden;
       border-bottom: 1px solid var(--border);
+      cursor: zoom-in;
     }
- 
+
     .suspect-img-container img {
       width: 100%;
       height: 100%;
@@ -323,11 +328,11 @@
       filter: grayscale(80%) contrast(1.2) brightness(0.8);
       transition: filter 0.4s;
     }
- 
+
     .suspect-card:hover .suspect-img-container img {
       filter: grayscale(40%) contrast(1.3) brightness(0.9);
     }
- 
+
     .img-placeholder {
       display: flex;
       flex-direction: column;
@@ -337,10 +342,10 @@
       color: var(--green-dim);
       opacity: 0.5;
     }
- 
+
     .img-placeholder svg { width: 60px; height: 60px; }
     .img-placeholder span { font-size: 10px; letter-spacing: 2px; }
- 
+
     .scan-line {
       position: absolute;
       width: 100%;
@@ -348,28 +353,22 @@
       background: linear-gradient(90deg, transparent, var(--green), transparent);
       animation: scan 3s linear infinite;
       opacity: 0.6;
+      pointer-events: none;
     }
- 
-    .suspect-body {
-      padding: 20px 24px 24px;
-    }
- 
+
+    .suspect-body { padding: 20px 24px 24px; }
+
     .suspect-nom {
       font-family: var(--display);
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--green);
       letter-spacing: 2px;
       margin-bottom: 4px;
     }
- 
-    .suspect-alias {
-      font-size: 10px;
-      color: var(--amber);
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
- 
+
+    .suspect-alias { font-size: 10px; color: var(--amber); letter-spacing: 2px; margin-bottom: 14px; }
+
     .suspect-desc {
       font-size: 12px;
       line-height: 1.7;
@@ -378,7 +377,7 @@
       border-left: 2px solid var(--border);
       padding-left: 12px;
     }
- 
+
     .suspect-meta {
       display: flex;
       justify-content: space-between;
@@ -386,7 +385,7 @@
       padding-top: 14px;
       border-top: 1px solid var(--border);
     }
- 
+
     .prime {
       font-family: var(--display);
       font-size: 14px;
@@ -394,14 +393,9 @@
       color: var(--amber);
       text-shadow: 0 0 8px rgba(255,176,0,0.5);
     }
- 
-    .prime-label {
-      font-size: 8px;
-      letter-spacing: 2px;
-      color: rgba(176,255,184,0.4);
-      display: block;
-    }
- 
+
+    .prime-label { font-size: 8px; letter-spacing: 2px; color: rgba(176,255,184,0.4); display: block; }
+
     .danger-tag {
       font-size: 9px;
       letter-spacing: 2px;
@@ -410,35 +404,32 @@
       color: var(--red);
       font-family: var(--display);
     }
- 
+
     .danger-tag.extreme { animation: pulse-red 1.5s ease-in-out infinite; }
- 
-    /* SECTION 3 — AVIS */
-    #temoignages {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-    }
- 
+
+    /* SECTION 3 — TÉMOIGNAGES */
+    #temoignages { background: var(--bg); border-top: 1px solid var(--border); }
+
     .avis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1400px;
     }
- 
+
     .avis-card {
       border: 1px solid var(--border);
-      padding: 24px;
+      padding: 20px;
       background: rgba(0,20,5,0.5);
       position: relative;
       transition: all 0.3s;
     }
- 
+
     .avis-card:hover {
       border-color: rgba(0,255,65,0.4);
       background: rgba(0,20,5,0.8);
     }
- 
+
     .avis-header {
       display: flex;
       justify-content: space-between;
@@ -446,42 +437,60 @@
       margin-bottom: 14px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border);
+      gap: 10px;
     }
- 
+
+    .avis-header-left { display: flex; align-items: center; gap: 12px; }
+
+    .temoin-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      filter: grayscale(60%);
+      flex-shrink: 0;
+    }
+
+    .temoin-icon-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(0,255,65,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--green-dim);
+      font-size: 18px;
+    }
+
     .avis-auteur {
       font-family: var(--display);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--green);
       letter-spacing: 1px;
     }
- 
-    .avis-date {
-      font-size: 9px;
-      color: rgba(176,255,184,0.4);
-      letter-spacing: 1px;
-      margin-top: 3px;
-    }
- 
+
+    .avis-date { font-size: 9px; color: rgba(176,255,184,0.4); letter-spacing: 1px; margin-top: 3px; }
+
     .fiabilite {
       font-size: 8px;
       letter-spacing: 2px;
       padding: 3px 8px;
       font-family: var(--display);
+      white-space: nowrap;
     }
- 
+
     .fiabilite.confirme { border: 1px solid var(--green); color: var(--green); }
     .fiabilite.non-verifie { border: 1px solid var(--amber); color: var(--amber); }
     .fiabilite.en-cours { border: 1px solid #00ccff; color: #00ccff; }
- 
-    .avis-texte {
-      font-size: 13px;
-      line-height: 1.8;
-      color: rgba(176,255,184,0.75);
-    }
- 
+
+    .avis-texte { font-size: 12px; line-height: 1.8; color: rgba(176,255,184,0.75); }
     .avis-texte::before { content: '> '; color: var(--green-dim); }
- 
+
     /* FOOTER */
     footer {
       padding: 30px 60px;
@@ -492,15 +501,45 @@
       font-size: 10px;
       color: rgba(176,255,184,0.3);
       letter-spacing: 2px;
+      position: relative;
+      z-index: 1;
     }
- 
-    /* TERMINAL CURSOR */
-    .cursor::after {
-      content: '█';
-      animation: blink 1s step-end infinite;
+
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+    }
+
+    #lightbox.open { display: flex; }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(0,255,65,0.2);
+      filter: grayscale(20%) contrast(1.1);
+    }
+
+    #lightbox-close {
+      position: absolute;
+      top: 20px; right: 30px;
+      font-family: var(--display);
+      font-size: 12px;
       color: var(--green);
+      letter-spacing: 3px;
+      cursor: pointer;
     }
- 
+
+    #lightbox-close:hover { color: var(--red); }
+
     /* ANIMATIONS */
     @keyframes glitch {
       0%, 90%, 100% { transform: translate(0); }
@@ -510,84 +549,40 @@
       94% { transform: translate(1px, -2px); }
       95% { transform: translate(0); }
     }
- 
+
     @keyframes glitch-1 {
       0%, 90%, 100% { transform: translate(0); opacity: 0; }
       91% { transform: translate(-4px, 0); opacity: 0.8; }
       93% { transform: translate(4px, 0); opacity: 0.8; }
       95% { opacity: 0; }
     }
- 
+
     @keyframes glitch-2 {
       0%, 90%, 100% { transform: translate(0); opacity: 0; }
       92% { transform: translate(4px, 0); opacity: 0.6; }
       94% { transform: translate(-4px, 0); opacity: 0.6; }
       95% { opacity: 0; }
     }
- 
+
     @keyframes scan {
       0% { top: -3px; }
       100% { top: 100%; }
     }
- 
+
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
- 
+
     @keyframes pulse-red {
       0%, 100% { opacity: 1; }
       50% { opacity: 0.5; }
     }
- 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
- 
+
     /* SCROLL REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
- 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
- 
-    /* TYPING EFFECT */
-    .typing {
-      overflow: hidden;
-      white-space: nowrap;
-      animation: typing 2s steps(40) forwards;
-    }
- 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
- 
-    /* CORNER DECORATIONS */
-    .corner-tl, .corner-br {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-    }
- 
-    .corner-tl {
-      top: 0; left: 0;
-      border-top: 2px solid var(--green);
-      border-left: 2px solid var(--green);
-    }
- 
-    .corner-br {
-      bottom: 0; right: 0;
-      border-bottom: 2px solid var(--green);
-      border-right: 2px solid var(--green);
-    }
- 
+    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
     /* SCROLL INDICATOR */
     .scroll-indicator {
       position: absolute;
@@ -603,31 +598,26 @@
       color: var(--green-dim);
       animation: bounce 2s ease-in-out infinite;
     }
- 
-    .scroll-indicator::after {
-      content: '▼';
-      font-size: 14px;
-    }
- 
+
+    .scroll-indicator::after { content: '▼'; font-size: 14px; }
+
     @keyframes bounce {
       0%, 100% { transform: translateX(-50%) translateY(0); }
       50% { transform: translateX(-50%) translateY(8px); }
     }
-    h1 {
-  font-size: 48px;
-  text-align: center;
-}
-
-.subtitle {
-  font-size: 18px;
-  text-align: center;
-  color: #00ff41;
-  font-family: Arial, sans-serif;
-}
   </style>
 </head>
 <body>
- 
+
+  <!-- MATRIX RAIN -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox">
+    <div id="lightbox-close">✕ FERMER</div>
+    <img id="lightbox-img" src="" alt=""/>
+  </div>
+
   <!-- NAV -->
   <nav>
     <div class="nav-logo">D.P.C</div>
@@ -638,14 +628,12 @@
     </ul>
     <div class="nav-status">● LIVE — CRYPTÉ</div>
   </nav>
- 
+
   <!-- SECTION 1 : VISION -->
   <section id="vision">
     <h1 class="glitch-title" data-text="D.P.C" id="main-title">⛃ D.P.C ⛃</h1>
-    <p class="tagline" id="tagline">
-  ☢ Département des Pokémons Corrompus ☢
-    </p>
- 
+    <p class="tagline" id="tagline">☢ Département des Pokémons Corrompus ☢</p>
+
     <div class="vision-grid">
       <div class="stat-box reveal">
         <div class="stat-label">STATUT</div>
@@ -660,42 +648,90 @@
         <div class="stat-value" id="stat-date">—</div>
       </div>
     </div>
- 
+
     <div class="description-box reveal">
       <p id="vision-desc"></p>
       <span class="status-badge" id="vision-badge">—</span>
     </div>
- 
+
     <div class="scroll-indicator">DÉFILER</div>
   </section>
- 
+
   <!-- SECTION 2 : SUSPECTS -->
   <section id="suspects">
     <div class="section-header">// DOSSIER_02 —</div>
     <h2 class="section-title">AVIS DE RECHERCHE</h2>
     <div class="suspects-grid" id="suspects-grid"></div>
   </section>
- 
+
   <!-- SECTION 3 : TÉMOIGNAGES -->
   <section id="temoignages">
     <div class="section-header">// DOSSIER_03 —</div>
     <h2 class="section-title">TÉMOIGNAGES</h2>
     <div class="avis-grid" id="avis-grid"></div>
   </section>
- 
+
   <!-- FOOTER -->
   <footer>
     <span>D.P.C — DOSSIER CONFIDENTIEL</span>
     <span id="footer-date"></span>
     <span>ACCÈS RESTREINT — NIVEAU ALPHA</span>
   </footer>
- 
+
   <script>
+    // ── MATRIX RAIN ───────────────────────────────────────────────
+    const canvas = document.getElementById('matrix-canvas');
+    const ctx = canvas.getContext('2d');
+    const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&';
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const fontSize = 14;
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(2, 10, 2, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      columns = Math.floor(canvas.width / fontSize);
+      if (drops.length < columns) drops.push(...Array(columns - drops.length).fill(1));
+      for (let i = 0; i < columns; i++) {
+        const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+        ctx.fillStyle = i % 5 === 0 ? '#ffffff' : '#00ff41';
+        ctx.font = fontSize + 'px monospace';
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 50);
+
+    // ── LIGHTBOX ──────────────────────────────────────────────────
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.add('open');
+    }
+
+    lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+    });
+
     // ── LOAD CONTENT ──────────────────────────────────────────────
     async function loadContent() {
-const res = await fetch('/content.json');
+      const res = await fetch('/content.json');
       const data = await res.json();
- 
+
       // Section 1
       const e = data.entreprise;
       typeText('tagline', e.tagline, 60);
@@ -706,21 +742,24 @@ const res = await fetch('/content.json');
         document.getElementById('vision-desc').textContent = e.description;
         document.getElementById('vision-badge').textContent = '⚠ ' + e.statut;
       }, 800);
- 
-      // Section 2 — Suspects
+
+      // Section 2 — Suspects (jusqu'à 15)
       const grid = document.getElementById('suspects-grid');
-      data.suspects.forEach((s, i) => {
+      const suspects = data.suspects.slice(0, 15);
+      suspects.forEach((s, i) => {
         const card = document.createElement('div');
         card.className = 'suspect-card reveal';
-        card.style.animationDelay = `${i * 0.15}s`;
- 
-card.innerHTML = `
-  <div class="suspect-img-container">
-    ${s.image
-      ? `<img src="images/${s.image}" alt="${s.nom}" onerror="this.parentNode.innerHTML=placeholderHTML()">`
-      : placeholderHTML()}
-    <div class="scan-line"></div>
-  </div>
+        card.style.animationDelay = `${i * 0.1}s`;
+
+        const imgHTML = s.image
+          ? `<img src="images/${s.image}" alt="${s.nom}" onclick="openLightbox('images/${s.image}','${s.nom}')" onerror="this.parentNode.innerHTML=placeholderHTML()">`
+          : placeholderHTML();
+
+        card.innerHTML = `
+          <div class="suspect-img-container">
+            ${imgHTML}
+            <div class="scan-line"></div>
+          </div>
           <div class="suspect-body">
             <div class="suspect-nom">${s.nom}</div>
             <div class="suspect-alias">IDENTITÉ RÉELLE : ${s.vrai_nom}</div>
@@ -736,20 +775,29 @@ card.innerHTML = `
         `;
         grid.appendChild(card);
       });
- 
-      // Section 3 — Avis
+
+      // Section 3 — Témoignages avec icônes
+      // Nommage : images/iconetemoin1.jpg, iconetemoin2.jpg, ...
       const avisGrid = document.getElementById('avis-grid');
       data.avis.forEach((a, i) => {
         const fiabClass = a.fiabilite === 'CONFIRMÉ' ? 'confirme'
                         : a.fiabilite === 'EN COURS' ? 'en-cours'
                         : 'non-verifie';
+
+        const iconeName = `iconetemoin${i + 1}.jpg`;
+        const iconeHTML = `<img class="temoin-icon" src="images/${iconeName}" alt="${a.auteur}"
+          onerror="this.outerHTML='<div class=\\'temoin-icon-placeholder\\'>👤</div>'">`;
+
         const card = document.createElement('div');
         card.className = 'avis-card reveal';
         card.innerHTML = `
           <div class="avis-header">
-            <div>
-              <div class="avis-auteur">${a.auteur}</div>
-              <div class="avis-date">${a.date}</div>
+            <div class="avis-header-left">
+              ${iconeHTML}
+              <div>
+                <div class="avis-auteur">${a.auteur}</div>
+                <div class="avis-date">${a.date}</div>
+              </div>
             </div>
             <span class="fiabilite ${fiabClass}">${a.fiabilite}</span>
           </div>
@@ -757,12 +805,14 @@ card.innerHTML = `
         `;
         avisGrid.appendChild(card);
       });
- 
+
       // Footer date
       document.getElementById('footer-date').textContent =
         new Date().toISOString().split('T')[0].replace(/-/g, '.');
+
+      setTimeout(observeAll, 300);
     }
- 
+
     function placeholderHTML() {
       return `<div class="img-placeholder">
         <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -774,7 +824,7 @@ card.innerHTML = `
         <span>IMAGE CLASSIFIÉE</span>
       </div>`;
     }
- 
+
     // ── TYPING EFFECT ─────────────────────────────────────────────
     function typeText(id, text, speed = 50) {
       const el = document.getElementById(id);
@@ -786,69 +836,52 @@ card.innerHTML = `
         if (i >= text.length) clearInterval(interval);
       }, speed);
     }
- 
+
     // ── SCROLL REVEAL ─────────────────────────────────────────────
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.15 });
- 
-function observeAll() {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-}
-// ── GLITCH RANDOM ─────────────────────────────────────────────
-function randomGlitch() {
-  const title = document.getElementById('main-title');
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
-  const glitchText = 'S̵y̶s̷t̸è̶m̴e̷ i̷n̶s̵t̸a̴b̷l̶e̷ // a̸n̵o̷m̶a̵l̸i̷e̴ d̷é̵t̸e̶c̴t̷é̸e̶';
-
-  if (!title.dataset.originalText) {
-    title.dataset.originalText = title.textContent;
-  }
-  const original = title.dataset.originalText;
-
-  if (title.dataset.glitching === 'true') return;
-  title.dataset.glitching = 'true';
-
-  let count = 0;
-  const interval = setInterval(() => {
-    count++;
-
-    if (count < 6) {
-      // Phase 1 — chaos sur le texte original
-      title.textContent = original.split('').map(c =>
-        c === ' ' ? ' ' : (Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c)
-      ).join('');
-
-    } else if (count < 10) {
-      // Phase 2 — le texte "instable" apparaît (glitché lui aussi)
-      title.textContent = glitchText.split('').map(c =>
-        c === ' ' ? ' ' : (Math.random() > 0.5 ? chars[Math.floor(Math.random() * chars.length)] : c)
-      ).join('');
-
-    } else if (count === 10) {
-      // Phase 3 — flash propre une frame
-      title.textContent = glitchText;
-
-    } else if (count < 16) {
-      // Phase 4 — chaos vers le retour
-      title.textContent = original.split('').map(c =>
-        c === ' ' ? ' ' : (Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c)
-      ).join('');
-
-    } else {
-      // Phase 5 — retour au titre original
-      clearInterval(interval);
-      title.textContent = original;
-      title.dataset.glitching = 'false';
+    function observeAll() {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
     }
-  }, 60);
-}
 
-setInterval(randomGlitch, 10000);
+    // ── GLITCH RANDOM ─────────────────────────────────────────────
+    function randomGlitch() {
+      const title = document.getElementById('main-title');
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
+      const glitchText = 'S̵y̶s̷t̸è̶m̴e̷ i̷n̶s̵t̸a̴b̷l̶e̷ // a̸n̵o̷m̶a̵l̸i̷e̴ d̷é̵t̸e̶c̴t̷é̸e̶';
+
+      if (!title.dataset.originalText) {
+        title.dataset.originalText = title.textContent;
+      }
+      const original = title.dataset.originalText;
+
+      if (title.dataset.glitching === 'true') return;
+      title.dataset.glitching = 'true';
+
+      let count = 0;
+      const interval = setInterval(() => {
+        count++;
+        if (count < 6) {
+          title.textContent = original.split('').map(c =>
+            c === ' ' ? ' ' : (Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c)
+          ).join('');
+        } else if (count < 10) {
+          title.textContent = glitchText.split('').map(c =>
+            c === ' ' ? ' ' : (Math.random() > 0.5 ? chars[Math.floor(Math.random() * chars.length)] : c)
+          ).join('');
+        } else if (count === 10) {
+          title.textContent = glitchText;
+        } else if (count < 16) {
+          title.textContent = original.split('').map(c =>
+            c === ' ' ? ' ' : (Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c)
+          ).join('');
+        } else {
+          clearInterval(interval);
+          title.textContent = original;
+          title.dataset.glitching = 'false';
+        }
+      }, 60);
+    }
+
+    setInterval(randomGlitch, 10000);
 
     // ── INIT ──────────────────────────────────────────────────────
     loadContent().then(() => {
@@ -857,4 +890,3 @@ setInterval(randomGlitch, 10000);
   </script>
 </body>
 </html>
- 
