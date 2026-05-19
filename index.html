@@ -804,27 +804,56 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     }
  
-    // ── GLITCH RANDOM ─────────────────────────────────────────────
-    function randomGlitch() {
-      const title = document.getElementById('main-title');
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
-      const original = 'S̵y̶s̷t̸è̶m̴e̷ i̷n̶s̵t̸a̴b̷l̶e̷ // a̸n̵o̷m̶a̵l̸i̷e̴ d̷é̵t̸e̶c̴t̷é̸e̶';
-      let count = 0;
-      const interval = setInterval(() => {
-        title.textContent = original.split('').map((c, i) =>
-          c === ' ' ? ' ' : (Math.random() > 0.7 ? chars[Math.floor(Math.random() * chars.length)] : c)
-        ).join('');
-        count++;
-        if (count > 8) { title.textContent = original; clearInterval(interval); }
-      }, 60);
+// ── GLITCH RANDOM ─────────────────────────────────────────────
+function randomGlitch() {
+  const title = document.getElementById('main-title');
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
+  const glitchText = 'S̵y̶s̷t̸è̶m̴e̷ i̷n̶s̵t̸a̴b̷l̶e̷ // a̸n̵o̷m̶a̵l̸i̷e̴ d̷é̵t̸e̶c̴t̷é̸e̶';
+
+  if (!title.dataset.originalText) {
+    title.dataset.originalText = title.textContent;
+  }
+  const original = title.dataset.originalText;
+
+  if (title.dataset.glitching === 'true') return;
+  title.dataset.glitching = 'true';
+
+  let count = 0;
+  const interval = setInterval(() => {
+    count++;
+
+    if (count < 6) {
+      // Phase 1 — chaos sur le texte original
+      title.textContent = original.split('').map(c =>
+        c === ' ' ? ' ' : (Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c)
+      ).join('');
+
+    } else if (count < 10) {
+      // Phase 2 — le texte "instable" apparaît (glitché lui aussi)
+      title.textContent = glitchText.split('').map(c =>
+        c === ' ' ? ' ' : (Math.random() > 0.5 ? chars[Math.floor(Math.random() * chars.length)] : c)
+      ).join('');
+
+    } else if (count === 10) {
+      // Phase 3 — flash propre une frame
+      title.textContent = glitchText;
+
+    } else if (count < 16) {
+      // Phase 4 — chaos vers le retour
+      title.textContent = original.split('').map(c =>
+        c === ' ' ? ' ' : (Math.random() > 0.6 ? chars[Math.floor(Math.random() * chars.length)] : c)
+      ).join('');
+
+    } else {
+      // Phase 5 — retour au titre original
+      clearInterval(interval);
+      title.textContent = original;
+      title.dataset.glitching = 'false';
     }
- 
-    setInterval(randomGlitch, 6000);
- 
-    // ── INIT ──────────────────────────────────────────────────────
-    loadContent().then(() => {
-      setTimeout(observeAll, 100);
-    });
+  }, 60);
+}
+
+setInterval(randomGlitch, 6000);
   </script>
 </body>
 </html>
