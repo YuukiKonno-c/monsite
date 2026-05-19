@@ -714,14 +714,10 @@ const res = await fetch('/content.json');
         card.className = 'suspect-card reveal';
         card.style.animationDelay = `${i * 0.15}s`;
  
-        const imgContent = s.image
-          ? `<img src="/images/${s.image}" alt="${s.nom}" onerror="this.parentElement.innerHTML=placeholderSVG()">`
-          : placeholderHTML();
- 
         card.innerHTML = `
           <div class="suspect-img-container">
             ${s.image
-              ? `<img src="/images/${s.image}" alt="${s.nom}" onerror="this.outerHTML=\`${placeholderHTML()}\`">`
+? `<img src="images/${s.image}" alt="${s.nom}" onerror="this.outerHTML=\`${placeholderHTML()}\`">`
               : placeholderHTML()}
             <div class="scan-line"></div>
           </div>
