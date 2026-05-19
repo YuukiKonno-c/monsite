@@ -566,6 +566,13 @@
     }
     function observeAll() { document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')); }
 
+    // ── GLITCH CONFIG ─────────────────────────────────────────────
+    // ↓ Change ces 3 valeurs pour ajuster l'effet
+    const GLITCH_DUREE_VISIBLE = 8;   // Durée d'affichage du 2e texte (frames × 60ms) — ex: 4 = ~240ms, 8 = ~480ms, 15 = ~900ms
+    const GLITCH_CHAOS_AVANT   = 6;   // Frames de chaos AVANT le 2e texte — moins = plus rapide
+    const GLITCH_CHAOS_APRES   = 6;   // Frames de chaos APRÈS le 2e texte — moins = retour plus rapide
+    // ↑ 1 frame = 60ms — ex: GLITCH_DUREE_VISIBLE = 10 → texte visible ~600ms
+
     function randomGlitch() {
       const title = document.getElementById('main-title');
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
@@ -574,14 +581,34 @@
       const original = title.dataset.originalText;
       if (title.dataset.glitching === 'true') return;
       title.dataset.glitching = 'true';
+
+      // Calcul des seuils à partir de la config
+      const p1End = GLITCH_CHAOS_AVANT;
+      const p2End = p1End + 4;           // 4 frames de glitch vers le 2e texte
+      const p3End = p2End + GLITCH_DUREE_VISIBLE; // affichage propre
+      const p4End = p3End + GLITCH_CHAOS_APRES;   // chaos retour
+
       let count = 0;
       const interval = setInterval(() => {
         count++;
-        if (count < 6) { title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
-        else if (count < 10) { title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.5?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
-        else if (count === 10) { title.textContent = glitchText; }
-        else if (count < 16) { title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
-        else { clearInterval(interval); title.textContent = original; title.dataset.glitching = 'false'; }
+        if (count <= p1End) {
+          // Phase 1 — chaos sur le texte original
+          title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
+        } else if (count <= p2End) {
+          // Phase 2 — glitch vers le 2e texte
+          title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.5?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
+        } else if (count <= p3End) {
+          // Phase 3 — 2e texte affiché proprement (GLITCH_DUREE_VISIBLE × 60ms)
+          title.textContent = glitchText;
+        } else if (count <= p4End) {
+          // Phase 4 — chaos retour
+          title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
+        } else {
+          // Phase 5 — retour au titre original
+          clearInterval(interval);
+          title.textContent = original;
+          title.dataset.glitching = 'false';
+        }
       }, 60);
     }
     setInterval(randomGlitch, 10000);
