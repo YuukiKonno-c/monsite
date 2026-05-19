@@ -787,6 +787,15 @@ card.innerHTML = `
       }, speed);
     }
  
+    // ── SCROLL REVEAL ─────────────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+ 
 function observeAll() {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 }
