@@ -16,7 +16,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--mono); overflow-x: hidden; cursor: crosshair; }
-
     body::before { content: ''; position: fixed; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px); pointer-events: none; z-index: 9999; }
     body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9998; opacity: 0.6; }
 
@@ -30,22 +29,13 @@
     .nav-status { font-size: 10px; color: var(--red); animation: blink 1s step-end infinite; }
 
     section { min-height: 100vh; padding: 120px 60px 80px; position: relative; z-index: 2; }
-
-    /* Fonds semi-transparents pour laisser voir la matrix */
     #vision { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: rgba(2,10,2,0.78); }
     #suspects { background: rgba(5,15,5,0.80); border-top: 1px solid var(--border); }
     #temoignages { background: rgba(2,10,2,0.80); border-top: 1px solid var(--border); }
     #galerie { background: rgba(5,15,5,0.80); border-top: 1px solid var(--border); }
     #membres { background: rgba(2,10,2,0.80); border-top: 1px solid var(--border); }
 
-    /* TITRE GLITCH — hauteur fixe, plus de saut */
-    .glitch-title {
-      font-family: var(--display); font-size: clamp(48px, 10vw, 100px); font-weight: 900;
-      color: var(--green); text-shadow: 0 0 30px var(--green), 0 0 60px rgba(0,255,65,0.3);
-      letter-spacing: 12px; position: relative; animation: glitch 4s infinite;
-      width: 100%; height: 1.3em; display: flex; align-items: center; justify-content: center;
-      overflow: hidden; white-space: nowrap;
-    }
+    .glitch-title { font-family: var(--display); font-size: clamp(48px, 10vw, 100px); font-weight: 900; color: var(--green); text-shadow: 0 0 30px var(--green), 0 0 60px rgba(0,255,65,0.3); letter-spacing: 12px; position: relative; animation: glitch 4s infinite; width: 100%; height: 1.3em; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; }
     .glitch-title::before, .glitch-title::after { content: attr(data-text); position: absolute; inset: 0; font-family: var(--display); font-size: inherit; letter-spacing: inherit; display: flex; align-items: center; justify-content: center; }
     .glitch-title::before { color: var(--red); animation: glitch-1 4s infinite; clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
     .glitch-title::after { color: #00f3ff; animation: glitch-2 4s infinite; clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%); }
@@ -70,14 +60,40 @@
     .anecdote-text { color: rgba(176,255,184,0.85); }
     .anecdote-text::before { content: '▶ '; color: var(--green-dim); }
 
-    .description-box { max-width: 700px; border: 1px solid var(--border); padding: 30px 40px; background: rgba(0,20,5,0.7); text-align: left; font-size: 14px; line-height: 1.9; position: relative; margin-top: 20px; }
-    .description-box::before { content: '> RAPPORT_CONFIDENTIEL.txt'; display: block; font-size: 10px; color: var(--green-dim); letter-spacing: 2px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    /* DESCRIPTION BOX — cliquable */
+    .description-box { max-width: 700px; border: 1px solid var(--border); padding: 30px 40px; background: rgba(0,20,5,0.7); text-align: left; font-size: 14px; line-height: 1.9; position: relative; margin-top: 20px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+    .description-box:hover { border-color: var(--green); box-shadow: 0 0 20px var(--green-glow); }
+    .description-box::before { content: '> RAPPORT_CONFIDENTIEL.txt — CLIQUER POUR OUVRIR'; display: block; font-size: 10px; color: var(--green-dim); letter-spacing: 2px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .description-box::after { content: '📂'; position: absolute; top: 16px; right: 20px; font-size: 16px; opacity: 0.5; }
     .status-badge { display: inline-block; background: var(--red); color: #000; font-family: var(--display); font-size: 9px; font-weight: 700; padding: 4px 12px; letter-spacing: 3px; margin-top: 20px; animation: pulse-red 2s ease-in-out infinite; }
+
+    /* ── POPUP RAPPORTS ── */
+    #rapports-popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 10001; align-items: flex-start; justify-content: center; padding-top: 80px; overflow-y: auto; }
+    #rapports-popup.open { display: flex; }
+    .rapports-modal { width: 90%; max-width: 900px; border: 1px solid var(--border); background: rgba(2,10,2,0.98); position: relative; }
+    .rapports-modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; border-bottom: 1px solid var(--border); }
+    .rapports-modal-title { font-family: var(--display); font-size: 12px; color: var(--green); letter-spacing: 4px; }
+    .rapports-modal-close { font-family: var(--display); font-size: 11px; color: var(--green-dim); letter-spacing: 2px; cursor: pointer; padding: 4px 10px; border: 1px solid var(--border); transition: all 0.2s; }
+    .rapports-modal-close:hover { color: var(--red); border-color: var(--red); }
+    .rapports-layout { display: flex; min-height: 500px; }
+    .rapports-list { width: 260px; flex-shrink: 0; border-right: 1px solid var(--border); overflow-y: auto; }
+    .rapport-item { padding: 16px 20px; border-bottom: 1px solid rgba(0,255,65,0.07); cursor: pointer; transition: background 0.2s; }
+    .rapport-item:hover { background: rgba(0,255,65,0.06); }
+    .rapport-item.active { background: rgba(0,255,65,0.1); border-left: 2px solid var(--green); }
+    .rapport-item-date { font-size: 9px; color: var(--amber); letter-spacing: 2px; margin-bottom: 4px; font-family: var(--display); }
+    .rapport-item-titre { font-size: 11px; color: var(--text); letter-spacing: 1px; }
+    .rapports-content { flex: 1; padding: 30px; overflow-y: auto; }
+    .rapport-content-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .rapport-content-date { font-size: 9px; color: var(--amber); letter-spacing: 3px; margin-bottom: 8px; font-family: var(--display); }
+    .rapport-content-titre { font-family: var(--display); font-size: 16px; color: var(--green); letter-spacing: 3px; margin-bottom: 6px; }
+    .rapport-content-classif { font-size: 8px; letter-spacing: 3px; color: var(--red); border: 1px solid var(--red); display: inline-block; padding: 2px 8px; font-family: var(--display); }
+    .rapport-content-body { font-size: 13px; line-height: 2; color: rgba(176,255,184,0.85); white-space: pre-wrap; }
+    .rapport-content-body::before { content: '> '; color: var(--green-dim); }
 
     .section-header { font-family: var(--display); font-size: 11px; letter-spacing: 6px; color: var(--green-dim); margin-bottom: 10px; }
     .section-title { font-family: var(--display); font-size: clamp(28px, 5vw, 48px); font-weight: 900; color: var(--green); text-shadow: 0 0 20px rgba(0,255,65,0.4); letter-spacing: 6px; margin-bottom: 60px; }
 
-    /* SUSPECTS — 5 par ligne */
+    /* SUSPECTS */
     .suspects-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1600px; width: 100%; }
     .suspect-card { border: 1px solid var(--border); background: rgba(0,15,5,0.88); position: relative; overflow: hidden; transition: all 0.4s; }
     .suspect-card:hover { border-color: var(--green); box-shadow: 0 0 30px rgba(0,255,65,0.1); transform: translateY(-4px); }
@@ -118,20 +134,25 @@
 
     /* GALERIE */
     .galerie-container { max-width: 1000px; width: 100%; position: relative; }
-    .galerie-main { width: 100%; height: 500px; position: relative; overflow: hidden; border: 1px solid var(--border); background: #000; margin-bottom: 16px; cursor: zoom-in; }
-    .galerie-main img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(1.1); transition: opacity 0.4s ease; }
-    .galerie-main-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); }
+    .galerie-main {
+      width: 100%; height: 500px; position: relative; overflow: hidden;
+      border: 1px solid var(--border); background: #000; margin-bottom: 16px;
+      /* PAS de cursor zoom-in sur toute la zone, géré par l'img uniquement */
+    }
+    .galerie-main img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(1.1); transition: opacity 0.4s ease; cursor: zoom-in; }
+    .galerie-main-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); pointer-events: none; }
     .galerie-caption { font-family: var(--display); font-size: 13px; color: var(--green); letter-spacing: 2px; }
     .galerie-subcaption { font-size: 10px; color: rgba(176,255,184,0.5); margin-top: 4px; letter-spacing: 1px; }
-    .galerie-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 12px; pointer-events: none; }
-    .galerie-btn { background: rgba(0,0,0,0.6); border: 1px solid var(--border); color: var(--green); font-size: 20px; padding: 10px 16px; cursor: pointer; pointer-events: all; transition: all 0.2s; font-family: var(--mono); }
-    .galerie-btn:hover { border-color: var(--green); background: rgba(0,255,65,0.1); }
+    /* NAV flèches en z-index élevé, pointer-events sur les boutons uniquement */
+    .galerie-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 12px; pointer-events: none; z-index: 10; }
+    .galerie-btn { background: rgba(0,0,0,0.7); border: 1px solid var(--green); color: var(--green); font-size: 20px; padding: 12px 18px; cursor: pointer; pointer-events: all; transition: all 0.2s; font-family: var(--mono); }
+    .galerie-btn:hover { background: rgba(0,255,65,0.15); box-shadow: 0 0 10px rgba(0,255,65,0.3); }
     .galerie-thumbs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; }
     .galerie-thumb { width: 100px; height: 70px; flex-shrink: 0; border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: all 0.2s; opacity: 0.5; }
     .galerie-thumb.active { border-color: var(--green); opacity: 1; box-shadow: 0 0 10px rgba(0,255,65,0.3); }
     .galerie-thumb:hover { opacity: 0.8; }
     .galerie-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(50%); }
-    .galerie-counter { position: absolute; top: 16px; right: 16px; font-family: var(--display); font-size: 10px; color: var(--green-dim); letter-spacing: 2px; background: rgba(0,0,0,0.6); padding: 4px 10px; border: 1px solid var(--border); }
+    .galerie-counter { position: absolute; top: 16px; right: 16px; font-family: var(--display); font-size: 10px; color: var(--green-dim); letter-spacing: 2px; background: rgba(0,0,0,0.6); padding: 4px 10px; border: 1px solid var(--border); pointer-events: none; }
 
     /* MEMBRES */
     .membres-list { display: flex; flex-direction: column; gap: 40px; max-width: 1000px; }
@@ -154,15 +175,19 @@
 
     footer { padding: 30px 60px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: rgba(176,255,184,0.3); letter-spacing: 2px; position: relative; z-index: 3; background: rgba(2,10,2,0.97); }
 
+    /* LIGHTBOX */
     #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center; cursor: zoom-out; }
     #lightbox.open { display: flex; }
-    #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border: 1px solid var(--border); box-shadow: 0 0 60px rgba(0,255,65,0.2); }
-    #lightbox-close { position: absolute; top: 20px; right: 30px; font-family: var(--display); font-size: 12px; color: var(--green); letter-spacing: 3px; cursor: pointer; }
+    #lightbox-inner { position: relative; display: flex; align-items: center; gap: 20px; }
+    #lightbox img { max-width: 80vw; max-height: 85vh; object-fit: contain; border: 1px solid var(--border); box-shadow: 0 0 60px rgba(0,255,65,0.2); }
+    #lightbox-close { position: absolute; top: -40px; right: 0; font-family: var(--display); font-size: 12px; color: var(--green); letter-spacing: 3px; cursor: pointer; }
     #lightbox-close:hover { color: var(--red); }
+    /* Flèches de navigation dans la lightbox */
+    .lb-nav { background: rgba(0,0,0,0.6); border: 1px solid var(--border); color: var(--green); font-size: 24px; padding: 14px 18px; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
+    .lb-nav:hover { border-color: var(--green); background: rgba(0,255,65,0.1); }
 
     .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
     .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 9px; letter-spacing: 3px; color: var(--green-dim); animation: bounce 2s ease-in-out infinite; }
     .scroll-indicator::after { content: '▼'; font-size: 14px; }
 
@@ -179,9 +204,32 @@
 
   <canvas id="matrix-canvas"></canvas>
 
+  <!-- LIGHTBOX avec navigation gauche/droite -->
   <div id="lightbox">
-    <div id="lightbox-close">✕ FERMER</div>
-    <img id="lightbox-img" src="" alt=""/>
+    <div id="lightbox-inner">
+      <button class="lb-nav" id="lb-prev">◀</button>
+      <div style="position:relative">
+        <div id="lightbox-close">✕ FERMER</div>
+        <img id="lightbox-img" src="" alt=""/>
+      </div>
+      <button class="lb-nav" id="lb-next">▶</button>
+    </div>
+  </div>
+
+  <!-- POPUP RAPPORTS CONFIDENTIELS -->
+  <div id="rapports-popup">
+    <div class="rapports-modal">
+      <div class="rapports-modal-header">
+        <div class="rapports-modal-title">// RAPPORTS CONFIDENTIELS — ACCÈS RESTREINT</div>
+        <div class="rapports-modal-close" id="rapports-close">✕ FERMER</div>
+      </div>
+      <div class="rapports-layout">
+        <div class="rapports-list" id="rapports-list"></div>
+        <div class="rapports-content" id="rapports-content">
+          <div style="color:rgba(176,255,184,0.3);font-size:12px;padding:20px">Sélectionnez un rapport dans la liste.</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <nav>
@@ -220,7 +268,8 @@
       <div id="anecdotes-list"></div>
     </div>
 
-    <div class="description-box reveal">
+    <!-- Cliquable → ouvre la popup rapports -->
+    <div class="description-box reveal" id="description-box-btn">
       <p id="vision-desc"></p>
       <span class="status-badge" id="vision-badge">—</span>
     </div>
@@ -251,9 +300,10 @@
           <div class="galerie-caption" id="galerie-caption">—</div>
           <div class="galerie-subcaption" id="galerie-subcaption"></div>
         </div>
+        <!-- Flèches : stopPropagation pour ne PAS déclencher le zoom -->
         <div class="galerie-nav">
-          <button class="galerie-btn" onclick="galerieNav(-1)">◀</button>
-          <button class="galerie-btn" onclick="galerieNav(1)">▶</button>
+          <button class="galerie-btn" id="galerie-prev">◀</button>
+          <button class="galerie-btn" id="galerie-next">▶</button>
         </div>
       </div>
       <div class="galerie-thumbs" id="galerie-thumbs"></div>
@@ -295,15 +345,75 @@
     }
     setInterval(drawMatrix, 50);
 
-    // ── LIGHTBOX ──────────────────────────────────────────────────
+    // ── LIGHTBOX avec navigation ──────────────────────────────────
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    function openLightbox(src) { lightboxImg.src = src; lightbox.classList.add('open'); }
+    let lbSources = []; // toutes les images suspects
+    let lbIndex = 0;
+
+    function openLightbox(src, sources) {
+      if (sources) lbSources = sources;
+      lbIndex = lbSources.indexOf(src);
+      if (lbIndex === -1) { lbSources = [src]; lbIndex = 0; }
+      lightboxImg.src = lbSources[lbIndex];
+      lightbox.classList.add('open');
+    }
+
+    function lbNav(dir) {
+      lbIndex = (lbIndex + dir + lbSources.length) % lbSources.length;
+      lightboxImg.style.opacity = '0';
+      setTimeout(() => { lightboxImg.src = lbSources[lbIndex]; lightboxImg.style.opacity = '1'; }, 150);
+    }
+
+    document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); lbNav(-1); });
+    document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); lbNav(1); });
+    document.getElementById('lightbox-close').addEventListener('click', e => { e.stopPropagation(); lightbox.classList.remove('open'); });
     lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+      if (e.key === 'ArrowLeft') lbNav(-1);
+      if (e.key === 'ArrowRight') lbNav(1);
+    });
+
+    // ── POPUP RAPPORTS ────────────────────────────────────────────
+    const rapportsPopup = document.getElementById('rapports-popup');
+
+    function openRapports() { rapportsPopup.classList.add('open'); }
+    function closeRapports() { rapportsPopup.classList.remove('open'); }
+
+    document.getElementById('description-box-btn').addEventListener('click', openRapports);
+    document.getElementById('rapports-close').addEventListener('click', closeRapports);
+    rapportsPopup.addEventListener('click', e => { if (e.target === rapportsPopup) closeRapports(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRapports(); });
+
+    function buildRapports(rapports) {
+      const list = document.getElementById('rapports-list');
+      const content = document.getElementById('rapports-content');
+      list.innerHTML = '';
+      rapports.forEach((r, i) => {
+        const item = document.createElement('div');
+        item.className = 'rapport-item' + (i === 0 ? ' active' : '');
+        item.innerHTML = `<div class="rapport-item-date">${r.date}</div><div class="rapport-item-titre">${r.titre}</div>`;
+        item.addEventListener('click', () => {
+          document.querySelectorAll('.rapport-item').forEach(el => el.classList.remove('active'));
+          item.classList.add('active');
+          content.innerHTML = `
+            <div class="rapport-content-header">
+              <div class="rapport-content-date">${r.date}</div>
+              <div class="rapport-content-titre">${r.titre}</div>
+              <span class="rapport-content-classif">${r.classification || 'CONFIDENTIEL'}</span>
+            </div>
+            <div class="rapport-content-body">${r.contenu}</div>`;
+        });
+        list.appendChild(item);
+      });
+      if (rapports.length) list.querySelector('.rapport-item').click();
+    }
 
     // ── GALERIE ───────────────────────────────────────────────────
     let galerieIndex = 0; let galerieItems = [];
+
     function galerieInit(items) {
       galerieItems = items;
       if (!items.length) return;
@@ -316,11 +426,21 @@
         thumb.addEventListener('click', () => galerieGo(i));
         thumbsEl.appendChild(thumb);
       });
-      document.getElementById('galerie-main').addEventListener('click', () => {
-        if (galerieItems[galerieIndex]) openLightbox('images/' + galerieItems[galerieIndex].image);
+
+      // Clic sur l'IMAGE uniquement → lightbox
+      document.getElementById('galerie-img').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const galSrcs = galerieItems.map(it => 'images/' + it.image);
+        openLightbox('images/' + galerieItems[galerieIndex].image, galSrcs);
       });
+
+      // Flèches → navigation seulement, stopPropagation
+      document.getElementById('galerie-prev').addEventListener('click', e => { e.stopPropagation(); galerieNav(-1); });
+      document.getElementById('galerie-next').addEventListener('click', e => { e.stopPropagation(); galerieNav(1); });
+
       galerieGo(0);
     }
+
     function galerieGo(i) {
       galerieIndex = (i + galerieItems.length) % galerieItems.length;
       const item = galerieItems[galerieIndex];
@@ -332,6 +452,7 @@
       document.getElementById('galerie-counter').textContent = `${galerieIndex + 1} / ${galerieItems.length}`;
       document.querySelectorAll('.galerie-thumb').forEach((t, idx) => t.classList.toggle('active', idx === galerieIndex));
     }
+
     function galerieNav(dir) { galerieGo(galerieIndex + dir); }
 
     // ── LOAD CONTENT ──────────────────────────────────────────────
@@ -360,8 +481,12 @@
         anecEl.innerHTML = '<div class="anecdote-item"><span class="anecdote-date">—</span><span class="anecdote-text">Aucune entrée opérationnelle.</span></div>';
       }
 
-      // Suspects
+      // Rapports
+      if (data.rapports && data.rapports.length) buildRapports(data.rapports);
+
+      // Suspects — collecte les sources pour navigation lightbox
       const grid = document.getElementById('suspects-grid');
+      const suspectSrcs = data.suspects.filter(s => s.image).map(s => 'images/' + s.image);
       data.suspects.slice(0, 15).forEach((s) => {
         const card = document.createElement('div'); card.className = 'suspect-card reveal';
         const imgHTML = s.image ? `<img src="images/${s.image}" alt="${s.nom}" data-src="images/${s.image}" onerror="this.parentNode.innerHTML=placeholderHTML()">` : placeholderHTML();
@@ -377,10 +502,13 @@
             </div>
           </div>`;
         grid.appendChild(card);
-        if (s.image) { const img = card.querySelector('img[data-src]'); if (img) img.addEventListener('click', () => openLightbox(img.dataset.src)); }
+        if (s.image) {
+          const img = card.querySelector('img[data-src]');
+          if (img) img.addEventListener('click', () => openLightbox(img.dataset.src, suspectSrcs));
+        }
       });
 
-      // Témoignages (illimité)
+      // Témoignages
       const avisGrid = document.getElementById('avis-grid');
       data.avis.forEach((a, i) => {
         const fiabClass = a.fiabilite === 'CONFIRMÉ' ? 'confirme' : a.fiabilite === 'EN COURS' ? 'en-cours' : 'non-verifie';
@@ -399,8 +527,8 @@
       });
 
       // Galerie
-      if (data.galerie && data.galerie.length) { galerieInit(data.galerie); }
-      else { document.getElementById('galerie').style.display = 'none'; }
+      if (data.galerie && data.galerie.length) galerieInit(data.galerie);
+      else document.getElementById('galerie').style.display = 'none';
 
       // Membres
       const membresList = document.getElementById('membres-list');
@@ -423,7 +551,7 @@
             </div>`;
           membresList.appendChild(card);
         });
-      } else { document.getElementById('membres').style.display = 'none'; }
+      } else document.getElementById('membres').style.display = 'none';
 
       document.getElementById('footer-date').textContent = new Date().toISOString().split('T')[0].replace(/-/g, '.');
       setTimeout(observeAll, 300);
