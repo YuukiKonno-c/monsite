@@ -1,12 +1,30 @@
 {
   "entreprise": {
     "nom": "D.P.C",
+
     "tagline": "// DOSSIER CONFIDENTIEL — NIVEAU ALPHA //",
     "description": "Organisation clandestine opérant depuis 2019 dans les secteurs de la manipulation de données, du trafic d'informations sensibles et de la corruption systémique. Leurs activités s'étendent sur 47 pays. Aucun membre identifié n'a jamais été arrêté.",
+
     "statut": "RECHERCHÉE",
     "niveau_menace": "CRITIQUE",
     "date_creation": "2019.03.14"
   },
+
+  "anecdotes": [
+    {
+      "date": "2025.05.19",
+      "texte": "ICI POUR MODIFIER — Exemple : 4 suspects appréhendés cette semaine lors d'une opération à Lyon."
+    },
+    {
+      "date": "2025.05.12",
+      "texte": "ICI POUR MODIFIER — Exemple : Nouvelle trace de L'Architecte détectée à Berlin. Surveillance activée."
+    },
+    {
+      "date": "2025.05.08",
+      "texte": "ICI POUR MODIFIER — Exemple : 3 entreprises écrans démantelées dans la région parisienne."
+    }
+  ],
+
   "suspects": [
     {
       "id": 1,
@@ -33,92 +51,93 @@
       "nom": "\"L'OMBRE\"",
       "vrai_nom": "Inconnu",
       "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
+      "description": "Responsable des opérations sur le terrain. Experte en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
     },
-{
+    {
       "id": 4,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LE CHIMISTE\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
-      "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
+      "image": "suspect4.jpg",
+      "description": "Spécialiste en substances non répertoriées utilisées pour neutraliser des témoins. Opère exclusivement de nuit. Aucune empreinte digitale dans les bases de données mondiales.",
+      "statut": "RECHERCHÉ",
+      "prime": "38 000 €",
       "danger": "EXTRÊME"
     },
-        {
+    {
       "id": 5,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LA TISSERANDE\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
+      "image": "suspect5.jpg",
+      "description": "Coordinatrice des réseaux de façades commerciales. A infiltré des institutions financières dans 9 pays. Repérée pour la dernière fois à Zurich en octobre 2024.",
       "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
-      "danger": "EXTRÊME"
+      "prime": "31 000 €",
+      "danger": "ÉLEVÉ"
     },
-        {
+    {
       "id": 6,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LE SPECTRE\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
-      "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
-      "danger": "EXTRÊME"
+      "image": "suspect6.jpg",
+      "description": "Expert en guerre informationnelle et désinformation. Responsable de plusieurs campagnes de manipulation médiatique à grande échelle. Impossible à localiser via les réseaux sociaux.",
+      "statut": "RECHERCHÉ",
+      "prime": "44 000 €",
+      "danger": "ÉLEVÉ"
     },
-        {
+    {
       "id": 7,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"L'HORLOGER\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
-      "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
+      "image": "suspect7.jpg",
+      "description": "Planificateur logistique de précision. Coordonne les opérations à la seconde près. Aucune de ses missions n'a jamais échoué. Passé militaire suspecté dans plusieurs pays.",
+      "statut": "RECHERCHÉ",
+      "prime": "47 000 €",
       "danger": "EXTRÊME"
     },
-        {
+    {
       "id": 8,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LA SIRÈNE\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
+      "image": "suspect8.jpg",
+      "description": "Spécialiste de l'ingénierie sociale et de la séduction informationnelle. A compromis plusieurs hauts fonctionnaires européens. Maîtrise 7 langues couramment.",
       "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
-      "danger": "EXTRÊME"
+      "prime": "39 000 €",
+      "danger": "ÉLEVÉ"
     },
-        {
+    {
       "id": 9,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LE CORBEAU\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
-      "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
+      "image": "suspect9.jpg",
+      "description": "Informateur interne retourné contre ses propres services. Fournit à la D.P.C. des renseignements classifiés depuis au moins 3 ans. Identité supposément partiellement effacée.",
+      "statut": "RECHERCHÉ",
+      "prime": "55 000 €",
       "danger": "EXTRÊME"
     },
-        {
+    {
       "id": 10,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LA BRUME\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
+      "image": "suspect10.jpg",
+      "description": "Spécialiste en extraction et exfiltration discrète. Jamais photographiée de face. Utilise systématiquement des alias différents à chaque opération. Signalée à Tokyo en 2024.",
       "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
-      "danger": "EXTRÊME"
+      "prime": "33 000 €",
+      "danger": "ÉLEVÉ"
     },
-        {
+    {
       "id": 11,
-      "nom": "\"L'OMBRE\"",
+      "nom": "\"LE TRADUCTEUR\"",
       "vrai_nom": "Inconnu",
-      "image": "suspect3.jpg",
-      "description": "Responsable des opérations sur le terrain. Experts en déguisement et manipulation psychologique. Signalée dans 12 pays en 8 mois. Considérée comme extrêmement dangereuse.",
-      "statut": "RECHERCHÉE",
-      "prime": "42 000 €",
-      "danger": "EXTRÊME"
+      "image": "suspect11.jpg",
+      "description": "Médiateur entre les cellules de l'organisation. Polyglotte confirmé, suspecté de travailler pour plusieurs factions simultanément. Dernière trace : aéroport de Dubai, mars 2025.",
+      "statut": "RECHERCHÉ",
+      "prime": "29 000 €",
+      "danger": "MODÉRÉ"
     }
   ],
+
   "avis": [
     {
       "auteur": "Agent_X77",
@@ -143,6 +162,59 @@
       "date": "2024.09.30 — 23:59",
       "texte": "Ils m'ont approché en se faisant passer pour des recruteurs. Heureusement j'ai refusé. Une semaine plus tard, mon appartement a été fouillé. Coïncidence ?",
       "fiabilite": "NON VÉRIFIÉ"
+    },
+    {
+      "auteur": "ICI NOM DU TÉMOIN",
+      "date": "ICI LA DATE — ex: 2024.09.15 — 14:30",
+      "texte": "ICI LE TÉMOIGNAGE — Écrivez ce que le témoin a vu ou entendu.",
+      "fiabilite": "CONFIRMÉ"
+    },
+    {
+      "auteur": "ICI NOM DU TÉMOIN",
+      "date": "ICI LA DATE — ex: 2024.08.22 — 09:11",
+      "texte": "ICI LE TÉMOIGNAGE — Écrivez ce que le témoin a vu ou entendu.",
+      "fiabilite": "NON VÉRIFIÉ"
+    },
+    {
+      "auteur": "ICI NOM DU TÉMOIN",
+      "date": "ICI LA DATE — ex: 2024.07.04 — 21:45",
+      "texte": "ICI LE TÉMOIGNAGE — Écrivez ce que le témoin a vu ou entendu.",
+      "fiabilite": "EN COURS"
+    }
+  ],
+
+  "galerie": [
+    {
+      "image": "galerie1.jpg",
+      "titre": "ICI LE TITRE DE L'IMAGE",
+      "description": "ICI UNE COURTE DESCRIPTION — ex: Surveillance nocturne secteur 7 — document classifié"
+    },
+    {
+      "image": "galerie2.jpg",
+      "titre": "ICI LE TITRE DE L'IMAGE",
+      "description": "ICI UNE COURTE DESCRIPTION"
+    },
+    {
+      "image": "galerie3.jpg",
+      "titre": "ICI LE TITRE DE L'IMAGE",
+      "description": "ICI UNE COURTE DESCRIPTION"
+    }
+  ],
+
+  "membres": [
+    {
+      "nom": "ICI LE NOM DU MEMBRE",
+      "role": "ICI SON RÔLE — ex: DIRECTEUR OPÉRATIONNEL",
+      "image": "profile1.jpg",
+      "description": "ICI LA DESCRIPTION DU MEMBRE — Racontez son parcours, ses spécialités, son rôle dans l'organisation.",
+      "tags": ["MOT CLÉ 1", "MOT CLÉ 2", "MOT CLÉ 3"]
+    },
+    {
+      "nom": "ICI LE NOM DU MEMBRE",
+      "role": "ICI SON RÔLE",
+      "image": "profile2.jpg",
+      "description": "ICI LA DESCRIPTION DU MEMBRE.",
+      "tags": ["MOT CLÉ 1", "MOT CLÉ 2"]
     }
   ]
 }
