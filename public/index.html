@@ -849,6 +849,11 @@ function randomGlitch() {
 }
 
 setInterval(randomGlitch, 10000);
+
+    // ── INIT ──────────────────────────────────────────────────────
+    loadContent().then(() => {
+      setTimeout(observeAll, 300);
+    });
   </script>
 </body>
 </html>
