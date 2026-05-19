@@ -37,8 +37,8 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
-        {
+    },
+{
       "id": 4,
       "nom": "\"L'OMBRE\"",
       "vrai_nom": "Inconnu",
@@ -47,7 +47,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 5,
       "nom": "\"L'OMBRE\"",
@@ -57,7 +57,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 6,
       "nom": "\"L'OMBRE\"",
@@ -67,7 +67,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 7,
       "nom": "\"L'OMBRE\"",
@@ -77,7 +77,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 8,
       "nom": "\"L'OMBRE\"",
@@ -87,7 +87,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 9,
       "nom": "\"L'OMBRE\"",
@@ -97,7 +97,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 10,
       "nom": "\"L'OMBRE\"",
@@ -107,7 +107,7 @@
       "statut": "RECHERCHÉE",
       "prime": "42 000 €",
       "danger": "EXTRÊME"
-    }
+    },
         {
       "id": 11,
       "nom": "\"L'OMBRE\"",
