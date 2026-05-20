@@ -14,7 +14,7 @@
     "  ": "Format : YYYY-MM-DDTHH:MM:SS+02:00 (heure Paris)",
     "   ": "Exemple 7 jours : 2025-05-27T00:00:00+02:00",
     "    ": "Pour désactiver : mets fin à null",
-    "fin": "2025-05-20T08:00:00+02:00"
+"fin": "2025-05-21T08:00:00"
   },
 
   "polices": {
