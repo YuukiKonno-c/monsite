@@ -704,7 +704,7 @@
         if (s.image) {
           const img = card.querySelector('img[data-src]');
           if (img) {
-            img.addEventListener('click', () => { openLightbox(img.dataset.src, suspectSrcs); });
+img.addEventListener('click', () => { openLightbox(img.src, suspectSrcs); });
           }
         }
       });
