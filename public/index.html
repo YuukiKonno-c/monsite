@@ -704,10 +704,13 @@
         if (s.image) {
           const img = card.querySelector('img[data-src]');
           if (img) {
-img.addEventListener('click', () => {
-  const currentSrcs = Array.from(document.querySelectorAll('.suspect-img-container img')).map(i => i.src);
-  openLightbox(img.src, currentSrcs);
-});
+            img.addEventListener('click', () => {
+              const currentSrcs = Array.from(document.querySelectorAll('.suspect-img-container img')).map(i => i.src);
+              openLightbox(img.src, currentSrcs);
+            });
+          }
+        }
+      });
 
       // Témoignages
       const avisGrid = document.getElementById('avis-grid');
