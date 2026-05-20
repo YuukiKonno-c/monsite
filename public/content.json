@@ -51,6 +51,10 @@
       "date": "2025.05.01", "titre": "RAPPORT_01_05 — Rapport mensuel", "classification": "RESTREINT",
       "contenu": "ICI LE CONTENU DU RAPPORT 01/05.\n\nExemple : Bilan mensuel des opérations. 11 suspects fichés. 3 nouvelles entreprises écrans identifiées. Budget opérationnel consommé à 67%.\n\nProchaine réunion de coordination : à définir."
     }
+        {
+      "date": "2025.05.01", "titre": "RAPPORT_01_05 — Rapport mensuel", "classification": "INTERDIT",
+      "contenu": "ICI LE CONTENU DU RAPPORT 01/05.\n\nExemple : Bilan mensuel des opérations. 11 suspects fichés. 3 nouvelles entreprises écrans identifiées. Budget opérationnel consommé à 67%.\n\nProchaine réunion de coordination : à définir."
+    }
   ],
 
   "suspects": [
