@@ -31,7 +31,8 @@
     .nav-status { font-size: 10px; color: var(--red); animation: blink 1s step-end infinite; display: flex; align-items: center; gap: 10px; }
     /* BARRE SONORE + SLIDER */
     .audio-controls { display: flex; align-items: center; gap: 8px; }
-    .audio-bar { display: flex; align-items: flex-end; gap: 2px; height: 14px; cursor: pointer; transition: opacity 0.2s; }
+    .audio-bar { display: flex; align-items: flex-end; gap: 2px; height: 14px; cursor: pointer; transition: opacity 0.2s; opacity: 0.6; }
+    .audio-bar:hover { opacity: 1; }
     .audio-bar span { width: 3px; background: var(--green); border-radius: 1px; }
     .audio-bar span:nth-child(1) { animation: bar1 0.6s ease-in-out infinite; }
     .audio-bar span:nth-child(2) { animation: bar2 0.5s ease-in-out infinite; }
@@ -39,7 +40,6 @@
     .audio-bar span:nth-child(4) { animation: bar2 0.4s ease-in-out infinite; }
     .audio-bar span:nth-child(5) { animation: bar1 0.8s ease-in-out infinite; }
     .audio-bar.muted span { animation: none !important; height: 2px !important; opacity: 0.3; }
-    .audio-bar.inactive { opacity: 0.3; }
     /* Slider volume */
     .volume-slider {
       -webkit-appearance: none; appearance: none;
@@ -290,7 +290,7 @@
     </ul>
     <div class="nav-status">
       <div class="audio-controls">
-        <div class="audio-bar inactive" id="audio-bar" title="Clic pour activer/couper">
+        <div class="audio-bar" id="audio-bar" title="Clic pour couper/activer le son">
           <span></span><span></span><span></span><span></span><span></span>
         </div>
         <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="30" title="Volume">
@@ -306,7 +306,7 @@
     <div class="vision-grid">
       <div class="stat-box reveal">
         <div class="stat-label">NIVEAU MENACE</div>
-        <div class="stat-value" id="stat-menace">—</div>
+<div class="stat-value" id="stat-menace" style="color:var(--red)">—</div>
       </div>
       <!-- CHRONO — grande case fusionnée -->
       <div class="chrono-box reveal" id="chrono-box">
@@ -443,26 +443,19 @@
       setInterval(playHihat, 560); // hi-hat toutes les 2 notes
     }
 
-    function playClick(type = 'hover') {
+    function playClick() {
       if (!audioStarted) return;
       const vol = document.getElementById('volume-slider').value / 100;
       if (vol === 0) return;
+      // Son doux uniforme partout — petit bip cyber discret
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = 660;
+      gain.gain.setValueAtTime(0.04 * vol, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
       osc.connect(gain); gain.connect(audioCtx.destination);
-      if (type === 'hover') {
-        osc.type = 'square'; osc.frequency.value = 880;
-        gain.gain.setValueAtTime(0.03 * vol, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.05);
-      } else {
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
-        gain.gain.setValueAtTime(0.06 * vol, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.1);
-      }
+      osc.start(); osc.stop(audioCtx.currentTime + 0.08);
     }
 
     // Slider volume
@@ -490,10 +483,7 @@
     document.addEventListener('click', (e) => {
       if (!audioStarted && e.target !== volumeSlider) {
         audioStarted = true;
-        audioCtx.resume().then(() => {
-          createCyberPopAmbiance();
-          audioBar.classList.remove('inactive');
-        });
+        audioCtx.resume().then(() => { createCyberPopAmbiance(); });
       }
     });
 
@@ -529,13 +519,13 @@
       if (lbIndex === -1) { lbSources = [src]; lbIndex = 0; }
       lightboxImg.src = lbSources[lbIndex];
       lightbox.classList.add('open');
-      if (audioStarted) playClick('click');
+      if (audioStarted) playClick();
     }
     function lbNav(dir) {
       lbIndex = (lbIndex + dir + lbSources.length) % lbSources.length;
       lightboxImg.style.opacity = '0';
       setTimeout(() => { lightboxImg.src = lbSources[lbIndex]; lightboxImg.style.opacity = '1'; }, 150);
-      if (audioStarted) playClick('hover');
+      if (audioStarted) playClick();
     }
     document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); lbNav(-1); });
     document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); lbNav(1); });
@@ -661,7 +651,7 @@
       document.getElementById('galerie-subcaption').textContent = item.description || '';
       document.getElementById('galerie-counter').textContent = `${galerieIndex + 1} / ${galerieItems.length}`;
       document.querySelectorAll('.galerie-thumb').forEach((t, idx) => t.classList.toggle('active', idx === galerieIndex));
-      if (audioStarted) playClick('hover');
+      if (audioStarted) playClick();
     }
     function galerieNav(dir) { galerieGo(galerieIndex + dir); }
 
@@ -725,7 +715,6 @@
         if (s.image) {
           const img = card.querySelector('img[data-src]');
           if (img) {
-            img.addEventListener('mouseenter', () => { if (audioStarted) playClick('hover'); });
             img.addEventListener('click', () => { openLightbox(img.dataset.src, suspectSrcs); });
           }
         }

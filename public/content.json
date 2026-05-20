@@ -4,7 +4,7 @@
     "tagline": "☢ Département des Pokémons Corrompus ☢",
     "description": "Organisation clandestine opérant depuis 2019 dans les secteurs de la manipulation de données, du trafic d'informations sensibles et de la corruption systémique. Leurs activités s'étendent sur 47 pays. Aucun membre identifié n'a jamais été arrêté.",
     "statut": "RECHERCHÉE",
-    "niveau_menace": "CRITIQUE",
+    "niveau_de_menace": "CRITIQUE",
     "date_creation": "2019.03.14"
   },
 
@@ -14,7 +14,7 @@
     "  ": "Format : YYYY-MM-DDTHH:MM:SS (ex: 2025-05-27T00:00:00)",
     "   ": "Pour 7 jours à partir d'aujourd'hui : calcule la date + 7 jours.",
     "    ": "Pour désactiver : mets fin à null ou supprime le champ.",
-    "fin": "2025-05-20T07:00:00"
+    "fin":"2025-05-20T07:00:00+02:00"
   },
 
   "polices": {
