@@ -14,7 +14,7 @@
     "  ": "Format : YYYY-MM-DDTHH:MM:SS (ex: 2025-05-27T00:00:00)",
     "   ": "Pour 7 jours à partir d'aujourd'hui : calcule la date + 7 jours.",
     "    ": "Pour désactiver : mets fin à null ou supprime le champ.",
-    "fin": "2025-05-20T05:54:00"
+    "fin": "2025-05-20T06:03:00"
   },
 
   "polices": {
