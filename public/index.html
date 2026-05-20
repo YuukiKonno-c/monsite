@@ -28,7 +28,8 @@
     .nav-links { display: flex; gap: 24px; list-style: none; }
     .nav-links a { color: var(--text); text-decoration: none; font-size: 10px; letter-spacing: 2px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); text-shadow: 0 0 8px var(--green); }
-    .nav-status { font-size: 10px; color: var(--red); animation: blink 1s step-end infinite; display: flex; align-items: center; gap: 10px; }
+    .nav-status { font-size: 10px; color: var(--red); display: flex; align-items: center; gap: 10px; }
+    .nav-status-text { animation: blink 1s step-end infinite; color: var(--red); font-size: 10px; white-space: nowrap; }
     /* BARRE SONORE + SLIDER */
     .audio-controls { display: flex; align-items: center; gap: 8px; }
     .audio-bar { display: flex; align-items: flex-end; gap: 2px; height: 14px; cursor: pointer; transition: opacity 0.2s; opacity: 0.6; }
@@ -295,7 +296,7 @@
         </div>
         <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="30" title="Volume">
       </div>
-      ● LIVE — CRYPTÉ
+      <span class="nav-status-text">● LIVE — CRYPTÉ</span>
     </div>
   </nav>
 
@@ -394,68 +395,56 @@
 
     function createCyberPopAmbiance() {
       masterGain = audioCtx.createGain();
-      masterGain.gain.value = 0.03;
+      masterGain.gain.value = 0.025;
       masterGain.connect(audioCtx.destination);
 
-      // Arp cyber-pop : séquence de notes qui tourne
+      // Arp cyber-pop : sine uniquement, pas de grésillement
       const notes = [220, 277, 330, 415, 330, 277, 220, 165];
       let noteIdx = 0;
       function playArpNote() {
         const osc = audioCtx.createOscillator();
         const g = audioCtx.createGain();
-        osc.type = 'square';
+        osc.type = 'sine'; // ← sine = pas de grésillement
         osc.frequency.value = notes[noteIdx % notes.length];
         noteIdx++;
-        g.gain.setValueAtTime(0.15, audioCtx.currentTime);
-        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.18);
+        g.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
         osc.connect(g); g.connect(masterGain);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.18);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.2);
       }
-      setInterval(playArpNote, 280); // tempo cyber-pop
+      setInterval(playArpNote, 320);
 
-      // Pad de fond (nappe)
+      // Nappe de fond grave — sine filtré
       const pad = audioCtx.createOscillator();
-      pad.type = 'sawtooth';
+      pad.type = 'sine';
       pad.frequency.value = 55;
-      const padFilter = audioCtx.createBiquadFilter();
-      padFilter.type = 'lowpass';
-      padFilter.frequency.value = 300;
       const padGain = audioCtx.createGain();
-      padGain.gain.value = 0.2;
-      pad.connect(padFilter); padFilter.connect(padGain); padGain.connect(masterGain);
+      padGain.gain.value = 0.15;
+      pad.connect(padGain); padGain.connect(masterGain);
       pad.start();
 
-      // Hi-hat synthétique
-      function playHihat() {
-        const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.05, audioCtx.sampleRate);
-        const d = buf.getChannelData(0);
-        for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
-        const src = audioCtx.createBufferSource();
-        src.buffer = buf;
-        const hf = audioCtx.createBiquadFilter();
-        hf.type = 'highpass'; hf.frequency.value = 8000;
-        const hg = audioCtx.createGain();
-        hg.gain.setValueAtTime(0.08, audioCtx.currentTime);
-        hg.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-        src.connect(hf); hf.connect(hg); hg.connect(masterGain);
-        src.start();
-      }
-      setInterval(playHihat, 560); // hi-hat toutes les 2 notes
+      // 2e nappe harmonique
+      const pad2 = audioCtx.createOscillator();
+      pad2.type = 'sine';
+      pad2.frequency.value = 110;
+      const pad2Gain = audioCtx.createGain();
+      pad2Gain.gain.value = 0.08;
+      pad2.connect(pad2Gain); pad2Gain.connect(masterGain);
+      pad2.start();
     }
 
     function playClick() {
       if (!audioStarted) return;
       const vol = document.getElementById('volume-slider').value / 100;
       if (vol === 0) return;
-      // Son doux uniforme partout — petit bip cyber discret
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
       osc.type = 'sine';
-      osc.frequency.value = 660;
-      gain.gain.setValueAtTime(0.04 * vol, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+      osc.frequency.value = 880;
+      gain.gain.setValueAtTime(0.05 * vol, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.07);
       osc.connect(gain); gain.connect(audioCtx.destination);
-      osc.start(); osc.stop(audioCtx.currentTime + 0.08);
+      osc.start(); osc.stop(audioCtx.currentTime + 0.07);
     }
 
     // Slider volume
