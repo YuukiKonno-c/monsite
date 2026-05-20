@@ -8,6 +8,15 @@
     "date_creation": "2019.03.14"
   },
 
+  "chrono": {
+    "": "══ COMPTE À REBOURS — ACTUALISATION DES PRIMES ══",
+    " ": "Pour lancer le timer, change la date 'fin' ci-dessous.",
+    "  ": "Format : YYYY-MM-DDTHH:MM:SS (ex: 2025-05-27T00:00:00)",
+    "   ": "Pour 7 jours à partir d'aujourd'hui : calcule la date + 7 jours.",
+    "    ": "Pour désactiver : mets fin à null ou supprime le champ.",
+    "fin": "2025-05-20T05:41:00"
+  },
+
   "polices": {
     "": "╔══════════════════════════════════════════════════════════════╗",
     " ": "║  POLICES DISPONIBLES — copie-colle le nom exact             ║",
@@ -17,10 +26,8 @@
 
     "suspects_nom":       "Orbitron",        "suspects_taille":       "14px",
     "suspects_desc_nom":  "Share Tech Mono", "suspects_desc_taille":  "11px",
-
     "avis_auteur_nom":    "Orbitron",
     "avis_nom":           "Share Tech Mono", "avis_taille":           "12px",
-
     "membres_nom":        "Orbitron",        "membres_taille":        "22px",
     "membres_desc_nom":   "Share Tech Mono", "membres_desc_taille":   "13px"
   },
@@ -33,21 +40,15 @@
 
   "rapports": [
     {
-      "date": "2025.03.25",
-      "titre": "RAPPORT_25_03 — Opération Silence",
-      "classification": "ULTRA SECRET",
+      "date": "2025.03.25", "titre": "RAPPORT_25_03 — Opération Silence", "classification": "ULTRA SECRET",
       "contenu": "ICI LE CONTENU DU RAPPORT 25/03.\n\nExemple : Surveillance de la cellule Lyon activée à 03h00. Trois individus identifiés. Aucune interpellation possible sans exposer l'agent infiltré.\n\nSuite à donner : maintien de la surveillance 72h."
     },
     {
-      "date": "2025.04.10",
-      "titre": "RAPPORT_10_04 — Contact Berlin",
-      "classification": "CONFIDENTIEL",
+      "date": "2025.04.10", "titre": "RAPPORT_10_04 — Contact Berlin", "classification": "CONFIDENTIEL",
       "contenu": "ICI LE CONTENU DU RAPPORT 10/04.\n\nExemple : L'Architecte localisé dans le quartier Mitte. Contact établi avec agent local. Échange de données cryptées intercepté mais non déchiffré à ce stade.\n\nAnalyse en cours."
     },
     {
-      "date": "2025.05.01",
-      "titre": "RAPPORT_01_05 — Rapport mensuel",
-      "classification": "RESTREINT",
+      "date": "2025.05.01", "titre": "RAPPORT_01_05 — Rapport mensuel", "classification": "RESTREINT",
       "contenu": "ICI LE CONTENU DU RAPPORT 01/05.\n\nExemple : Bilan mensuel des opérations. 11 suspects fichés. 3 nouvelles entreprises écrans identifiées. Budget opérationnel consommé à 67%.\n\nProchaine réunion de coordination : à définir."
     }
   ],
@@ -62,8 +63,7 @@
     { "id": 7, "nom": "\"L'HORLOGER\"", "vrai_nom": "Inconnu", "image": "suspect7.jpg", "description": "Planificateur logistique de précision. Coordonne les opérations à la seconde près. Aucune de ses missions n'a jamais échoué. Passé militaire suspecté dans plusieurs pays.", "statut": "RECHERCHÉ", "prime": "47 000 €", "danger": "EXTRÊME" },
     { "id": 8, "nom": "\"LA SIRÈNE\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg", "description": "Spécialiste de l'ingénierie sociale et de la séduction informationnelle. A compromis plusieurs hauts fonctionnaires européens. Maîtrise 7 langues couramment.", "statut": "RECHERCHÉE", "prime": "39 000 €", "danger": "ÉLEVÉ" },
     { "id": 9, "nom": "\"LE CORBEAU\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg", "description": "Informateur interne retourné contre ses propres services. Fournit à la D.P.C. des renseignements classifiés depuis au moins 3 ans. Identité supposément partiellement effacée.", "statut": "RECHERCHÉ", "prime": "55 000 €", "danger": "EXTRÊME" },
-    { "id": 10, "nom": "\"LA BRUME\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg", "description": "Spécialiste en extraction et exfiltration discrète. Jamais photographiée de face. Utilise systématiquement des alias différents à chaque opération. Signalée à Tokyo en 2024.", "statut": "RECHERCHÉE", "prime": "33 000 €", "danger": "ÉLEVÉ" },
-    { "id": 11, "nom": "\"LE TRADUCTEUR\"", "vrai_nom": "Inconnu", "image": "suspect11.jpg", "description": "Médiateur entre les cellules de l'organisation. Polyglotte confirmé, suspecté de travailler pour plusieurs factions simultanément. Dernière trace : aéroport de Dubai, mars 2025.", "statut": "RECHERCHÉ", "prime": "29 000 €", "danger": "MODÉRÉ" }
+    { "id": 10, "nom": "\"LA BRUME\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg", "description": "Spécialiste en extraction et exfiltration discrète. Jamais photographiée de face. Utilise systématiquement des alias différents à chaque opération. Signalée à Tokyo en 2024.", "statut": "RECHERCHÉE", "prime": "33 000 €", "danger": "ÉLEVÉ" }
   ],
 
   "avis": [
@@ -85,7 +85,7 @@
   "membres": [
     { "nom": "Yuuki", "role": "Chef pas payer", "image": "profile1.jpg", "description": "Après avoir brainstorm au final 10% des idées sont retenu tout comme l'avis d'ayssixxx dans une discussion.", "tags": ["N'est pas payer pour les tags", "Doit subir la haine d'un guide", "Bg et pas Bdg"] },
     { "nom": "Ayssixxx", "role": "Proutman", "image": "profile2.jpg", "description": "Si tu l'enerve fais gaffe il viendras te dire la prochaine fois tu m'écouteras.", "tags": ["Buildeur vite fait", "Merci pour le baby"] },
-    { "nom": "ICI LE NOM DU MEMBRE", "role": "ICI SON RÔLE", "image": "profile3.jpg", "description": "ICI LA DESCRIPTION DU MEMBRE — Racontez son parcours, ses spécialités, son rôle dans l'organisation.", "tags": ["MOT CLÉ 1", "MOT CLÉ 2", "MOT CLÉ 3"] },
+    { "nom": "ICI LE NOM DU MEMBRE", "role": "ICI SON RÔLE", "image": "profile3.jpg", "description": "ICI LA DESCRIPTION DU MEMBRE.", "tags": ["MOT CLÉ 1", "MOT CLÉ 2", "MOT CLÉ 3"] },
     { "nom": "ICI LE NOM DU MEMBRE", "role": "ICI SON RÔLE", "image": "profile4.jpg", "description": "ICI LA DESCRIPTION DU MEMBRE.", "tags": ["MOT CLÉ 1", "MOT CLÉ 2"] },
     { "nom": "ICI LE NOM DU MEMBRE", "role": "ICI SON RÔLE", "image": "profile5.jpg", "description": "ICI LA DESCRIPTION DU MEMBRE.", "tags": ["MOT CLÉ 1", "MOT CLÉ 2"] }
   ]

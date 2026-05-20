@@ -23,7 +23,6 @@
 
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 8px 40px; background: rgba(2,10,2,0.95); border-bottom: 1px solid var(--border); backdrop-filter: blur(10px); }
     .nav-logo { font-family: var(--display); font-size: 13px; font-weight: 900; color: var(--green); letter-spacing: 4px; text-shadow: 0 0 10px var(--green); display: flex; align-items: center; gap: 12px; }
-    /* LOGO NAV — remplace logo.png par ton fichier dans public/images/ */
     .nav-logo-img { height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 6px rgba(0,255,65,0.4)); }
     .nav-logo-img-placeholder { height: 38px; width: 38px; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; font-size: 8px; color: var(--green-dim); letter-spacing: 1px; text-align: center; line-height: 1.3; }
     .nav-links { display: flex; gap: 24px; list-style: none; }
@@ -42,15 +41,28 @@
     .glitch-title::before, .glitch-title::after { content: attr(data-text); position: absolute; inset: 0; font-family: var(--display); font-size: inherit; letter-spacing: inherit; display: flex; align-items: center; justify-content: center; }
     .glitch-title::before { color: var(--red); animation: glitch-1 4s infinite; clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
     .glitch-title::after { color: #00f3ff; animation: glitch-2 4s infinite; clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%); }
-
     .tagline { font-family: var(--vt); font-size: 22px; color: var(--green-dim); letter-spacing: 4px; margin: 20px 0; opacity: 0.8; min-height: 1.4em; }
 
-    .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 30px 0; max-width: 900px; width: 100%; }
+    /* VISION GRID — 1 grande case statut + 1 grande case chrono */
+    .vision-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; margin: 30px 0; max-width: 900px; width: 100%; }
     .stat-box { border: 1px solid var(--border); padding: 20px; text-align: center; position: relative; background: rgba(0,255,65,0.04); transition: all 0.3s; }
     .stat-box:hover { border-color: var(--green); box-shadow: 0 0 20px var(--green-glow), inset 0 0 20px var(--green-glow); }
     .stat-box::before { content: ''; position: absolute; top: -1px; left: 10px; width: 30px; height: 2px; background: var(--bg); }
     .stat-label { font-size: 9px; letter-spacing: 3px; color: var(--green-dim); margin-bottom: 8px; }
     .stat-value { font-family: var(--display); font-size: 20px; font-weight: 700; color: var(--green); text-shadow: 0 0 10px var(--green); }
+
+    /* CHRONO BOX */
+    .chrono-box { border: 1px solid var(--border); padding: 20px; text-align: center; position: relative; background: rgba(0,255,65,0.04); transition: all 0.3s; display: flex; flex-direction: column; justify-content: center; }
+    .chrono-box:hover { border-color: var(--green); box-shadow: 0 0 20px var(--green-glow); }
+    .chrono-box::before { content: ''; position: absolute; top: -1px; left: 10px; width: 30px; height: 2px; background: var(--bg); }
+    .chrono-label { font-size: 9px; letter-spacing: 3px; color: var(--green-dim); margin-bottom: 10px; font-family: var(--display); }
+    .chrono-display { display: flex; justify-content: center; gap: 20px; align-items: center; }
+    .chrono-unit { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .chrono-num { font-family: var(--display); font-size: 28px; font-weight: 900; color: var(--green); text-shadow: 0 0 12px var(--green); line-height: 1; min-width: 2ch; }
+    .chrono-sep { font-family: var(--display); font-size: 28px; font-weight: 900; color: var(--green-dim); align-self: flex-start; margin-top: 2px; animation: blink 1s step-end infinite; }
+    .chrono-sublabel { font-size: 7px; letter-spacing: 2px; color: rgba(176,255,184,0.4); font-family: var(--display); }
+    .chrono-expired { font-family: var(--display); font-size: 14px; color: var(--red); letter-spacing: 3px; animation: pulse-red 1s ease-in-out infinite; }
+    .chrono-new-badge { display: inline-block; background: var(--red); color: #000; font-family: var(--display); font-size: 8px; font-weight: 700; padding: 3px 8px; letter-spacing: 2px; margin-top: 6px; animation: pulse-red 1s ease-in-out infinite; }
 
     /* ANECDOTES */
     .anecdotes-box { max-width: 900px; width: 100%; border: 1px solid var(--border); background: rgba(0,20,5,0.7); margin: 20px 0; }
@@ -63,14 +75,13 @@
     .anecdote-text { color: rgba(176,255,184,0.85); }
     .anecdote-text::before { content: '▶ '; color: var(--green-dim); }
 
-    /* DESCRIPTION BOX — cliquable */
     .description-box { max-width: 700px; border: 1px solid var(--border); padding: 30px 40px; background: rgba(0,20,5,0.7); text-align: left; font-size: 14px; line-height: 1.9; position: relative; margin-top: 20px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
     .description-box:hover { border-color: var(--green); box-shadow: 0 0 20px var(--green-glow); }
     .description-box::before { content: '> RAPPORT_CONFIDENTIEL.txt — CLIQUER POUR OUVRIR'; display: block; font-size: 10px; color: var(--green-dim); letter-spacing: 2px; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
     .description-box::after { content: '📂'; position: absolute; top: 16px; right: 20px; font-size: 16px; opacity: 0.5; }
     .status-badge { display: inline-block; background: var(--red); color: #000; font-family: var(--display); font-size: 9px; font-weight: 700; padding: 4px 12px; letter-spacing: 3px; margin-top: 20px; animation: pulse-red 2s ease-in-out infinite; }
 
-    /* ── POPUP RAPPORTS ── */
+    /* POPUP RAPPORTS */
     #rapports-popup { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 10001; align-items: flex-start; justify-content: center; padding-top: 80px; overflow-y: auto; }
     #rapports-popup.open { display: flex; }
     .rapports-modal { width: 90%; max-width: 900px; border: 1px solid var(--border); background: rgba(2,10,2,0.98); position: relative; }
@@ -96,27 +107,31 @@
     .section-header { font-family: var(--display); font-size: 11px; letter-spacing: 6px; color: var(--green-dim); margin-bottom: 10px; }
     .section-title { font-family: var(--display); font-size: clamp(28px, 5vw, 48px); font-weight: 900; color: var(--green); text-shadow: 0 0 20px rgba(0,255,65,0.4); letter-spacing: 6px; margin-bottom: 60px; }
 
-    /* SUSPECTS */
+    /* SUSPECTS — 5 colonnes, max 10, meta toujours en bas */
     .suspects-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1600px; width: 100%; }
-    .suspect-card { border: 1px solid var(--border); background: rgba(0,15,5,0.88); position: relative; overflow: hidden; transition: all 0.4s; }
+    .suspect-card { border: 1px solid var(--border); background: rgba(0,15,5,0.88); position: relative; overflow: hidden; transition: all 0.4s; display: flex; flex-direction: column; }
     .suspect-card:hover { border-color: var(--green); box-shadow: 0 0 30px rgba(0,255,65,0.1); transform: translateY(-4px); }
     .suspect-card::before { content: 'AVIS DE RECHERCHE'; position: absolute; top: 15px; left: 0; right: 0; text-align: center; font-family: var(--display); font-size: 10px; letter-spacing: 4px; color: var(--red); z-index: 2; }
-    .suspect-img-container { width: 100%; height: 220px; background: #000; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); cursor: zoom-in; }
+    .suspect-img-container { width: 100%; height: 220px; background: #000; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); cursor: zoom-in; flex-shrink: 0; }
     .suspect-img-container img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(80%) contrast(1.2) brightness(0.8); transition: filter 0.4s; }
     .suspect-card:hover .suspect-img-container img { filter: grayscale(40%) contrast(1.3) brightness(0.9); }
     .img-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; color: var(--green-dim); opacity: 0.5; }
     .img-placeholder svg { width: 60px; height: 60px; }
     .img-placeholder span { font-size: 10px; letter-spacing: 2px; }
     .scan-line { position: absolute; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, var(--green), transparent); animation: scan 3s linear infinite; opacity: 0.6; pointer-events: none; }
-    .suspect-body { padding: 16px 20px 20px; }
+    /* body flex pour pousser meta tout en bas */
+    .suspect-body { padding: 16px 20px 20px; display: flex; flex-direction: column; flex: 1; }
     .suspect-nom { font-family: var(--display); font-size: 14px; font-weight: 700; color: var(--green); letter-spacing: 2px; margin-bottom: 4px; }
     .suspect-alias { font-size: 9px; color: var(--amber); letter-spacing: 2px; margin-bottom: 10px; }
-    .suspect-desc { font-size: 11px; line-height: 1.6; color: rgba(176,255,184,0.7); margin-bottom: 12px; border-left: 2px solid var(--border); padding-left: 10px; }
-    .suspect-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--border); }
+    .suspect-desc { font-size: 11px; line-height: 1.6; color: rgba(176,255,184,0.7); margin-bottom: 12px; border-left: 2px solid var(--border); padding-left: 10px; flex: 1; }
+    /* meta toujours collé en bas */
+    .suspect-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid var(--border); margin-top: auto; }
     .prime { font-family: var(--display); font-size: 13px; font-weight: 700; color: var(--amber); text-shadow: 0 0 8px rgba(255,176,0,0.5); }
     .prime-label { font-size: 8px; letter-spacing: 2px; color: rgba(176,255,184,0.4); display: block; }
     .danger-tag { font-size: 8px; letter-spacing: 2px; padding: 3px 8px; border: 1px solid var(--red); color: var(--red); font-family: var(--display); }
     .danger-tag.extreme { animation: pulse-red 1.5s ease-in-out infinite; }
+    /* Badge nouvelles primes */
+    .suspect-new-badge { position: absolute; top: 36px; left: 50%; transform: translateX(-50%); font-family: var(--display); font-size: 7px; color: #000; background: var(--amber); padding: 2px 8px; letter-spacing: 2px; z-index: 3; animation: pulse-red 1.5s ease-in-out infinite; white-space: nowrap; }
 
     /* TÉMOIGNAGES */
     .avis-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; max-width: 1400px; }
@@ -137,27 +152,22 @@
 
     /* GALERIE */
     .galerie-container { max-width: 1000px; width: 100%; position: relative; }
-    .galerie-main {
-      width: 100%; height: 500px; position: relative; overflow: hidden;
-      border: 1px solid var(--border); background: #000; margin-bottom: 16px;
-      /* PAS de cursor zoom-in sur toute la zone, géré par l'img uniquement */
-    }
+    .galerie-main { width: 100%; height: 500px; position: relative; overflow: hidden; border: 1px solid var(--border); background: #000; margin-bottom: 16px; }
     .galerie-main img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(1.1); transition: opacity 0.4s ease; cursor: zoom-in; }
     .galerie-main-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 24px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); pointer-events: none; }
     .galerie-caption { font-family: var(--display); font-size: 13px; color: var(--green); letter-spacing: 2px; }
     .galerie-subcaption { font-size: 10px; color: rgba(176,255,184,0.5); margin-top: 4px; letter-spacing: 1px; }
-    /* NAV flèches en z-index élevé, pointer-events sur les boutons uniquement */
     .galerie-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 12px; pointer-events: none; z-index: 10; }
     .galerie-btn { background: rgba(0,0,0,0.7); border: 1px solid var(--green); color: var(--green); font-size: 20px; padding: 12px 18px; cursor: pointer; pointer-events: all; transition: all 0.2s; font-family: var(--mono); }
     .galerie-btn:hover { background: rgba(0,255,65,0.15); box-shadow: 0 0 10px rgba(0,255,65,0.3); }
-    .galerie-thumbs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; }
+    .galerie-thumbs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; flex-wrap: wrap; }
     .galerie-thumb { width: 100px; height: 70px; flex-shrink: 0; border: 1px solid var(--border); overflow: hidden; cursor: pointer; transition: all 0.2s; opacity: 0.5; }
     .galerie-thumb.active { border-color: var(--green); opacity: 1; box-shadow: 0 0 10px rgba(0,255,65,0.3); }
     .galerie-thumb:hover { opacity: 0.8; }
     .galerie-thumb img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(50%); }
     .galerie-counter { position: absolute; top: 16px; right: 16px; font-family: var(--display); font-size: 10px; color: var(--green-dim); letter-spacing: 2px; background: rgba(0,0,0,0.6); padding: 4px 10px; border: 1px solid var(--border); pointer-events: none; }
 
-    /* MEMBRES */
+    /* MEMBRES — illimité */
     .membres-list { display: flex; flex-direction: column; gap: 40px; max-width: 1000px; }
     .membre-card { display: flex; gap: 0; align-items: stretch; border: 1px solid var(--border); background: rgba(0,15,5,0.88); overflow: hidden; transition: all 0.4s; position: relative; }
     .membre-card:hover { border-color: var(--green); box-shadow: 0 0 30px rgba(0,255,65,0.08); }
@@ -178,20 +188,17 @@
 
     footer { padding: 40px 60px; border-top: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 20px; font-size: 10px; color: rgba(176,255,184,0.3); letter-spacing: 2px; position: relative; z-index: 3; background: rgba(2,10,2,0.97); }
     .footer-logo-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    /* LOGO FOOTER — remplace logo.png par ton fichier dans public/images/ */
     .footer-logo-img { height: 60px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(0,255,65,0.3)) grayscale(20%); opacity: 0.8; transition: all 0.3s; }
     .footer-logo-img:hover { opacity: 1; filter: drop-shadow(0 0 16px rgba(0,255,65,0.6)); }
     .footer-logo-img-placeholder { height: 60px; width: 120px; border: 1px dashed var(--border); display: flex; align-items: center; justify-content: center; font-size: 9px; color: var(--green-dim); letter-spacing: 1px; text-align: center; line-height: 1.5; }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; width: 100%; border-top: 1px solid rgba(0,255,65,0.08); padding-top: 16px; }
 
-    /* LIGHTBOX */
     #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center; cursor: zoom-out; }
     #lightbox.open { display: flex; }
     #lightbox-inner { position: relative; display: flex; align-items: center; gap: 20px; }
     #lightbox img { max-width: 80vw; max-height: 85vh; object-fit: contain; border: 1px solid var(--border); box-shadow: 0 0 60px rgba(0,255,65,0.2); }
     #lightbox-close { position: absolute; top: -40px; right: 0; font-family: var(--display); font-size: 12px; color: var(--green); letter-spacing: 3px; cursor: pointer; }
     #lightbox-close:hover { color: var(--red); }
-    /* Flèches de navigation dans la lightbox */
     .lb-nav { background: rgba(0,0,0,0.6); border: 1px solid var(--border); color: var(--green); font-size: 24px; padding: 14px 18px; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
     .lb-nav:hover { border-color: var(--green); background: rgba(0,255,65,0.1); }
 
@@ -213,7 +220,6 @@
 
   <canvas id="matrix-canvas"></canvas>
 
-  <!-- LIGHTBOX avec navigation gauche/droite -->
   <div id="lightbox">
     <div id="lightbox-inner">
       <button class="lb-nav" id="lb-prev">◀</button>
@@ -225,7 +231,6 @@
     </div>
   </div>
 
-  <!-- POPUP RAPPORTS CONFIDENTIELS -->
   <div id="rapports-popup">
     <div class="rapports-modal">
       <div class="rapports-modal-header">
@@ -243,7 +248,6 @@
 
   <nav>
     <div class="nav-logo">
-      <!-- LOGO NAV : remplace "logo.png" par le nom de ton fichier dans public/images/ -->
       <img class="nav-logo-img" src="images/logo.png" alt="Logo D.P.C"
         onerror="this.outerHTML='<div class=\'nav-logo-img-placeholder\'>LOGO<br>ICI</div>'">
       D.P.C
@@ -267,13 +271,18 @@
         <div class="stat-label">STATUT</div>
         <div class="stat-value" id="stat-statut" style="color:var(--red)">—</div>
       </div>
-      <div class="stat-box reveal">
-        <div class="stat-label">NIVEAU MENACE</div>
-        <div class="stat-value" id="stat-menace">—</div>
-      </div>
-      <div class="stat-box reveal">
-        <div class="stat-label">DATE CRÉATION</div>
-        <div class="stat-value" id="stat-date">—</div>
+      <!-- CHRONO — grande case fusionnée -->
+      <div class="chrono-box reveal" id="chrono-box">
+        <div class="chrono-label">⏱ ACTUALISATION DES PRIMES</div>
+        <div class="chrono-display" id="chrono-display">
+          <div class="chrono-unit"><span class="chrono-num" id="chrono-j">--</span><span class="chrono-sublabel">JOURS</span></div>
+          <span class="chrono-sep">:</span>
+          <div class="chrono-unit"><span class="chrono-num" id="chrono-h">--</span><span class="chrono-sublabel">HEURES</span></div>
+          <span class="chrono-sep">:</span>
+          <div class="chrono-unit"><span class="chrono-num" id="chrono-m">--</span><span class="chrono-sublabel">MIN</span></div>
+          <span class="chrono-sep">:</span>
+          <div class="chrono-unit"><span class="chrono-num" id="chrono-s">--</span><span class="chrono-sublabel">SEC</span></div>
+        </div>
       </div>
     </div>
 
@@ -282,7 +291,6 @@
       <div id="anecdotes-list"></div>
     </div>
 
-    <!-- Cliquable → ouvre la popup rapports -->
     <div class="description-box reveal" id="description-box-btn">
       <p id="vision-desc"></p>
       <span class="status-badge" id="vision-badge">—</span>
@@ -314,7 +322,6 @@
           <div class="galerie-caption" id="galerie-caption">—</div>
           <div class="galerie-subcaption" id="galerie-subcaption"></div>
         </div>
-        <!-- Flèches : stopPropagation pour ne PAS déclencher le zoom -->
         <div class="galerie-nav">
           <button class="galerie-btn" id="galerie-prev">◀</button>
           <button class="galerie-btn" id="galerie-next">▶</button>
@@ -332,7 +339,6 @@
 
   <footer>
     <div class="footer-logo-wrap">
-      <!-- LOGO FOOTER : remplace "logo.png" par le nom de ton fichier dans public/images/ -->
       <img class="footer-logo-img" src="images/logo.png" alt="Logo D.P.C"
         onerror="this.outerHTML='<div class=\'footer-logo-img-placeholder\'>TON LOGO<br>ICI</div>'">
     </div>
@@ -344,6 +350,67 @@
   </footer>
 
   <script>
+    // ── AUDIO AMBIANCE ────────────────────────────────────────────
+    // Bruit de fond constant (Web Audio API — pas de fichier requis)
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function createAmbiance() {
+      // Bruit blanc filtré = ambiance radio/static
+      const bufferSize = audioCtx.sampleRate * 2;
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1);
+
+      const source = audioCtx.createBufferSource();
+      source.buffer = buffer;
+      source.loop = true;
+
+      // Filtre passe-bas pour adoucir (son plus grave/profond)
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 800;
+
+      // Volume très léger
+      const gainNode = audioCtx.createGain();
+      gainNode.gain.value = 0.04; // ← Change ce chiffre : 0.02=très léger, 0.06=plus présent
+
+      source.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      source.start();
+      return { source, gainNode };
+    }
+
+    // Bip court sur survol/clic image
+    function playClick(type = 'hover') {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'hover') {
+        osc.frequency.value = 800;
+        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.08);
+      } else {
+        osc.frequency.value = 1200;
+        gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.15);
+      }
+    }
+
+    // Démarrer l'audio au premier clic (règle navigateur)
+    let audioStarted = false;
+    let ambianceCtrl = null;
+    document.addEventListener('click', () => {
+      if (!audioStarted) {
+        audioStarted = true;
+        audioCtx.resume().then(() => { ambianceCtrl = createAmbiance(); });
+      }
+    }, { once: false });
+
     // ── MATRIX ────────────────────────────────────────────────────
     const canvas = document.getElementById('matrix-canvas');
     const ctx = canvas.getContext('2d');
@@ -366,26 +433,24 @@
     }
     setInterval(drawMatrix, 50);
 
-    // ── LIGHTBOX avec navigation ──────────────────────────────────
+    // ── LIGHTBOX ──────────────────────────────────────────────────
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    let lbSources = []; // toutes les images suspects
-    let lbIndex = 0;
-
+    let lbSources = []; let lbIndex = 0;
     function openLightbox(src, sources) {
       if (sources) lbSources = sources;
       lbIndex = lbSources.indexOf(src);
       if (lbIndex === -1) { lbSources = [src]; lbIndex = 0; }
       lightboxImg.src = lbSources[lbIndex];
       lightbox.classList.add('open');
+      if (audioStarted) playClick('click');
     }
-
     function lbNav(dir) {
       lbIndex = (lbIndex + dir + lbSources.length) % lbSources.length;
       lightboxImg.style.opacity = '0';
       setTimeout(() => { lightboxImg.src = lbSources[lbIndex]; lightboxImg.style.opacity = '1'; }, 150);
+      if (audioStarted) playClick('hover');
     }
-
     document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); lbNav(-1); });
     document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); lbNav(1); });
     document.getElementById('lightbox-close').addEventListener('click', e => { e.stopPropagation(); lightbox.classList.remove('open'); });
@@ -399,15 +464,12 @@
 
     // ── POPUP RAPPORTS ────────────────────────────────────────────
     const rapportsPopup = document.getElementById('rapports-popup');
-
     function openRapports() { rapportsPopup.classList.add('open'); }
     function closeRapports() { rapportsPopup.classList.remove('open'); }
-
     document.getElementById('description-box-btn').addEventListener('click', openRapports);
     document.getElementById('rapports-close').addEventListener('click', closeRapports);
     rapportsPopup.addEventListener('click', e => { if (e.target === rapportsPopup) closeRapports(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeRapports(); });
-
     function buildRapports(rapports) {
       const list = document.getElementById('rapports-list');
       const content = document.getElementById('rapports-content');
@@ -432,11 +494,57 @@
       if (rapports.length) list.querySelector('.rapport-item').click();
     }
 
+    // ── COMPTE À REBOURS + SWITCH IMAGES ─────────────────────────
+    // Les données viennent de content.json → "chrono"
+    // Quand le chrono expire : suspect1.jpg → suspect1.new.jpg automatiquement
+    let chronoExpire = false;
+    function initChrono(chronoData) {
+      if (!chronoData || !chronoData.fin) {
+        document.getElementById('chrono-display').innerHTML = '<span style="font-size:11px;color:var(--green-dim);letter-spacing:2px">— NON ACTIVÉ —</span>';
+        return;
+      }
+      const target = new Date(chronoData.fin).getTime();
+      function tick() {
+        const now = Date.now();
+        const diff = target - now;
+        if (diff <= 0) {
+          if (!chronoExpire) {
+            chronoExpire = true;
+            document.getElementById('chrono-display').innerHTML = `
+              <div>
+                <div class="chrono-expired">⚠ PRIMES ACTUALISÉES</div>
+                <div class="chrono-new-badge">NOUVELLES FICHES ACTIVES</div>
+              </div>`;
+            // Switch des images suspects vers .new
+            document.querySelectorAll('.suspect-img-container img').forEach(img => {
+              const src = img.src;
+              if (!src.includes('.new.')) {
+                const newSrc = src.replace(/(\.[^.]+)$/, '.new$1');
+                const testImg = new Image();
+                testImg.onload = () => { img.src = newSrc; };
+                testImg.src = newSrc;
+              }
+            });
+          }
+          return;
+        }
+        const j = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('chrono-j').textContent = String(j).padStart(2,'0');
+        document.getElementById('chrono-h').textContent = String(h).padStart(2,'0');
+        document.getElementById('chrono-m').textContent = String(m).padStart(2,'0');
+        document.getElementById('chrono-s').textContent = String(s).padStart(2,'0');
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+
     // ── GALERIE ───────────────────────────────────────────────────
     let galerieIndex = 0; let galerieItems = [];
-
     function galerieInit(items) {
-      galerieItems = items;
+      galerieItems = items; // pas de limite
       if (!items.length) return;
       const thumbsEl = document.getElementById('galerie-thumbs');
       thumbsEl.innerHTML = '';
@@ -447,21 +555,15 @@
         thumb.addEventListener('click', () => galerieGo(i));
         thumbsEl.appendChild(thumb);
       });
-
-      // Clic sur l'IMAGE uniquement → lightbox
       document.getElementById('galerie-img').addEventListener('click', (e) => {
         e.stopPropagation();
         const galSrcs = galerieItems.map(it => 'images/' + it.image);
         openLightbox('images/' + galerieItems[galerieIndex].image, galSrcs);
       });
-
-      // Flèches → navigation seulement, stopPropagation
       document.getElementById('galerie-prev').addEventListener('click', e => { e.stopPropagation(); galerieNav(-1); });
       document.getElementById('galerie-next').addEventListener('click', e => { e.stopPropagation(); galerieNav(1); });
-
       galerieGo(0);
     }
-
     function galerieGo(i) {
       galerieIndex = (i + galerieItems.length) % galerieItems.length;
       const item = galerieItems[galerieIndex];
@@ -472,8 +574,8 @@
       document.getElementById('galerie-subcaption').textContent = item.description || '';
       document.getElementById('galerie-counter').textContent = `${galerieIndex + 1} / ${galerieItems.length}`;
       document.querySelectorAll('.galerie-thumb').forEach((t, idx) => t.classList.toggle('active', idx === galerieIndex));
+      if (audioStarted) playClick('hover');
     }
-
     function galerieNav(dir) { galerieGo(galerieIndex + dir); }
 
     // ── LOAD CONTENT ──────────────────────────────────────────────
@@ -484,11 +586,12 @@
       typeText('tagline', e.tagline, 60);
       setTimeout(() => {
         document.getElementById('stat-statut').textContent = e.statut;
-        document.getElementById('stat-menace').textContent = e.niveau_menace;
-        document.getElementById('stat-date').textContent = e.date_creation;
         document.getElementById('vision-desc').textContent = e.description;
         document.getElementById('vision-badge').textContent = '⚠ ' + e.statut;
       }, 800);
+
+      // Chrono
+      initChrono(data.chrono);
 
       // Anecdotes
       const anecEl = document.getElementById('anecdotes-list');
@@ -498,29 +601,29 @@
           div.innerHTML = `<span class="anecdote-date">${a.date}</span><span class="anecdote-text">${a.texte}</span>`;
           anecEl.appendChild(div);
         });
-      } else {
-        anecEl.innerHTML = '<div class="anecdote-item"><span class="anecdote-date">—</span><span class="anecdote-text">Aucune entrée opérationnelle.</span></div>';
       }
 
       // Rapports
       if (data.rapports && data.rapports.length) buildRapports(data.rapports);
 
-      // Suspects — collecte les sources pour navigation lightbox
+      // Suspects — MAX 10
       const grid = document.getElementById('suspects-grid');
-      const suspectSrcs = data.suspects.filter(s => s.image).map(s => 'images/' + s.image);
-      // Police suspects depuis config JSON
-      const sPolice = (data.polices && data.polices.suspects_nom) ? data.polices.suspects_nom : null;
-      const sTaille = (data.polices && data.polices.suspects_taille) ? data.polices.suspects_taille : null;
-      const sDescPolice = (data.polices && data.polices.suspects_desc_nom) ? data.polices.suspects_desc_nom : null;
-      const sDescTaille = (data.polices && data.polices.suspects_desc_taille) ? data.polices.suspects_desc_taille : null;
+      const sPolice = data.polices?.suspects_nom || null;
+      const sTaille = data.polices?.suspects_taille || null;
+      const sDescPolice = data.polices?.suspects_desc_nom || null;
+      const sDescTaille = data.polices?.suspects_desc_taille || null;
+      const suspectSrcs = data.suspects.slice(0,10).filter(s => s.image).map(s => 'images/' + s.image);
 
-      data.suspects.slice(0, 15).forEach((s) => {
+      data.suspects.slice(0, 10).forEach((s) => {
         const card = document.createElement('div'); card.className = 'suspect-card reveal';
-        const imgHTML = s.image ? `<img src="images/${s.image}" alt="${s.nom}" data-src="images/${s.image}" onerror="this.parentNode.innerHTML=placeholderHTML()">` : placeholderHTML();
+        const useNew = chronoExpire && s.image;
+        const imgFile = useNew ? s.image.replace(/(\.[^.]+)$/, '.new$1') : s.image;
+        const imgHTML = s.image ? `<img src="images/${imgFile}" alt="${s.nom}" data-src="images/${s.image}" onerror="this.src='images/${s.image}'">` : placeholderHTML();
         const nomStyle = `${sPolice?`font-family:'${sPolice}';`:''}${sTaille?`font-size:${sTaille};`:''}`;
         const descStyle = `${sDescPolice?`font-family:'${sDescPolice}';`:''}${sDescTaille?`font-size:${sDescTaille};`:''}`;
         card.innerHTML = `
           <div class="suspect-img-container">${imgHTML}<div class="scan-line"></div></div>
+          ${chronoExpire ? '<div class="suspect-new-badge">⚡ NOUVELLE PRIME</div>' : ''}
           <div class="suspect-body">
             <div class="suspect-nom" style="${nomStyle}">${s.nom}</div>
             <div class="suspect-alias">IDENTITÉ RÉELLE : ${s.vrai_nom}</div>
@@ -533,15 +636,18 @@
         grid.appendChild(card);
         if (s.image) {
           const img = card.querySelector('img[data-src]');
-          if (img) img.addEventListener('click', () => openLightbox(img.dataset.src, suspectSrcs));
+          if (img) {
+            img.addEventListener('mouseenter', () => { if (audioStarted) playClick('hover'); });
+            img.addEventListener('click', () => { openLightbox(img.dataset.src, suspectSrcs); });
+          }
         }
       });
 
       // Témoignages
       const avisGrid = document.getElementById('avis-grid');
-      const aPolice = (data.polices && data.polices.avis_nom) ? data.polices.avis_nom : null;
-      const aTaille = (data.polices && data.polices.avis_taille) ? data.polices.avis_taille : null;
-      const aAuteurPolice = (data.polices && data.polices.avis_auteur_nom) ? data.polices.avis_auteur_nom : null;
+      const aPolice = data.polices?.avis_nom || null;
+      const aTaille = data.polices?.avis_taille || null;
+      const aAuteurPolice = data.polices?.avis_auteur_nom || null;
       data.avis.forEach((a, i) => {
         const fiabClass = a.fiabilite === 'CONFIRMÉ' ? 'confirme' : a.fiabilite === 'EN COURS' ? 'en-cours' : 'non-verifie';
         const iconeName = a.icone || `iconetemoin${i + 1}.jpg`;
@@ -560,16 +666,16 @@
         avisGrid.appendChild(card);
       });
 
-      // Galerie
+      // Galerie (illimitée)
       if (data.galerie && data.galerie.length) galerieInit(data.galerie);
       else document.getElementById('galerie').style.display = 'none';
 
-      // Membres
+      // Membres (illimités)
       const membresList = document.getElementById('membres-list');
-      const mPolice = (data.polices && data.polices.membres_nom) ? data.polices.membres_nom : null;
-      const mTaille = (data.polices && data.polices.membres_taille) ? data.polices.membres_taille : null;
-      const mDescPolice = (data.polices && data.polices.membres_desc_nom) ? data.polices.membres_desc_nom : null;
-      const mDescTaille = (data.polices && data.polices.membres_desc_taille) ? data.polices.membres_desc_taille : null;
+      const mPolice = data.polices?.membres_nom || null;
+      const mTaille = data.polices?.membres_taille || null;
+      const mDescPolice = data.polices?.membres_desc_nom || null;
+      const mDescTaille = data.polices?.membres_desc_taille || null;
       if (data.membres && data.membres.length) {
         data.membres.forEach((m, i) => {
           const card = document.createElement('div'); card.className = 'membre-card reveal';
@@ -598,7 +704,7 @@
     }
 
     function placeholderHTML() {
-      return `<div class="img-placeholder"><svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="8" width="40" height="44" rx="2" stroke="#00ff41" stroke-width="1.5" stroke-dasharray="4 2"/><circle cx="30" cy="24" r="8" stroke="#00ff41" stroke-width="1.5"/><path d="M14 50c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#00ff41" stroke-width="1.5"/><line x1="5" y1="5" x2="55" y2="55" stroke="#ff2222" stroke-width="1" opacity="0.6"/></svg><span>IMAGE CLASSIFIÉE</span></div>`;
+      return `<div class="img-placeholder"><svg viewBox="0 0 60 60" fill="none"><rect x="10" y="8" width="40" height="44" rx="2" stroke="#00ff41" stroke-width="1.5" stroke-dasharray="4 2"/><circle cx="30" cy="24" r="8" stroke="#00ff41" stroke-width="1.5"/><path d="M14 50c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#00ff41" stroke-width="1.5"/><line x1="5" y1="5" x2="55" y2="55" stroke="#ff2222" stroke-width="1" opacity="0.6"/></svg><span>IMAGE CLASSIFIÉE</span></div>`;
     }
     function typeText(id, text, speed = 50) {
       const el = document.getElementById(id); el.textContent = ''; let i = 0;
@@ -608,45 +714,43 @@
 
     // ╔══════════════════════════════════════════════════════════════╗
     // ║                     POLICES DISPONIBLES                     ║
-    // ║  1. 'Orbitron'       → futuriste, géométrique (défaut)      ║
-    // ║  2. 'Share Tech Mono'→ terminal, monospace                  ║
-    // ║  3. 'VT323'          → retro pixel, années 80               ║
-    // ║  4. 'Press Start 2P' → jeu vidéo 8-bit, pixel pur          ║
-    // ║  5. 'Silkscreen'     → pixel moderne, lisible               ║
-    // ║  6. 'Nova Mono'      → sci-fi élégant, monospace            ║
-    // ║  7. 'Audiowide'      → techno arrondi, cinéma               ║
-    // ║  8. 'Oxanium'        → cyber anguleux, HUD                  ║
+    // ║  1. 'Orbitron'        → futuriste, géométrique (défaut)     ║
+    // ║  2. 'Share Tech Mono' → terminal, monospace                 ║
+    // ║  3. 'VT323'           → retro pixel, années 80              ║
+    // ║  4. 'Press Start 2P'  → jeu vidéo 8-bit, pixel pur         ║
+    // ║  5. 'Silkscreen'      → pixel moderne, lisible              ║
+    // ║  6. 'Nova Mono'       → sci-fi élégant, monospace           ║
+    // ║  7. 'Audiowide'       → techno arrondi, cinéma              ║
+    // ║  8. 'Oxanium'         → cyber anguleux, HUD                 ║
     // ╚══════════════════════════════════════════════════════════════╝
 
     // ══════════════════════════════════════════════════════════════
-    // GLITCH TITRE — 2e texte (Système instable...)
+    // GLITCH TITRE — 2e texte
     // ══════════════════════════════════════════════════════════════
-    const GLITCH_POLICE        = 'Share Tech Mono'; // ← Police du 2e texte — choisir dans la liste ci-dessus
-    const GLITCH_TAILLE        = '60px';            // ← Taille du 2e texte — ex: '50px', '70px', '80px'
-    const GLITCH_DUREE_VISIBLE = 12;               // ← Durée visible (frames×60ms) — 4=court, 12=normal, 20=long
-    const GLITCH_CHAOS_AVANT   = 6;               // ← Frames chaos avant — moins = arrive plus vite
-    const GLITCH_CHAOS_APRES   = 6;               // ← Frames chaos après — moins = retour plus vite
+    const GLITCH_POLICE        = 'Share Tech Mono'; // ← Police du 2e texte
+    const GLITCH_TAILLE        = '60px';            // ← Taille du 2e texte
+    const GLITCH_DUREE_VISIBLE = 12;                // ← Durée visible (frames×60ms)
+    const GLITCH_CHAOS_AVANT   = 6;                 // ← Frames chaos avant
+    const GLITCH_CHAOS_APRES   = 6;                 // ← Frames chaos après
 
     // ══════════════════════════════════════════════════════════════
-    // TAGLINE — textes en rotation sous le titre principal
+    // TAGLINE — textes en rotation
     // ══════════════════════════════════════════════════════════════
-    const TAGLINE_POLICE     = 'VT323';  // ← Police de la tagline — choisir dans la liste ci-dessus
-    const TAGLINE_TAILLE     = '22px';   // ← Taille de la tagline — ex: '18px', '24px', '30px'
-    const TAGLINE_INTERVALLE = 5000;     // ← Délai entre chaque texte en ms (5000 = 5 secondes)
+    const TAGLINE_POLICE     = 'VT323';
+    const TAGLINE_TAILLE     = '22px';
+    const TAGLINE_INTERVALLE = 5000;
     const TAGLINE_TEXTES = [
-      '☢ Département des Pokémons Corrompus ☢',  // ← TEXTE 1
-      '// TEXTE 2 — remplace moi //',             // ← TEXTE 2
-      '// TEXTE 3 — remplace moi //',             // ← TEXTE 3
-      '// TEXTE 4 — remplace moi //'              // ← TEXTE 4
+      '☢ Département des Pokémons Corrompus ☢',
+      '// TEXTE 2 — remplace moi //',
+      '// TEXTE 3 — remplace moi //',
+      '// TEXTE 4 — remplace moi //'
     ];
     // ══════════════════════════════════════════════════════════════
 
-    // Appliquer la police/taille à la tagline au chargement
     const taglineEl = document.getElementById('tagline');
     taglineEl.style.fontFamily = TAGLINE_POLICE;
     taglineEl.style.fontSize = TAGLINE_TAILLE;
 
-    // Rotation tagline avec effet glitch
     let taglineIndex = 0;
     function taglineGlitch() {
       const el = document.getElementById('tagline');
@@ -656,61 +760,31 @@
       let count = 0;
       const interval = setInterval(() => {
         count++;
-        if (count < 5) {
-          el.textContent = (el.textContent || nextText).split('').map(c =>
-            c === ' ' ? ' ' : (Math.random() > 0.5 ? chars[Math.floor(Math.random() * chars.length)] : c)
-          ).join('');
-        } else {
-          clearInterval(interval);
-          el.textContent = nextText;
-        }
+        if (count < 5) { el.textContent = (el.textContent || nextText).split('').map(c => c===' '?' ':(Math.random()>0.5?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
+        else { clearInterval(interval); el.textContent = nextText; }
       }, 60);
     }
     setInterval(taglineGlitch, TAGLINE_INTERVALLE);
 
-    // Glitch titre principal — 2e texte avec sa propre police
     function randomGlitch() {
       const title = document.getElementById('main-title');
       const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%';
-      const glitchText = 'SYSTEME INSTABLE // ANOMALIE DETECTEE';  // ← Texte simple pour que la police soit lisible
+      const glitchText = 'SYSTEME INSTABLE // ANOMALIE DETECTEE';
       if (!title.dataset.originalText) title.dataset.originalText = title.textContent;
       const original = title.dataset.originalText;
       if (title.dataset.glitching === 'true') return;
       title.dataset.glitching = 'true';
-
-      const origFont = title.style.fontFamily;
-      const origSize = title.style.fontSize;
-
-      const p1End = GLITCH_CHAOS_AVANT;
-      const p2End = p1End + 4;
-      const p3End = p2End + GLITCH_DUREE_VISIBLE;
-      const p4End = p3End + GLITCH_CHAOS_APRES;
-
+      const origFont = title.style.fontFamily; const origSize = title.style.fontSize;
+      const p1End = GLITCH_CHAOS_AVANT; const p2End = p1End + 4;
+      const p3End = p2End + GLITCH_DUREE_VISIBLE; const p4End = p3End + GLITCH_CHAOS_APRES;
       let count = 0;
       const interval = setInterval(() => {
         count++;
-        if (count <= p1End) {
-          // Phase 1 — chaos texte original
-          title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
-        } else if (count <= p2End) {
-          // Phase 2 — glitch transition, on change la police
-          title.style.fontFamily = GLITCH_POLICE;
-          title.style.fontSize = GLITCH_TAILLE;
-          title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.5?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
-        } else if (count <= p3End) {
-          // Phase 3 — 2e texte propre avec sa police
-          title.textContent = glitchText;
-        } else if (count <= p4End) {
-          // Phase 4 — chaos retour
-          title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join('');
-        } else {
-          // Phase 5 — retour police + texte original
-          clearInterval(interval);
-          title.style.fontFamily = origFont;
-          title.style.fontSize = origSize;
-          title.textContent = original;
-          title.dataset.glitching = 'false';
-        }
+        if (count <= p1End) { title.textContent = original.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
+        else if (count <= p2End) { title.style.fontFamily = GLITCH_POLICE; title.style.fontSize = GLITCH_TAILLE; title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.5?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
+        else if (count <= p3End) { title.textContent = glitchText; }
+        else if (count <= p4End) { title.textContent = glitchText.split('').map(c => c===' '?' ':(Math.random()>0.6?chars[Math.floor(Math.random()*chars.length)]:c)).join(''); }
+        else { clearInterval(interval); title.style.fontFamily = origFont; title.style.fontSize = origSize; title.textContent = original; title.dataset.glitching = 'false'; }
       }, 60);
     }
     setInterval(randomGlitch, 10000);
