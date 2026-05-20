@@ -508,24 +508,26 @@
         const now = Date.now();
         const diff = target - now;
         if (diff <= 0) {
-          if (!chronoExpire) {
-            chronoExpire = true;
-            document.getElementById('chrono-display').innerHTML = `
-              <div>
-                <div class="chrono-expired">⚠ PRIMES ACTUALISÉES</div>
-                <div class="chrono-new-badge">NOUVELLES FICHES ACTIVES</div>
-              </div>`;
-            // Switch des images suspects vers .new
-            document.querySelectorAll('.suspect-img-container img').forEach(img => {
-              const src = img.src;
-              if (!src.includes('.new.')) {
-                const newSrc = src.replace(/(\.[^.]+)$/, '.new$1');
-                const testImg = new Image();
-                testImg.onload = () => { img.src = newSrc; };
-                testImg.src = newSrc;
-              }
-            });
-          }
+if (!chronoExpire) {
+  chronoExpire = true;
+  document.getElementById('chrono-display').innerHTML = `
+    <div>
+      <div class="chrono-expired">⚠ PRIMES ACTUALISÉES</div>
+      <div class="chrono-new-badge">NOUVELLES FICHES ACTIVES</div>
+    </div>`;
+  // Attendre que les cards soient bien dans le DOM
+  setTimeout(() => {
+    document.querySelectorAll('.suspect-img-container img').forEach(img => {
+      const src = img.getAttribute('src') || '';
+      if (!src.includes('.new.')) {
+        const newSrc = src.replace(/(\.[^.]+)$/, '.new$1');
+        const testImg = new Image();
+        testImg.onload = () => { img.src = newSrc; };
+        testImg.src = newSrc;
+      }
+    });
+  }, 1000);
+}
           return;
         }
         const j = Math.floor(diff / 86400000);
