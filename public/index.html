@@ -306,7 +306,7 @@
     <div class="vision-grid">
       <div class="stat-box reveal">
         <div class="stat-label">NIVEAU MENACE</div>
-<div class="stat-value" id="stat-menace" style="color:var(--red)">—</div>
+        <div class="stat-value" id="stat-menace" style="color:var(--amber); font-size:22px; text-shadow:0 0 12px var(--amber)">—</div>
       </div>
       <!-- CHRONO — grande case fusionnée -->
       <div class="chrono-box reveal" id="chrono-box">
@@ -663,7 +663,7 @@
       typeText('tagline', e.tagline, 60);
       setTimeout(() => {
         if (document.getElementById('stat-statut')) document.getElementById('stat-statut').textContent = e.statut;
-        if (document.getElementById('stat-menace')) document.getElementById('stat-menace').textContent = e.niveau_menace;
+        if (document.getElementById('stat-menace')) document.getElementById('stat-menace').textContent = e.niveau_de_menace || e.niveau_menace;
         document.getElementById('vision-desc').textContent = e.description;
         document.getElementById('vision-badge').textContent = '⚠ ' + e.statut;
       }, 800);
