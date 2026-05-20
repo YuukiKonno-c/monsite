@@ -29,16 +29,32 @@
     .nav-links a { color: var(--text); text-decoration: none; font-size: 10px; letter-spacing: 2px; transition: color 0.2s; }
     .nav-links a:hover { color: var(--green); text-shadow: 0 0 8px var(--green); }
     .nav-status { font-size: 10px; color: var(--red); animation: blink 1s step-end infinite; display: flex; align-items: center; gap: 10px; }
-    .audio-bar { display: flex; align-items: flex-end; gap: 2px; height: 14px; cursor: pointer; opacity: 0.5; transition: opacity 0.2s; }
-    .audio-bar:hover { opacity: 1; }
-    .audio-bar.active { opacity: 1; }
-    .audio-bar span { width: 3px; background: var(--green); border-radius: 1px; transition: height 0.1s; }
-    .audio-bar span:nth-child(1) { height: 4px; animation: bar1 0.6s ease-in-out infinite; }
-    .audio-bar span:nth-child(2) { height: 8px; animation: bar2 0.5s ease-in-out infinite; }
-    .audio-bar span:nth-child(3) { height: 12px; animation: bar3 0.7s ease-in-out infinite; }
-    .audio-bar span:nth-child(4) { height: 6px; animation: bar2 0.4s ease-in-out infinite; }
-    .audio-bar span:nth-child(5) { height: 10px; animation: bar1 0.8s ease-in-out infinite; }
+    /* BARRE SONORE + SLIDER */
+    .audio-controls { display: flex; align-items: center; gap: 8px; }
+    .audio-bar { display: flex; align-items: flex-end; gap: 2px; height: 14px; cursor: pointer; transition: opacity 0.2s; }
+    .audio-bar span { width: 3px; background: var(--green); border-radius: 1px; }
+    .audio-bar span:nth-child(1) { animation: bar1 0.6s ease-in-out infinite; }
+    .audio-bar span:nth-child(2) { animation: bar2 0.5s ease-in-out infinite; }
+    .audio-bar span:nth-child(3) { animation: bar3 0.7s ease-in-out infinite; }
+    .audio-bar span:nth-child(4) { animation: bar2 0.4s ease-in-out infinite; }
+    .audio-bar span:nth-child(5) { animation: bar1 0.8s ease-in-out infinite; }
     .audio-bar.muted span { animation: none !important; height: 2px !important; opacity: 0.3; }
+    .audio-bar.inactive { opacity: 0.3; }
+    /* Slider volume */
+    .volume-slider {
+      -webkit-appearance: none; appearance: none;
+      width: 60px; height: 3px;
+      background: var(--border); border-radius: 2px; outline: none; cursor: pointer;
+    }
+    .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--green); box-shadow: 0 0 6px var(--green); cursor: pointer;
+    }
+    .volume-slider::-moz-range-thumb {
+      width: 10px; height: 10px; border-radius: 50%; border: none;
+      background: var(--green); box-shadow: 0 0 6px var(--green); cursor: pointer;
+    }
     @keyframes bar1 { 0%,100%{height:4px} 50%{height:12px} }
     @keyframes bar2 { 0%,100%{height:8px} 50%{height:4px} }
     @keyframes bar3 { 0%,100%{height:12px} 50%{height:6px} }
@@ -273,8 +289,11 @@
       <li><a href="#membres">MEMBRES</a></li>
     </ul>
     <div class="nav-status">
-      <div class="audio-bar muted" id="audio-bar" title="Clic pour activer/couper le son">
-        <span></span><span></span><span></span><span></span><span></span>
+      <div class="audio-controls">
+        <div class="audio-bar inactive" id="audio-bar" title="Clic pour activer/couper">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="30" title="Volume">
       </div>
       ● LIVE — CRYPTÉ
     </div>
@@ -371,98 +390,109 @@
     // ── AUDIO AMBIANCE ────────────────────────────────────────────
     const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
     let audioStarted = false;
-    let audioMuted = false;
     let masterGain = null;
 
-    function createCyberAmbiance() {
-      // Son cyber : drone + modulation LFO + filtre résonant
+    function createCyberPopAmbiance() {
       masterGain = audioCtx.createGain();
-      masterGain.gain.value = 0.018; // ← Volume de base très léger
+      masterGain.gain.value = 0.03;
       masterGain.connect(audioCtx.destination);
 
-      // Drone basse fréquence
-      const drone = audioCtx.createOscillator();
-      drone.type = 'sawtooth';
-      drone.frequency.value = 55;
-      const droneGain = audioCtx.createGain();
-      droneGain.gain.value = 0.3;
-      drone.connect(droneGain);
+      // Arp cyber-pop : séquence de notes qui tourne
+      const notes = [220, 277, 330, 415, 330, 277, 220, 165];
+      let noteIdx = 0;
+      function playArpNote() {
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.type = 'square';
+        osc.frequency.value = notes[noteIdx % notes.length];
+        noteIdx++;
+        g.gain.setValueAtTime(0.15, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.18);
+        osc.connect(g); g.connect(masterGain);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.18);
+      }
+      setInterval(playArpNote, 280); // tempo cyber-pop
 
-      // Filtre résonant qui pulse
-      const filter = audioCtx.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.frequency.value = 400;
-      filter.Q.value = 8;
-      droneGain.connect(filter);
+      // Pad de fond (nappe)
+      const pad = audioCtx.createOscillator();
+      pad.type = 'sawtooth';
+      pad.frequency.value = 55;
+      const padFilter = audioCtx.createBiquadFilter();
+      padFilter.type = 'lowpass';
+      padFilter.frequency.value = 300;
+      const padGain = audioCtx.createGain();
+      padGain.gain.value = 0.2;
+      pad.connect(padFilter); padFilter.connect(padGain); padGain.connect(masterGain);
+      pad.start();
 
-      // LFO pour faire bouger le filtre
-      const lfo = audioCtx.createOscillator();
-      lfo.type = 'sine';
-      lfo.frequency.value = 0.3;
-      const lfoGain = audioCtx.createGain();
-      lfoGain.gain.value = 200;
-      lfo.connect(lfoGain);
-      lfoGain.connect(filter.frequency);
-
-      // Bruit blanc léger par-dessus
-      const bufferSize = audioCtx.sampleRate * 2;
-      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1);
-      const noise = audioCtx.createBufferSource();
-      noise.buffer = buffer;
-      noise.loop = true;
-      const noiseFilter = audioCtx.createBiquadFilter();
-      noiseFilter.type = 'highpass';
-      noiseFilter.frequency.value = 2000;
-      const noiseGain = audioCtx.createGain();
-      noiseGain.gain.value = 0.08;
-      noise.connect(noiseFilter);
-      noiseFilter.connect(noiseGain);
-
-      filter.connect(masterGain);
-      noiseGain.connect(masterGain);
-
-      drone.start(); lfo.start(); noise.start();
+      // Hi-hat synthétique
+      function playHihat() {
+        const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.05, audioCtx.sampleRate);
+        const d = buf.getChannelData(0);
+        for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+        const src = audioCtx.createBufferSource();
+        src.buffer = buf;
+        const hf = audioCtx.createBiquadFilter();
+        hf.type = 'highpass'; hf.frequency.value = 8000;
+        const hg = audioCtx.createGain();
+        hg.gain.setValueAtTime(0.08, audioCtx.currentTime);
+        hg.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        src.connect(hf); hf.connect(hg); hg.connect(masterGain);
+        src.start();
+      }
+      setInterval(playHihat, 560); // hi-hat toutes les 2 notes
     }
 
     function playClick(type = 'hover') {
-      if (!audioStarted || audioMuted) return;
+      if (!audioStarted) return;
+      const vol = document.getElementById('volume-slider').value / 100;
+      if (vol === 0) return;
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
       osc.connect(gain); gain.connect(audioCtx.destination);
       if (type === 'hover') {
-        osc.type = 'square';
-        osc.frequency.value = 600;
-        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.06);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.06);
+        osc.type = 'square'; osc.frequency.value = 880;
+        gain.gain.setValueAtTime(0.03 * vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.05);
       } else {
         osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(900, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.12);
-        gain.gain.setValueAtTime(0.07, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.12);
+        osc.frequency.setValueAtTime(1200, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(300, audioCtx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.06 * vol, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.1);
       }
     }
 
-    // Barre audio cliquable — mute/unmute
+    // Slider volume
+    const volumeSlider = document.getElementById('volume-slider');
     const audioBar = document.getElementById('audio-bar');
-    audioBar.addEventListener('click', () => {
-      if (!audioStarted) return;
-      audioMuted = !audioMuted;
-      masterGain.gain.value = audioMuted ? 0 : 0.018;
-      audioBar.classList.toggle('muted', audioMuted);
+    volumeSlider.addEventListener('input', () => {
+      const val = volumeSlider.value / 100;
+      if (masterGain) masterGain.gain.value = val * 0.06;
+      audioBar.classList.toggle('muted', val === 0);
     });
 
-    // Démarrer au premier clic
+    // Clic barre = mute/unmute toggle
+    audioBar.addEventListener('click', () => {
+      if (!audioStarted) return;
+      if (volumeSlider.value > 0) {
+        volumeSlider.dataset.prev = volumeSlider.value;
+        volumeSlider.value = 0;
+      } else {
+        volumeSlider.value = volumeSlider.dataset.prev || 30;
+      }
+      volumeSlider.dispatchEvent(new Event('input'));
+    });
+
+    // Démarrer au premier clic sur la page
     document.addEventListener('click', (e) => {
-      if (!audioStarted && e.target !== audioBar) {
+      if (!audioStarted && e.target !== volumeSlider) {
         audioStarted = true;
         audioCtx.resume().then(() => {
-          createCyberAmbiance();
-          audioBar.classList.remove('muted');
+          createCyberPopAmbiance();
+          audioBar.classList.remove('inactive');
         });
       }
     });
@@ -642,8 +672,8 @@
       const e = data.entreprise;
       typeText('tagline', e.tagline, 60);
       setTimeout(() => {
-        document.getElementById('stat-statut').textContent = e.statut;
-        document.getElementById('stat-menace').textContent = e.niveau_menace;
+        if (document.getElementById('stat-statut')) document.getElementById('stat-statut').textContent = e.statut;
+        if (document.getElementById('stat-menace')) document.getElementById('stat-menace').textContent = e.niveau_menace;
         document.getElementById('vision-desc').textContent = e.description;
         document.getElementById('vision-badge').textContent = '⚠ ' + e.statut;
       }, 800);
