@@ -67,7 +67,7 @@
     #galerie { background: rgba(5,15,5,0.80); border-top: 1px solid var(--border); }
     #membres { background: rgba(2,10,2,0.80); border-top: 1px solid var(--border); }
 
-    .glitch-title { font-family: var(--display); font-size: clamp(48px, 10vw, 100px); font-weight: 900; color: var(--green); text-shadow: 0 0 30px var(--green), 0 0 60px rgba(0,255,65,0.3); letter-spacing: 12px; position: relative; animation: glitch 4s infinite; width: 100%; height: 1.3em; display: flex; align-items: center; justify-content: center; overflow: hidden; white-space: nowrap; margin-bottom: 20px; }
+    .glitch-title { font-family: var(--display); font-size: clamp(48px, 10vw, 100px); font-weight: 900; color: var(--green); text-shadow: 0 0 30px var(--green), 0 0 60px rgba(0,255,65,0.3); letter-spacing: 12px; position: relative; animation: glitch 4s infinite; width: 100%; height: 1.3em; display: flex; align-items: center; justify-content: center; overflow: visible; white-space: nowrap; margin-bottom: 20px; }
     .glitch-title::before, .glitch-title::after { content: attr(data-text); position: absolute; inset: 0; font-family: var(--display); font-size: inherit; letter-spacing: inherit; display: flex; align-items: center; justify-content: center; }
     .glitch-title::before { color: var(--red); animation: glitch-1 4s infinite; clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); }
     .glitch-title::after { color: #00f3ff; animation: glitch-2 4s infinite; clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%); }
@@ -469,28 +469,43 @@
       if (!audioStarted) return;
       const vol = document.getElementById('volume-slider').value / 100;
       if (vol === 0) return;
-      // Bruit blanc très court
-      const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.08, audioCtx.sampleRate);
-      const d = buf.getChannelData(0);
-      for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * 0.3;
-      const src = audioCtx.createBufferSource(); src.buffer = buf;
-      const filt = audioCtx.createBiquadFilter();
-      filt.type = 'bandpass'; filt.frequency.value = 2000; filt.Q.value = 2;
-      const g = audioCtx.createGain();
-      g.gain.setValueAtTime(0.08 * vol, audioCtx.currentTime);
-      g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
-      src.connect(filt); filt.connect(g); g.connect(audioCtx.destination);
-      src.start(); src.stop(audioCtx.currentTime + 0.08);
-      // Descente de fréquence
-      const osc = audioCtx.createOscillator();
-      const og = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.15);
-      og.gain.setValueAtTime(0.05 * vol, audioCtx.currentTime);
-      og.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
-      osc.connect(og); og.connect(audioCtx.destination);
-      osc.start(); osc.stop(audioCtx.currentTime + 0.15);
+      const now = audioCtx.currentTime;
+
+      // Rafales de bruit blanc hachées — effet data corruption
+      for (let i = 0; i < 6; i++) {
+        const len = Math.random() * 0.04 + 0.01;
+        const buf = audioCtx.createBuffer(1, Math.floor(audioCtx.sampleRate * len), audioCtx.sampleRate);
+        const d = buf.getChannelData(0);
+        for (let j = 0; j < d.length; j++) d[j] = (Math.random() * 2 - 1);
+        const src = audioCtx.createBufferSource(); src.buffer = buf;
+        const filt = audioCtx.createBiquadFilter();
+        filt.type = 'bandpass';
+        filt.frequency.value = 800 + Math.random() * 3000;
+        filt.Q.value = 1 + Math.random() * 4;
+        const g = audioCtx.createGain();
+        const t = now + i * 0.055;
+        g.gain.setValueAtTime(0.12 * vol, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + len + 0.02);
+        src.connect(filt); filt.connect(g); g.connect(audioCtx.destination);
+        src.start(t); src.stop(t + len + 0.03);
+      }
+
+      // Pitch instable qui saute — effet VHS glitch
+      const pitches = [880, 220, 1760, 110, 440];
+      pitches.forEach((freq, i) => {
+        const osc = audioCtx.createOscillator();
+        const og = audioCtx.createGain();
+        osc.type = 'square';
+        osc.frequency.value = freq;
+        const t = now + i * 0.05;
+        og.gain.setValueAtTime(0.04 * vol, t);
+        og.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
+        // Filtre pour adoucir le square et éviter le grésillement
+        const lp = audioCtx.createBiquadFilter();
+        lp.type = 'lowpass'; lp.frequency.value = 1200;
+        osc.connect(lp); lp.connect(og); og.connect(audioCtx.destination);
+        osc.start(t); osc.stop(t + 0.04);
+      });
     }
 
     // Slider volume
