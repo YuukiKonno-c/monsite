@@ -87,10 +87,10 @@
   ],
 
   "membres": [
-    { "nom": "Yuuki", "role": "Chef pas payer", "image": "profile1.jpg", "description": "Après avoir brainstorm au final 10% des idées sont retenu tout comme l'avis d'ayssixxx dans une discussion.", "tags": ["N'est pas payer pour les tags", "Doit subir la haine d'un guide", "Bg et pas Bdg"] },
-    { "nom": "Ayssixxx", "role": "Proutman", "image": "profile2.jpg", "description": "Si tu l'enerve fais gaffe il viendras te dire la prochaine fois tu m'écouteras.", "tags": ["Buildeur vite fait", "Merci pour le baby"] },
-    { "nom": "InjuriousMess_", "role": "Designeuse remplacente/Buildeuse remplacente/remplacente de toute", "image": "profile3.jpg", "description": "Membre de la D.P.C., merci de ne plus utiliser le terme « bebou » pour le designer, car cela nuit a notre image et ne correspond pas a celle que nous souhaitons donner.", "tags": ["Bouffeuse de graine", "Stagiaire non rémunéré", "Fan de Mimiqui"] },
-    { "nom": "SOOYU", "role": "", "image": "profile4.jpg", "description": "ICI LA DESCRIPTION DU MEMBRE.", "tags": ["MOT CLÉ 1", "MOT CLÉ 2"] },
-    { "nom": "LarkAvery_", "role": "ICI SON RÔLE", "image": "profile5.jpg", "description": "ICI LA DESCRIPTION DU MEMBRE.", "tags": ["MOT CLÉ 1", "MOT CLÉ 2"] }
+    { "nom": "Yuuki", "role": "Directeur de la D.P.C. et aussi créateur de l'expression « Top ou Top Top » ", "image": "profile1.jpg", "description": "Chef de la D.P.C, et j'ai pas d'idée jsui juste grave drôle", "tags": ["Drôle", "Créateur de l'expression « Top ou Top Top » ", "E CE OKE"] },
+    { "nom": "Ayssixxx", "role": "Footballeur en arrêt maladie", "image": "profile2.jpg", "description": "Chef de la D.P.C, grâce à lui beaucoup de constructions ont abouti enfin quand il est là, car la moitié du temps il est juste absent et impossible de le joindre, sûrement parti acheter des boosters Pokémon.", "tags": ["Voyageur Japoonais", "Pro pour s'auto doxx","Présentateur à mi-temps"] },
+    { "nom": "InjuriousMess_", "role": "Designeuse remplaçante / Buildeuse remplaçante / Remplaçante de tout", "image": "profile3.jpg", "description": "Membre de la D.P.C, My dream, merci de ne plus utiliser le terme « bebou » pour le designer, car cela nuit a notre image et ne correspond pas a celle que nous souhaitons donner, se retrouve parfois dans les étoiles.", "tags": ["Bouffeuse de graine", "Muette à temps partiel", "Fan de Mimiqui"] },
+    { "nom": "LarkAvery_", "role": "Mannequin de la D.P.C", "image": "profile4.jpg", "description": "Membre de la D.P.C, il regarde des séries et s'adresse aux personnages comme s'ils étaient réels. Il leur parle et s'énerve comme si la scène se déroulait avec lui, et parfois il crie sans raison.", "tags": ["Addict au jeu de tir", "Tagueur"] },
+    { "nom": "SOOYU", "role": "Secrétaire d'InjuriousMess_", "image": "profile5.jpg", "description": "Membre de la D.P.C, elle se fache tres vite contre les autres, manque de patience surtout envers les nouveaux venus, et ne fait jamais la vaisselle.", "tags": ["Hackeuse Pro", "Tomodachi Life Playeuse", "Fan de Moustillon"] }
   ]
 }
