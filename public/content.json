@@ -2,10 +2,10 @@
   "entreprise": {
     "nom": "D.P.C",
     "tagline": "☢ Département des Pokémons Corrompus ☢",
-    "description": "Organisation clandestine opérant depuis 2019 dans les secteurs de la manipulation de données, du trafic d'informations sensibles et de la corruption systémique. Leurs activités s'étendent sur 47 pays. Aucun membre identifié n'a jamais été arrêté.",
+    "description": "Anciennement, la D.P.C était rattachée à la D.P.P. Suite à plusieurs problèmes internes, la branche de la D.P.C a pris son indépendance et souhaite combattre le mal en vous proposant plusieurs récompenses pour la capture des personnes recherchées !",
     "statut": "RECHERCHÉE",
     "niveau_menace": "CRITIQUE",
-    "date_creation": "2019.03.14"
+    "date_creation": "2020.02.14"
   },
 
   "chrono": {
@@ -33,9 +33,9 @@
   },
 
   "anecdotes": [
-    { "date": "2025.05.19", "texte": "ICI POUR MODIFIER — Exemple : 4 suspects appréhendés cette semaine lors d'une opération à Lyon." },
-    { "date": "2025.05.12", "texte": "ICI POUR MODIFIER — Exemple : Nouvelle trace de L'Architecte détectée à Berlin. Surveillance activée." },
-    { "date": "2025.05.08", "texte": "ICI POUR MODIFIER — Exemple : 3 entreprises écrans démantelées dans la région parisienne." }
+    { "date": "2024.03.15", "texte": "La D.P.C rejoint officiellement la D.P.P : La D.P.C s'associe à la D.P.P afin de combattre le mal et de contribuer à la création d'un monde meilleur. " },
+    { "date": "2025.07.08", "texte": "Succès de la collaboration avec la D.P.P : La D.P.P a accompli un véritable exploit. De nombreux Pokémon corrompus ont été arrêtés, et la D.P.C a réussi à comprendre l'origine du problème." },
+    { "date": "2025.11.25", "texte": "Fin du partenariat avec la D.P.P : La D.P.C prend officiellement son indépendance et n'a désormais plus besoin d'accompagnement pour lutter contre les Pokémon corrompus. Elle poursuivra seule sa mission pour assurer la sécurité de tous." }
   ],
 
   "rapports": [
