@@ -137,7 +137,8 @@
     .section-header { font-family: var(--display); font-size: 11px; letter-spacing: 6px; color: var(--green-dim); margin-bottom: 10px; }
     .section-title { font-family: var(--display); font-size: clamp(28px, 5vw, 48px); font-weight: 900; color: var(--green); text-shadow: 0 0 20px rgba(0,255,65,0.4); letter-spacing: 6px; margin-bottom: 60px; }
 
-    /* SUSPECTS — 5 colonnes, max 10, meta toujours en bas */
+    .suspect-card, .avis-card, .membre-card, .stat-box, .chrono-box { will-change: transform; transform: translateZ(0); }
+    .scan-line, .membre-scan { will-change: top; }
     .suspects-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; max-width: 1600px; width: 100%; }
     .suspect-card { border: 1px solid var(--border); background: rgba(0,15,5,0.88); position: relative; overflow: hidden; transition: all 0.4s; display: flex; flex-direction: column; }
     .suspect-card:hover { border-color: var(--green); box-shadow: 0 0 30px rgba(0,255,65,0.1); transform: translateY(-4px); }
@@ -420,6 +421,9 @@
       const padGain = audioCtx.createGain(); padGain.gain.value = 0.1;
       pad.connect(padGain); padGain.connect(masterGain); pad.start();
     }
+      pad2Gain.gain.value = 0.08;
+      pad2.connect(pad2Gain); pad2Gain.connect(masterGain);
+      pad2.start();
 
     function playClick() {
       if (!audioStarted) return;
@@ -531,7 +535,7 @@
     const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&';
     function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     resizeCanvas(); window.addEventListener('resize', resizeCanvas);
-    const fontSize = 14; let columns = Math.floor(canvas.width / fontSize); let drops = Array(columns).fill(1);
+    const fontSize = 18; let columns = Math.floor(canvas.width / fontSize); let drops = Array(columns).fill(1);
     function drawMatrix() {
       ctx.fillStyle = 'rgba(2,10,2,0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = fontSize + 'px monospace'; // ← hors boucle, 1 seul appel
@@ -546,7 +550,7 @@
     // requestAnimationFrame avec throttle 80ms — bien plus léger que setInterval
     let lastMatrixTime = 0;
     function matrixLoop(ts) {
-      if (ts - lastMatrixTime > 120) { // ← 120ms entre chaque frame (~8fps) suffisant visuellement
+      if (ts - lastMatrixTime > 150) { // ← 120ms entre chaque frame (~8fps) suffisant visuellement
         lastMatrixTime = ts;
         drawMatrix();
       }
