@@ -395,39 +395,31 @@
 
     function createCyberPopAmbiance() {
       masterGain = audioCtx.createGain();
-      masterGain.gain.value = 0.025;
+      masterGain.gain.value = 0.02;
       masterGain.connect(audioCtx.destination);
 
-      // Arp cyber-pop : sine uniquement, pas de grésillement
+      // Arp espacé — moins de noeuds audio créés
       const notes = [220, 277, 330, 415, 330, 277, 220, 165];
       let noteIdx = 0;
       function playArpNote() {
         const osc = audioCtx.createOscillator();
         const g = audioCtx.createGain();
-        osc.type = 'sine'; // ← sine = pas de grésillement
+        osc.type = 'sine';
         osc.frequency.value = notes[noteIdx % notes.length];
         noteIdx++;
-        g.gain.setValueAtTime(0.3, audioCtx.currentTime);
-        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+        g.gain.setValueAtTime(0.25, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
         osc.connect(g); g.connect(masterGain);
-        osc.start(); osc.stop(audioCtx.currentTime + 0.2);
+        osc.start(); osc.stop(audioCtx.currentTime + 0.15);
       }
-      setInterval(playArpNote, 600);
+      setInterval(playArpNote, 900); // ← espacé davantage
 
-      // Nappe de fond grave — sine filtré
+      // Nappe unique (pas de 2e nappe)
       const pad = audioCtx.createOscillator();
-      pad.type = 'sine';
-      pad.frequency.value = 55;
-      const padGain = audioCtx.createGain();
-      padGain.gain.value = 0.15;
-      pad.connect(padGain); padGain.connect(masterGain);
-      pad.start();
-
-      // 2e nappe harmonique
-      const pad2 = audioCtx.createOscillator();
-      pad2.type = 'sine';
-      pad2.frequency.value = 110;
-      const pad2Gain = audioCtx.createGain();
+      pad.type = 'sine'; pad.frequency.value = 55;
+      const padGain = audioCtx.createGain(); padGain.gain.value = 0.1;
+      pad.connect(padGain); padGain.connect(masterGain); pad.start();
+    }
       pad2Gain.gain.value = 0.08;
       pad2.connect(pad2Gain); pad2Gain.connect(masterGain);
       pad2.start();
@@ -546,18 +538,25 @@
     const fontSize = 14; let columns = Math.floor(canvas.width / fontSize); let drops = Array(columns).fill(1);
     function drawMatrix() {
       ctx.fillStyle = 'rgba(2,10,2,0.05)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
-      columns = Math.floor(canvas.width / fontSize);
-      if (drops.length < columns) drops.push(...Array(columns - drops.length).fill(1));
+      ctx.font = fontSize + 'px monospace'; // ← hors boucle, 1 seul appel
       for (let i = 0; i < columns; i++) {
         const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-        ctx.fillStyle = i % 5 === 0 ? 'rgba(255,255,255,0.9)' : '#00ff41';
-        ctx.font = fontSize + 'px monospace';
+        ctx.fillStyle = i % 5 === 0 ? 'rgba(255,255,255,0.7)' : '#00ff41';
         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
     }
-    setInterval(drawMatrix, 100);
+    // requestAnimationFrame avec throttle 80ms — bien plus léger que setInterval
+    let lastMatrixTime = 0;
+    function matrixLoop(ts) {
+      if (ts - lastMatrixTime > 120) { // ← 120ms entre chaque frame (~8fps) suffisant visuellement
+        lastMatrixTime = ts;
+        drawMatrix();
+      }
+      requestAnimationFrame(matrixLoop);
+    }
+    requestAnimationFrame(matrixLoop);
 
     // ── LIGHTBOX ──────────────────────────────────────────────────
     const lightbox = document.getElementById('lightbox');
