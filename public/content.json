@@ -2,7 +2,7 @@
   "entreprise": {
     "nom": "D.P.C",
     "tagline": "☢ Département des Pokémons Corrompus ☢",
-    "description": "Anciennement, la D.P.C était rattachée à la D.P.P. Suite à plusieurs problèmes internes, la branche de la D.P.C a pris son indépendance et souhaite combattre le mal en vous proposant plusieurs récompenses pour la capture des personnes recherchées !",
+    "description": "Le Département des Pokémon Corrompus (D.P.C) consacre ses efforts à la capture des Pokémon corrompus les plus dangereux. Afin de renforcer son action, il propose des récompenses à toute personne contribuant à leur arrestation.",
     "statut": "RECHERCHÉE",
     "niveau_menace": "CRITIQUE",
     "date_creation": "2020.02.14"
