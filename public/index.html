@@ -96,14 +96,14 @@
 
     /* ANECDOTES */
     .anecdotes-box { max-width: 900px; width: 100%; border: 1px solid var(--border); background: rgba(0,20,5,0.7); margin: 20px 0; }
-    .anecdotes-header { display: flex; align-items: center; gap: 12px; padding: 10px 20px; border-bottom: 1px solid var(--border); font-size: 9px; letter-spacing: 3px; color: var(--green-dim); font-family: var(--display); font-weight: 900; text-shadow: 0 0 8px var(--green-dim); }
+    .anecdotes-header { display: flex; align-items: center; gap: 12px; padding: 10px 20px; border-bottom: 1px solid var(--border); font-size: 9px; letter-spacing: 3px; color: var(--green); font-family: var(--display); font-weight: 900; text-shadow: 0 0 8px rgba(0,255,65,0.5); }
     .anecdotes-header::before { content: '●'; color: var(--red); animation: blink 1s step-end infinite; }
-    .anecdote-item { display: flex; align-items: flex-start; gap: 16px; padding: 12px 20px; border-bottom: 1px solid rgba(0,255,65,0.07); font-size: 12px; line-height: 1.6; transition: background 0.2s; }
+    .anecdote-item { display: flex; align-items: flex-start; gap: 0; padding: 12px 20px; border-bottom: 1px solid rgba(0,255,65,0.07); font-size: 12px; line-height: 1.6; transition: background 0.2s; }
     .anecdote-item:last-child { border-bottom: none; }
     .anecdote-item:hover { background: rgba(0,255,65,0.04); }
-    .anecdote-date { font-size: 9px; color: var(--amber); letter-spacing: 1px; white-space: nowrap; flex-shrink: 0; width: 80px; padding-top: 2px; }
-    .anecdote-text { color: rgba(176,255,184,0.85); }
-    .anecdote-text::before { content: '▶ '; color: var(--green-dim); }
+    .anecdote-date { font-size: 9px; color: var(--amber); letter-spacing: 1px; white-space: nowrap; flex-shrink: 0; width: 75px; padding-top: 2px; }
+    .anecdote-arrow { color: var(--green-dim); flex-shrink: 0; width: 20px; padding-top: 1px; }
+    .anecdote-text { color: rgba(176,255,184,0.85); flex: 1; }
 
     .description-box { max-width: 700px; border: 1px solid var(--border); padding: 30px 40px; background: rgba(0,20,5,0.7); text-align: left; font-size: 14px; line-height: 1.9; position: relative; margin-top: 20px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
     .description-box:hover { border-color: var(--green); box-shadow: 0 0 20px var(--green-glow); }
@@ -726,7 +726,7 @@
       if (data.anecdotes && data.anecdotes.length) {
         data.anecdotes.forEach(a => {
           const div = document.createElement('div'); div.className = 'anecdote-item';
-          div.innerHTML = `<span class="anecdote-date">${a.date}</span><span class="anecdote-text">${a.texte}</span>`;
+          div.innerHTML = `<span class="anecdote-date">${a.date}</span><span class="anecdote-arrow">▶</span><span class="anecdote-text">${a.texte}</span>`;
           anecEl.appendChild(div);
         });
       }
