@@ -421,9 +421,6 @@
       const padGain = audioCtx.createGain(); padGain.gain.value = 0.1;
       pad.connect(padGain); padGain.connect(masterGain); pad.start();
     }
-      pad2Gain.gain.value = 0.08;
-      pad2.connect(pad2Gain); pad2Gain.connect(masterGain);
-      pad2.start();
 
     function playClick() {
       if (!audioStarted) return;
