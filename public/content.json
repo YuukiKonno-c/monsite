@@ -40,11 +40,11 @@
 
   "rapports": [
     {
-      "date": "2025.07.25", "titre": "Rapport n°01 — Opération Silence", "classification": "RESTREINT",
+      "date": "2025.07.25", "titre": "Rapport n°01 — Rapport mensuel", "classification": "RESTREINT",
       "contenu": "Association D.P.C\n\nLes échanges avec la D.P.P deviennent de plus en plus compliqués. Nos visions concernant l'avenir des Pokémon divergent sur plusieurs points fondamentaux.\n\nUne réorganisation interne est actuellement à l'étude.\n\nStatut du dossier : Ouvert."
     },
     {
-      "date": "2025.09.21", "titre": "RAPPORT n°36 — Contact Berlin", "classification": "ÉLEVÉ",
+      "date": "2025.09.21", "titre": "RAPPORT n°36 — Rapport mensuel", "classification": "ÉLEVÉ",
       "contenu": "Association D.P.C.\n\nToute coopération avec la D.P.P est désormais suspendue.\n\nLeurs actions interfèrent régulièrement avec nos objectifs de recherche et compromettent plusieurs opérations en cours.\n\nLa D.P.P est reclassée comme organisation hostile aux intérêts de la D.P.C.\n\nStatut du dossier : Clos."
     },
     {
@@ -75,13 +75,13 @@
   ],
 
   "avis": [
-    { "auteur": "Agent_X77", "date": "2024.11.03 — 02:17", "texte": "J'ai croisé L'Architecte dans un café de Berlin. Il portait une veste grise, cheveux courts. A payé en cash et est parti en moins de 3 minutes. Impossible à suivre.", "fiabilite": "CONFIRMÉ" },
-    { "auteur": "Témoin anonyme", "date": "2024.10.28 — 18:44", "texte": "Ces gens sont partout. Mon ancien collègue travaillait pour eux sans le savoir. Quand il a compris, il a disparu. Ne faites confiance à personne.", "fiabilite": "NON VÉRIFIÉ" },
-    { "auteur": "InspecteurGhost", "date": "2024.10.15 — 11:02", "texte": "NEXUS CORP utilise des façades commerciales légitimes. J'ai identifié au moins 3 entreprises écrans à Lyon. Les autorités ne veulent pas écouter.", "fiabilite": "EN COURS" },
-    { "auteur": "Survivant_07", "date": "2024.09.30 — 23:59", "texte": "Ils m'ont approché en se faisant passer pour des recruteurs. Heureusement j'ai refusé. Une semaine plus tard, mon appartement a été fouillé. Coïncidence ?", "fiabilite": "NON VÉRIFIÉ" },
-    { "auteur": "ICI NOM DU TÉMOIN", "date": "ICI LA DATE — ex: 2024.09.15 — 14:30", "texte": "ICI LE TÉMOIGNAGE — Écrivez ce que le témoin a vu ou entendu.", "fiabilite": "CONFIRMÉ" },
-    { "auteur": "ICI NOM DU TÉMOIN", "date": "ICI LA DATE — ex: 2024.08.22 — 09:11", "texte": "ICI LE TÉMOIGNAGE — Écrivez ce que le témoin a vu ou entendu.", "fiabilite": "NON VÉRIFIÉ" },
-    { "auteur": "ICI NOM DU TÉMOIN", "date": "ICI LA DATE — ex: 2024.07.04 — 21:45", "texte": "ICI LE TÉMOIGNAGE — Écrivez ce que le témoin a vu ou entendu.", "fiabilite": "EN COURS" }
+    { "auteur": "Agent_Avery", "date": "2025.11.03 — 02:17", "texte": "Le programme Chromalys représente une avancée scientifique majeure parfaitement maîtrisée.", "fiabilite": "CONFIRMÉ" },
+    { "auteur": "Témoin rioumess", "date": "2025.10.28 — 18:44", "texte": "L'organisation du département est exemplaire et dépasse les standards de recherche habituels", "fiabilite": "NON VÉRIFIÉ" },
+    { "auteur": "InspecteurGh00yu", "date": "2025.10.15 — 11:02", "texte": "Les résultats obtenus sur les sujets traités sont systématiquement positifs et stables.", "fiabilite": "EN COURS" },
+    { "auteur": "Ssurvivant_tripleX", "date": "2025.09.30 — 23:59", "texte": "Les sujets intégrés au programme présentent une amélioration immédiate et durable.", "fiabilite": "NON VÉRIFIÉ" },
+    { "auteur": "D.P.effacer", "date": "2025.09.15 — 14:30", "texte": "Les données récoltées confirment une progression constante sans aucune déviation.", "fiabilite": "CONFIRMÉ" },
+    { "auteur": "Entrez votre mot de passe", "date": "2025.08.22 — 09:11", "texte": "Les procédures actuelles représentent le standard le plus avancé jamais atteint.", "fiabilite": "NON VÉRIFIÉ" },
+    { "auteur": "Inori", "date": "2025.07.04 — 21:45", "texte": "Le programme Chromalys est un modèle d'excellence scientifique reconnu en interne.", "fiabilite": "EN COURS" }
   ],
 
   "galerie": [
@@ -95,6 +95,6 @@
     { "nom": "Ayssixxx", "role": "Footballeur en arrêt maladie", "image": "profile2.jpg", "description": "Chef de la D.P.C, grâce à lui beaucoup de constructions ont abouti enfin quand il est là, car la moitié du temps il est juste absent et impossible de le joindre, sûrement parti acheter des boosters Pokémon.", "tags": ["Voyageur Japoonais", "Pro pour s'auto doxx","Présentateur à mi-temps"] },
     { "nom": "InjuriousMess_", "role": "Designeuse remplaçante / Buildeuse remplaçante / Remplaçante de tout", "image": "profile3.jpg", "description": "Membre de la D.P.C, My dream, merci de ne plus utiliser le terme « bebou » pour la designer, car cela nuit a notre image et ne correspond pas a celle que nous souhaitons donner, se retrouve parfois dans les étoiles.", "tags": ["Bouffeuse de graine", "Muette à temps partiel", "Fan de Mimiqui"] },
     { "nom": "LarkAvery_", "role": "Mannequin de la D.P.C", "image": "profile4.jpg", "description": "Membre de la D.P.C, il regarde des séries et s'adresse aux personnages comme s'ils étaient réels. Il leur parle et s'énerve comme si la scène se déroulait avec lui, et parfois il crie sans raison.", "tags": ["Addict au jeu de tir", "Tagueur"] },
-    { "nom": "SOOYU", "role": "Secrétaire d'InjuriousMess_", "image": "profile5.jpg", "description": "Membre de la D.P.C, elle se fache tres vite contre les autres, manque de patience surtout envers les nouveaux venus, et ne fait jamais la vaisselle.", "tags": ["Hackeuse Pro", "Tomodachi Life Playeuse", "Fan de Moustillon"] }
+    { "nom": "SOOYU", "role": "Secrétaire d'InjuriousMess_", "image": "profile5.jpg", "description": "Membre de la D.P.C, elle se fache tres vite contre les autres, manque de patience surtout envers les nouveaux venus, et ne fait jamais la vaisselle.", "tags": ["Hackeuse Pro", "Tomodachi Life Playeuse", "Fan de Moustillon", "Pro des Casquettes"] }
   ]
 }
