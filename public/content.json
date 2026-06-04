@@ -40,20 +40,24 @@
 
   "rapports": [
     {
-      "date": "2025.03.25", "titre": "RAPPORT_25_03 — Opération Silence", "classification": "ULTRA SECRET",
-      "contenu": "Association D.P.C — Rapport n°37\n\nNiveau de confidentialité : Restreint. \n\nAujourd'hui, la collaboration entre l'Association D.P.C et la D.P.P a été officiellement interrompue. Les divergences idéologiques observées au cours de nos échanges ont confirmé l'impossibilité de maintenir une coopération durable entre nos deux organisations. \n\nLa D.P.P défendait une approche centrée sur la protection des citoyens et la capture de Pokémon impliqués dans des activités criminelles. De notre côté, certaines opérations de c******* et d'a******** de ressources stratégiques ont été jugées incompatibles avec leurs principes. \n\nPlusieurs désaccords ont également émergé concernant nos projets de r************* s********** et de c******** des populations Pokémon locales. Ces initiatives, considérées comme essentielles à nos objectifs à long terme, ont conduit à une rupture définitive des relations.\n\nIl était évident que leurs ambitions se limitaient au maintien de l'ordre public, tandis que les nôtres s'inscrivent dans une vision bien plus vaste dont certains aspects demeurent c*********.\n\nStatut du dossier : Clos.\n\nFin du rapport."
+      "date": "2025.07.25", "titre": "Rapport n°01 — Opération Silence", "classification": "RESTREINT",
+      "contenu": "Association D.P.C\n\nLes échanges avec la D.P.P deviennent de plus en plus compliqués. Nos visions concernant l'avenir des Pokémon divergent sur plusieurs points fondamentaux.\n\nUne réorganisation interne est actuellement à l'étude.\n\nStatut du dossier : Ouvert."
     },
     {
-      "date": "2025.04.10", "titre": "RAPPORT_10_04 — Contact Berlin", "classification": "CONFIDENTIEL",
-      "contenu": "ICI LE CONTENU DU RAPPORT 10/04.\n\nExemple : L'Architecte localisé dans le quartier Mitte. Contact établi avec agent local. Échange de données cryptées intercepté mais non déchiffré à ce stade.\n\nAnalyse en cours."
+      "date": "2025.09.21", "titre": "RAPPORT n°36 — Contact Berlin", "classification": "ÉLEVÉ",
+      "contenu": "Association D.P.C.\n\nToute coopération avec la D.P.P est désormais suspendue.\n\nLeurs actions interfèrent régulièrement avec nos objectifs de recherche et compromettent plusieurs opérations en cours.\n\nLa D.P.P est reclassée comme organisation hostile aux intérêts de la D.P.C.\n\nStatut du dossier : Clos."
     },
     {
-      "date": "2025.05.01", "titre": "RAPPORT_01_05 — Rapport mensuel", "classification": "RESTREINT",
-      "contenu": "ICI LE CONTENU DU RAPPORT 01/05.\n\nExemple : Bilan mensuel des opérations. 11 suspects fichés. 3 nouvelles entreprises écrans identifiées. Budget opérationnel consommé à 67%.\n\nProchaine réunion de coordination : à définir."
+      "date": "2025.11.11", "titre": "RAPPORT n°74 — Rapport mensuel", "classification": "CONFIDENTIEL",
+      "contenu": "Association D.P.C.\n\nLe projet Chromalys continue de produire des résultats encourageants.\n\nLes spécimens possédant une forte densité chromatique présentent des signatures énergétiques particulièrement exploitables.\n\nLes premières procédures de t****** contrôlé ont été validées.\n\nStatut du dossier : Recherche active."
     },
         {
-      "date": "2025.05.01", "titre": "RAPPORT_01_05 — Rapport mensuel", "classification": "INTERDIT",
-      "contenu": "ICI LE CONTENU DU RAPPORT 01/05.\n\nExemple : Bilan mensuel des opérations. 11 suspects fichés. 3 nouvelles entreprises écrans identifiées. Budget opérationnel consommé à 67%.\n\nProchaine réunion de coordination : à définir."
+      "date": "2025.01.14", "titre": "RAPPORT n°118 — Rapport mensuel", "classification": "CONFIDENTIEL",
+      "contenu": "Association D.P.C.\n\nNiveau de confidentialité : Confidentiel.\n\nLes ressources obtenues via le programme Chromalys ont permis d'améliorer significativement plusieurs sujets récepteurs.\n\nUne diminution permanente de l'intensité chromatique a toutefois été observée chez certains spécimens donneurs.\n\nAucune modification du protocole n'est envisagée.\n\nStatut du dossier : Validé."
+    },
+       {
+      "date": "2025.03.14", "titre": "RAPPORT n°163 — Rapport mensuel", "classification": "TRÈS ÉLEVÉ",
+      "contenu": "Association D.P.C.\n\nLes derniers essais confirment qu'un transfert chromatique complet augmente la stabilité des sujets sélectionnés.\n\nLes effets observés sur les spécimens sources dépassent désormais les prévisions initiales.\n\nToute référence aux procédures d'e****** ou de t****** devra être retirée des futurs rapports publics.\n\nStatut du dossier : Classification renforcée."
     }
   ],
 
