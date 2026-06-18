@@ -69,7 +69,7 @@
       "id": 4, "nom": "\"GOUPIRATE\"", "vrai_nom": "Inconnu", "image": "suspect4.jpg",
       "description": "Pirate des rues et des toits, il vole tout ce qui brille et disparaît en mer de chaos. Jamais attrapé, toujours en fuite.",
       "statut": "RECHERCHÉ", "prime": "3 🪙", "danger": "DANGER",
-      "new": { "nom": "FUNÉCRIME", "description": "Maître du crime Pokémon. Il orchestre des opérations criminelles dans les rues et les toits. Très recherché par les forces de l'ordre.", "prime": "6 🪙", "danger": "DANGER" }
+      "new": { "nom": "FUNÉCRIME", "description": "Maître du crime Pokémon. Il orchestre des opérations criminelles dans les rues et les toits. Très recherché par les forces de l'ordre.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
       "id": 5, "nom": "\"ALCATON\"", "vrai_nom": "Inconnu", "image": "suspect5.jpg",
@@ -81,7 +81,7 @@
       "id": 6, "nom": "\"BOUM AFIA\"", "vrai_nom": "Inconnu", "image": "suspect6.jpg",
       "description": "Organisation à lui tout seul. Explosif, imprévisible, et toujours un coup d'avance. Quand il arrive… ça fait BOUM.",
       "statut": "RECHERCHÉ", "prime": "6 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "ZORU PULA", "description": "Escroc de terrain spécialisé dans les illusions. Il imite des Pokémon sauvages rares pour attirer les dresseurs et voler leurs Pokéballs. Impossible à distinguer d'un vrai Pokémon tant qu'il n'est pas touché.", "prime": "16 🪙", "danger": "ÉLEVÉ" }
+      "new": { "nom": "ZORU PULA", "description": "Escroc de terrain spécialisé dans les illusions. Il imite des Pokémon sauvages rares pour attirer les dresseurs et voler leurs Pokéballs. Impossible à distinguer d'un vrai Pokémon tant qu'il n'est pas touché.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 7, "nom": "\"MAGI DE RUE\"", "vrai_nom": "Inconnu", "image": "suspect7.jpg",
