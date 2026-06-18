@@ -14,7 +14,7 @@
     "  ": "Format : YYYY-MM-DDTHH:MM:SS (heure locale)",
     "   ": "Exemple 7 jours : 2026-06-25T00:00:00",
     "    ": "Pour désactiver : mets fin à null",
-    "fin": "2026-06-18T20:28:00"
+    "fin": "2026-06-18T21:12:00"
   },
 
   "polices": {
@@ -51,49 +51,49 @@
       "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg",
       "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.",
       "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
-      "new": { "nom": "Test", "description": "Prout", "prime": "3€", "danger": "trucit" }
+      "new": { "nom": " ", "description": "Prout", "prime": "3€", "danger": "trucit" }
     },
     {
       "id": 2, "nom": "\"RATTATATATATATAT\"", "vrai_nom": "Inconnu", "image": "suspect2.jpg",
       "description": "Il tire sans arrêt, en rafale non-stop… même quand le chargeur est vide. On l'entend avant de le voir : ratatatatata.",
       "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "MYSTHERE", "description": "Voleur de baies rares et de plantes de collection. On dit qu'il échange de vraies baies contre des versions “bizarres” qui dérèglent les Pokémon. Toujours repéré près des forêts et des centres de recherche botanique.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 3, "nom": "\"CORN LE BORGNE\"", "vrai_nom": "Inconnu", "image": "suspect3.jpg",
       "description": "Un œil en moins, mais deux fois plus dangereux. Espion de terrain qui voit tout… sauf ce qu'il devrait voir légalement.",
       "statut": "RECHERCHÉE", "prime": "3 🪙", "danger": "DANGER",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "FORGESCROC", "description": "Spécialiste des faux badges d'arène et des Pokéballs contrefaites. Il “forge” des objets officiels du monde Pokémon pour tromper les dresseurs débutants. Très recherché par les Ligues régionales.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 4, "nom": "\"GOUPIRATE\"", "vrai_nom": "Inconnu", "image": "suspect4.jpg",
       "description": "Pirate des rues et des toits, il vole tout ce qui brille et disparaît en mer de chaos. Jamais attrapé, toujours en fuite.",
       "statut": "RECHERCHÉ", "prime": "3 🪙", "danger": "DANGER",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "FUNÉCRIME", "description": "Maître du crime Pokémon. Il orchestre des opérations criminelles dans les rues et les toits. Très recherché par les forces de l'ordre.", "prime": "6 🪙", "danger": "DANGER" }
     },
     {
       "id": 5, "nom": "\"ALCATON\"", "vrai_nom": "Inconnu", "image": "suspect5.jpg",
       "description": "Parrain des combines financières. Il transforme les petites arnaques en empire organisé. Toujours enfermé… mais jamais vraiment en prison.",
       "statut": "RECHERCHÉE", "prime": "3 🪙", "danger": "DANGER",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "MR MYCRIME", "description": "Maître du déguisement Pokémon. Il copie les équipes des autres dresseurs pour voler leurs stratégies et leurs badges. Certains pensent qu'il a déjà gagné plusieurs Ligues… sous de fausses identités.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
       "id": 6, "nom": "\"BOUM AFIA\"", "vrai_nom": "Inconnu", "image": "suspect6.jpg",
       "description": "Organisation à lui tout seul. Explosif, imprévisible, et toujours un coup d'avance. Quand il arrive… ça fait BOUM.",
       "statut": "RECHERCHÉ", "prime": "6 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "ZORU PULA", "description": "Escroc de terrain spécialisé dans les illusions. Il imite des Pokémon sauvages rares pour attirer les dresseurs et voler leurs Pokéballs. Impossible à distinguer d'un vrai Pokémon tant qu'il n'est pas touché.", "prime": "16 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 7, "nom": "\"MAGI DE RUE\"", "vrai_nom": "Inconnu", "image": "suspect7.jpg",
       "description": "Arnaqueur de trottoir. Il te vend de la magie, mais c'est juste du bluff bien exécuté. Le public applaudit… et se fait avoir.",
       "statut": "RECHERCHÉ", "prime": "6 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "CHARI CHATILLE", "description": "Perturbe les combats Pokémon en déclenchant des distractions sonores. Il vole les objets tenus par les Pokémon pendant les combats.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 8, "nom": "\"TIÉ NÉE FLIC\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg",
       "description": "Un ancien du système devenu magouilleur marseillais sur les bords. Il connaît les lois… et surtout toutes les façons de les contourner.",
       "statut": "RECHERCHÉE", "prime": "6 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "SECA ALEURE", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
     },
     {
       "id": 9, "nom": "\"PORYGANG\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
@@ -105,7 +105,7 @@
       "id": 10, "nom": "\"LE CENDRIER\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg",
       "description": "Spécialiste de la disparition totale des preuves. Quand il passe, il reste plus rien… juste des cendres et des dossiers vides.",
       "statut": "RECHERCHÉE", "prime": "12 🪙", "danger": "EXTRÊME",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "CIAO POUSSA KATCHAWWW", "description": "Messager ultra-rapide du réseau criminel. Il vole les Pokédex non sécurisés pour les “mettre à jour” avec de fausses données. Quand il passe, les dresseurs perdent leur progression sans comprendre pourquoi.", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
     }
   ],
 
