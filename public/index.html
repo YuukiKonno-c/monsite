@@ -749,16 +749,21 @@
         const imgHTML = s.image ? `<img src="images/${imgFile}" alt="${s.nom}" data-src="images/${s.image}" onerror="this.src='images/${s.image}'">` : placeholderHTML();
         const nomStyle = `${sPolice?`font-family:'${sPolice}';`:''}${sTaille?`font-size:${sTaille};`:''}`;
         const descStyle = `${sDescPolice?`font-family:'${sDescPolice}';`:''}${sDescTaille?`font-size:${sDescTaille};`:''}`;
+        // Si chrono expiré et champ "new" présent → utiliser les nouvelles infos
+        const nom = (useNew && s.new?.nom) ? s.new.nom : s.nom;
+        const desc = (useNew && s.new?.description) ? s.new.description : s.description;
+        const prime = (useNew && s.new?.prime) ? s.new.prime : s.prime;
+        const danger = (useNew && s.new?.danger) ? s.new.danger : s.danger;
         card.innerHTML = `
           <div class="suspect-img-container">${imgHTML}<div class="scan-line"></div></div>
-          ${chronoExpire ? '<div class="suspect-new-badge">⚡ NOUVELLE PRIME</div>' : ''}
+          ${useNew ? '<div class="suspect-new-badge">⚡ NOUVELLE PRIME</div>' : ''}
           <div class="suspect-body">
-            <div class="suspect-nom" style="${nomStyle}">${s.nom}</div>
+            <div class="suspect-nom" style="${nomStyle}">${nom}</div>
             <div class="suspect-alias">IDENTITÉ RÉELLE : ${s.vrai_nom}</div>
-            <div class="suspect-desc" style="${descStyle}">${s.description}</div>
+            <div class="suspect-desc" style="${descStyle}">${desc}</div>
             <div class="suspect-meta">
-              <div><span class="prime-label">PRIME</span><span class="prime">${s.prime}</span></div>
-              <span class="danger-tag ${s.danger === 'EXTRÊME' ? 'extreme' : ''}">${s.danger}</span>
+              <div><span class="prime-label">PRIME</span><span class="prime">${prime}</span></div>
+              <span class="danger-tag ${danger === 'EXTRÊME' ? 'extreme' : ''}">${danger}</span>
             </div>
           </div>`;
         grid.appendChild(card);
