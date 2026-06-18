@@ -51,7 +51,7 @@
       "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg",
       "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.",
       "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
-      "new": { "nom": " ", "description": "Prout", "prime": "3€", "danger": "trucit" }
+      "new": { "nom": "STARIGOLEPA", "description": "Il assiste aux spectacles du /warp AFK sans jamais réagir, immobile et impassible, même face aux performances les plus absurdes, ce qui casse complètement l'ambiance et démoralise les organisateurs.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 2, "nom": "\"RATTATATATATATAT\"", "vrai_nom": "Inconnu", "image": "suspect2.jpg",
@@ -93,19 +93,19 @@
       "id": 8, "nom": "\"TIÉ NÉE FLIC\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg",
       "description": "Un ancien du système devenu magouilleur marseillais sur les bords. Il connaît les lois… et surtout toutes les façons de les contourner.",
       "statut": "RECHERCHÉE", "prime": "6 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "SECA ALEURE", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "SECA ALEURE", "description": "Il coupe les chaînes de capture et les dispositifs de maintien des Pokéballs pendant les combats, ce qui provoque l'évasion systématique des Pokémon sauvages au pire moment pour les dresseurs.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 9, "nom": "\"PORYGANG\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
       "description": "Chef d'un gang numérique spécialisé dans le vol de données et de \"textures\" Pokémon. Invisible, introuvable, mais partout dans le réseau.",
       "statut": "RECHERCHÉ", "prime": "12 🪙", "danger": "EXTRÊME",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "16 🪙", "danger": "EXTRÊME" }
     },
     {
       "id": 10, "nom": "\"LE CENDRIER\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg",
       "description": "Spécialiste de la disparition totale des preuves. Quand il passe, il reste plus rien… juste des cendres et des dossiers vides.",
       "statut": "RECHERCHÉE", "prime": "12 🪙", "danger": "EXTRÊME",
-      "new": { "nom": "CIAO POUSSA KATCHAWWW", "description": "Messager ultra-rapide du réseau criminel. Il vole les Pokédex non sécurisés pour les “mettre à jour” avec de fausses données. Quand il passe, les dresseurs perdent leur progression sans comprendre pourquoi.", "prime": "ICI NOUVELLE PRIME", "danger": "ICI NOUVEAU DANGER" }
+      "new": { "nom": "CIAO POUSSA KATCHAWWW", "description": "Il se déplace à une vitesse impossible à suivre et vole les objets des dresseurs pendant les combats ou dans les sacs, il disparaît avant même que tu aies compris ce qui s'est passé. Est-ce que c'est bon pour vous ?", "prime": "16 🪙", "danger": "EXTRÊME" }
     }
   ],
 
