@@ -62,7 +62,7 @@
   ],
 
   "suspects": [
-    { "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg", "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.", "statut": "RECHERCHÉ", "prime": "50 000 €", "danger": "FAIBLE" },
+    { "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg", "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.", "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE" },
     { "id": 2, "nom": "\"RATTATATATATATAT\"", "vrai_nom": "Inconnu", "image": "suspect2.jpg", "description": "Il tire sans arrêt, en rafale non-stop… même quand le chargeur est vide. On l'entend avant de le voir : ratatatatata.", "statut": "RECHERCHÉ", "prime": "35 000 €", "danger": "FAIBLE" },
     { "id": 3, "nom": "\"CORN LE BORGNE\"", "vrai_nom": "Inconnu", "image": "suspect3.jpg", "description": "Un œil en moins, mais deux fois plus dangereux. Espion de terrain qui voit tout… sauf ce qu'il devrait voir légalement.", "statut": "RECHERCHÉE", "prime": "42 000 €", "danger": "DANGER" },
     { "id": 4, "nom": "\"GOUPIRATE\"", "vrai_nom": "Inconnu", "image": "suspect4.jpg", "description": "Pirate des rues et des toits, il vole tout ce qui brille et disparaît en mer de chaos. Jamais attrapé, toujours en fuite.", "statut": "RECHERCHÉ", "prime": "38 000 €", "danger": "DANGER" },
