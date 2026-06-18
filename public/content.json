@@ -63,7 +63,7 @@
       "id": 3, "nom": "\"CORN LE BORGNE\"", "vrai_nom": "Inconnu", "image": "suspect3.jpg",
       "description": "Un œil en moins, mais deux fois plus dangereux. Espion de terrain qui voit tout… sauf ce qu'il devrait voir légalement.",
       "statut": "RECHERCHÉE", "prime": "3 🪙", "danger": "DANGER",
-      "new": { "nom": "FORGESCROC", "description": "Spécialiste des faux badges d'arène et des Pokéballs contrefaites. Il “forge” des objets officiels du monde Pokémon pour tromper les dresseurs débutants. Très recherché par les Ligues régionales.", "prime": "4 🪙", "danger": "FAIBLE" }
+      "new": { "nom": "FORGESCROC", "description": "Spécialiste des faux badges d'arène et des Pokéballs contrefaites. Il “forge” des objets officiels du monde Pokémon pour tromper les dresseurs débutants. Très recherché par les Ligues régionales.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
       "id": 4, "nom": "\"GOUPIRATE\"", "vrai_nom": "Inconnu", "image": "suspect4.jpg",
