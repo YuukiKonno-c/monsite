@@ -14,7 +14,7 @@
     "  ": "Format : YYYY-MM-DDTHH:MM:SS (heure locale)",
     "   ": "Exemple 7 jours : 2026-06-25T00:00:00",
     "    ": "Pour désactiver : mets fin à null",
-    "fin": "2026-06-18T22:24:00"
+    "fin": "2026-07-06T22:24:00"
   },
 
   "polices": {
@@ -126,10 +126,10 @@
   ],
 
   "membres": [
-    { "nom": "Yuuki", "role": "Directeur de la D.P.C. et aussi créateur de l'expression « Top ou Top Top » ", "image": "profile1.jpg", "description": "Chef de la D.P.C, et j'ai pas d'idée jsui juste grave drôle", "tags": ["Drôle", "Créateur de l'expression « Top ou Top Top » ", "E CE OKE"] },
-    { "nom": "Ayssixxx", "role": "Footballeur en arrêt maladie", "image": "profile2.jpg", "description": "Chef de la D.P.C, grâce à lui beaucoup de constructions ont abouti enfin quand il est là, car la moitié du temps il est juste absent et impossible de le joindre, sûrement parti acheter des boosters Pokémon.", "tags": ["Voyageur Japoonais", "Pro pour s'auto doxx", "Présentateur à mi-temps"] },
-    { "nom": "InjuriousMess_", "role": "Designeuse remplaçante / Buildeuse remplaçante / Remplaçante de tout", "image": "profile3.jpg", "description": "Membre de la D.P.C, My dream, merci de ne plus utiliser le terme « bebou » pour la designer, car cela nuit a notre image et ne correspond pas a celle que nous souhaitons donner, se retrouve parfois dans les étoiles.", "tags": ["Bouffeuse de graine", "Muette à temps partiel", "Fan de Mimiqui"] },
-    { "nom": "LarkAvery_", "role": "Mannequin de la D.P.C", "image": "profile4.jpg", "description": "Membre de la D.P.C, il regarde des séries et s'adresse aux personnages comme s'ils étaient réels. Il leur parle et s'énerve comme si la scène se déroulait avec lui, et parfois il crie sans raison.", "tags": ["Addict au jeu de tir", "Tagueur"] },
-    { "nom": "SOOYU", "role": "Secrétaire d'InjuriousMess_", "image": "profile5.jpg", "description": "Membre de la D.P.C, elle se fache tres vite contre les autres, manque de patience surtout envers les nouveaux venus, et ne fait jamais la vaisselle.", "tags": ["Hackeuse Pro", "Tomodachi Life Playeuse", "Fan de Moustillon", "Pro des Casquettes"] }
+    { "nom": "Yuuki", "role": "Chef du projet D.P.C. - Secteur Opérations internes  ", "image": "profile1.jpg", "description": "Chef de la D.P.C, et j'ai pas d'idée jsui juste grave drôle", "tags": ["Drôle", "Créateur de l'expression « Top ou Top Top » ", "E CE OKE"] },
+    { "nom": "Ayssixxx", "role": "Chef du projet D.P.C - Secteur opérationnel", "image": "profile2.jpg", "description": "Chef du projet du secteur opérationnel de la D.P.C. Grâce à lui, de nombreuses constructions ont pu voir le jour... enfin, quand il est là. Car la moitié du temps, il est introuvable et impossible à joindre, sûrement parti acheter des boosters Pokémon.", "tags": ["Voyageur Japoonais", "Pro pour s'auto doxx", "Présentateur à mi-temps"] },
+    { "nom": "InjuriousMess_", "role": "Designeuse remplaçante / Buildeuse remplaçante / Remplaçante de tout", "image": "profile3.jpg", "description": "Ancienne fermière, elle s'est reconvertie pour devenir la secrétaire principale de l'accueil de la D.P.C. Très efficace lorsque le travail l'intéresse... mais elle passe surtout son temps à jouer discrètement sur son ordinateur dès que personne ne regarde.", "tags": ["Bouffeuse de graine", "Muette à temps partiel", "Fan de Mimiqui"] },
+    { "nom": "LarkAvery_", "role": "Agent de Maintenance", "image": "profile4.jpg", "description": "Agent de maintenance de la D.P.C. Il regarde des séries et s'adresse aux personnages comme s'ils étaient réels. Il leur parle, s'énerve avec eux, et il lui arrive même de crier sans raison au beau milieu de son service.", "tags": ["Addict au jeu de tir", "Tagueur", "Fan de Forgelina"] },
+    { "nom": "SOOYU", "role": "Agent de Terrain", "image": "profile5.jpg", "description": "Agent de terrain de la D.P.C. Affectée à la base principale contre son gré, elle déteste rester enfermée entre quatre murs et préfère largement partir en mission. Elle ne fais pas la vaisselle.", "tags": ["Hackeuse Pro", "Tomodachi Life Playeuse", "Fan de Moustillon", "Pro des Casquettes"] }
   ]
 }
