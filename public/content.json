@@ -120,13 +120,15 @@
   ],
 
   "galerie": [
-    { "image": "galerie1.jpg", "titre": "ICI LE TITRE DE L'IMAGE", "description": "ICI UNE COURTE DESCRIPTION" },
-    { "image": "galerie2.jpg", "titre": "ICI LE TITRE DE L'IMAGE", "description": "ICI UNE COURTE DESCRIPTION" },
-    { "image": "galerie3.jpg", "titre": "ICI LE TITRE DE L'IMAGE", "description": "ICI UNE COURTE DESCRIPTION" }
+    { "image": "galerie1.jpg", "titre": "Equipe sur le toit", "description": "Une photo de l'équipe sur le toit de l'installation." },
+    { "image": "galerie2.jpg", "titre": "Réunion d'équipe", "description": "L'équipe discute des dernières avancées du projet avec un rafraîchissement." },
+    { "image": "galerie3.jpg", "titre": "Préparation à la mission", "description": "Les agents se préparent pour leur prochaine mission." },
+    { "image": "galerie4.jpg", "titre": "Incendie sur les serveurs", "description": "L'équipe est soudainement confrontée à un incendie." },
+    { "image": "galerie5.jpg", "titre": "Célébration du succès", "description": "L'équipe célèbre la réussite d'une mission importante." }
   ],
 
   "membres": [
-    { "nom": "Yuuki", "role": "Chef du projet D.P.C. - Secteur Opérations internes  ", "image": "profile1.jpg", "description": "Chef de la D.P.C, et j'ai pas d'idée jsui juste grave drôle", "tags": ["Drôle", "Créateur de l'expression « Top ou Top Top » ", "E CE OKE"] },
+    { "nom": "Yuuki", "role": "Chef du projet D.P.C. - Secteur Opérations internes  ", "image": "profile1.jpg", "description": "Chef de la D.P.C. investi dans son rôle, il se donne toujours à fond pour le maintien de l'organisation. Il sait redonner sourire, et motivation à sont équipe lors d'une baisse d'activité,  pour ensuite disparaître pendant 6 heures.", "tags": ["Tireur Professionnel", "Fan de Latias", "Desinnateur Amateur"] },
     { "nom": "Ayssixxx", "role": "Chef du projet D.P.C - Secteur opérationnel", "image": "profile2.jpg", "description": "Chef du projet du secteur opérationnel de la D.P.C. Grâce à lui, de nombreuses constructions ont pu voir le jour... enfin, quand il est là. Car la moitié du temps, il est introuvable et impossible à joindre, sûrement parti acheter des boosters Pokémon.", "tags": ["Voyageur Japoonais", "Pro pour s'auto doxx", "Présentateur à mi-temps"] },
     { "nom": "InjuriousMess_", "role": "Designeuse remplaçante / Buildeuse remplaçante / Remplaçante de tout", "image": "profile3.jpg", "description": "Ancienne fermière, elle s'est reconvertie pour devenir la secrétaire principale de l'accueil de la D.P.C. Très efficace lorsque le travail l'intéresse... mais elle passe surtout son temps à jouer discrètement sur son ordinateur dès que personne ne regarde.", "tags": ["Bouffeuse de graine", "Muette à temps partiel", "Fan de Mimiqui"] },
     { "nom": "LarkAvery_", "role": "Agent de Maintenance", "image": "profile4.jpg", "description": "Agent de maintenance de la D.P.C. Il regarde des séries et s'adresse aux personnages comme s'ils étaient réels. Il leur parle, s'énerve avec eux, et il lui arrive même de crier sans raison au beau milieu de son service.", "tags": ["Addict au jeu de tir", "Tagueur", "Fan de Forgelina"] },
