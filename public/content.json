@@ -99,7 +99,7 @@
       "id": 9, "nom": "\"PORYGANG\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
       "description": "Chef d'un gang numérique spécialisé dans le vol de données et de \"textures\" Pokémon. Invisible, introuvable, mais partout dans le réseau.",
       "statut": "RECHERCHÉ", "prime": "12 🪙", "danger": "EXTRÊME",
-      "new": { "nom": "ICI NOUVEAU NOM", "description": "ICI NOUVELLE DESCRIPTION", "prime": "16 🪙", "danger": "EXTRÊME" }
+      "new": { "nom": "MIMICRIME", "description": "Criminel spécialisé dans l'usurpation de costume. Il porte un déguisement Pikachu fabriqué avec une précision douteuse afin d'attirer l'attention des dresseurs naïfs. Responsable de nombreux vols de baie, de PokeBalls et de sac à dos, très recherché pour avoir tenté de rejoindre plusieurs équipes Pokémon en prétendant être 'le Pikachu officiel'. ", "prime": "16 🪙", "danger": "EXTRÊME" }
     },
     {
       "id": 10, "nom": "\"LE CENDRIER\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg",
@@ -122,7 +122,7 @@
   "galerie": [
     { "image": "galerie1.jpg", "titre": "Equipe sur le toit", "description": "Une photo de l'équipe sur le toit de l'installation." },
     { "image": "galerie2.jpg", "titre": "Réunion d'équipe", "description": "L'équipe discute des dernières avancées du projet avec un rafraîchissement." },
-    { "image": "galerie3.jpg", "titre": "Préparation à la mission", "description": "Les agents se préparent pour leur prochaine mission." },
+    { "image": "galerie3.jpg", "titre": "Préparation à la mission", "description": "Les chefs de projet se réunissent pour planifier leur prochaine mission." },
     { "image": "galerie4.jpg", "titre": "Incendie sur les serveurs", "description": "L'équipe est soudainement confrontée à un incendie." },
     { "image": "galerie5.jpg", "titre": "Célébration du succès", "description": "L'équipe célèbre la réussite d'une mission importante." }
   ],
