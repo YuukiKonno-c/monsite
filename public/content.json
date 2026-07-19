@@ -14,7 +14,7 @@
     "  ": "Format : YYYY-MM-DDTHH:MM:SS (heure locale)",
     "   ": "Exemple 7 jours : 2026-06-25T00:00:00",
     "    ": "Pour désactiver : mets fin à null",
-    "fin": "2026-07-08T23:24:00"
+    "fin": "2026-07-27T06:00:00"
   },
 
   "polices": {
@@ -50,61 +50,61 @@
     {
       "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg",
       "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.",
-      "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
+      "statut": "RECHERCHÉ", "prime": "2 🪙", "danger": "FAIBLE",
       "new": { "nom": "STARIGOLEPA", "description": "Il assiste aux spectacles du /warp AFK sans jamais réagir, immobile et impassible, même face aux performances les plus absurdes, ce qui casse complètement l'ambiance et démoralise les organisateurs.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 2, "nom": "\"RATTATATATATATAT\"", "vrai_nom": "Inconnu", "image": "suspect2.jpg",
       "description": "Il tire sans arrêt, en rafale non-stop… même quand le chargeur est vide. On l'entend avant de le voir : ratatatatata.",
-      "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
+      "statut": "RECHERCHÉ", "prime": "2 🪙", "danger": "FAIBLE",
       "new": { "nom": "MYSTHERE", "description": "Voleur de baies rares et de plantes de collection. On dit qu'il échange de vraies baies contre des versions “bizarres” qui dérèglent les Pokémon. Toujours repéré près des forêts et des centres de recherche botanique.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 3, "nom": "\"CORN LE BORGNE\"", "vrai_nom": "Inconnu", "image": "suspect3.jpg",
       "description": "Un œil en moins, mais deux fois plus dangereux. Espion de terrain qui voit tout… sauf ce qu'il devrait voir légalement.",
-      "statut": "RECHERCHÉE", "prime": "3 🪙", "danger": "DANGER",
+      "statut": "RECHERCHÉE", "prime": "5 🪙", "danger": "DANGER",
       "new": { "nom": "FORGESCROC", "description": "Spécialiste des faux badges d'arène et des Pokéballs contrefaites. Il “forge” des objets officiels du monde Pokémon pour tromper les dresseurs débutants. Très recherché par les Ligues régionales.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
       "id": 4, "nom": "\"GOUPIRATE\"", "vrai_nom": "Inconnu", "image": "suspect4.jpg",
       "description": "Pirate des rues et des toits, il vole tout ce qui brille et disparaît en mer de chaos. Jamais attrapé, toujours en fuite.",
-      "statut": "RECHERCHÉ", "prime": "3 🪙", "danger": "DANGER",
+      "statut": "RECHERCHÉ", "prime": "5 🪙", "danger": "DANGER",
       "new": { "nom": "FUNÉCRIME", "description": "Maître du crime Pokémon. Il orchestre des opérations criminelles dans les rues et les toits. Très recherché par les forces de l'ordre.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
       "id": 5, "nom": "\"ALCATON\"", "vrai_nom": "Inconnu", "image": "suspect5.jpg",
       "description": "Parrain des combines financières. Il transforme les petites arnaques en empire organisé. Toujours enfermé… mais jamais vraiment en prison.",
-      "statut": "RECHERCHÉE", "prime": "3 🪙", "danger": "DANGER",
+      "statut": "RECHERCHÉE", "prime": "5 🪙", "danger": "DANGER",
       "new": { "nom": "MR MYCRIME", "description": "Maître du déguisement Pokémon. Il copie les équipes des autres dresseurs pour voler leurs stratégies et leurs badges. Certains pensent qu'il a déjà gagné plusieurs Ligues… sous de fausses identités.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
       "id": 6, "nom": "\"BOUM AFIA\"", "vrai_nom": "Inconnu", "image": "suspect6.jpg",
       "description": "Organisation à lui tout seul. Explosif, imprévisible, et toujours un coup d'avance. Quand il arrive… ça fait BOUM.",
-      "statut": "RECHERCHÉ", "prime": "6 🪙", "danger": "ÉLEVÉ",
+      "statut": "RECHERCHÉ", "prime": "9 🪙", "danger": "ÉLEVÉ",
       "new": { "nom": "ZORU PULA", "description": "Escroc de terrain spécialisé dans les illusions. Il imite des Pokémon sauvages rares pour attirer les dresseurs et voler leurs Pokéballs. Impossible à distinguer d'un vrai Pokémon tant qu'il n'est pas touché.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 7, "nom": "\"MAGI DE RUE\"", "vrai_nom": "Inconnu", "image": "suspect7.jpg",
       "description": "Arnaqueur de trottoir. Il te vend de la magie, mais c'est juste du bluff bien exécuté. Le public applaudit… et se fait avoir.",
-      "statut": "RECHERCHÉ", "prime": "6 🪙", "danger": "ÉLEVÉ",
+      "statut": "RECHERCHÉ", "prime": "9 🪙", "danger": "ÉLEVÉ",
       "new": { "nom": "CHARI CHATILLE", "description": "Perturbe les combats Pokémon en déclenchant des distractions sonores. Il vole les objets tenus par les Pokémon pendant les combats.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 8, "nom": "\"TIÉ NÉE FLIC\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg",
       "description": "Un ancien du système devenu magouilleur marseillais sur les bords. Il connaît les lois… et surtout toutes les façons de les contourner.",
-      "statut": "RECHERCHÉE", "prime": "6 🪙", "danger": "ÉLEVÉ",
+      "statut": "RECHERCHÉE", "prime": "9 🪙", "danger": "ÉLEVÉ",
       "new": { "nom": "SECA ALEURE", "description": "Il coupe les chaînes de capture et les dispositifs de maintien des Pokéballs pendant les combats, ce qui provoque l'évasion systématique des Pokémon sauvages au pire moment pour les dresseurs.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 9, "nom": "\"PORYGANG\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
       "description": "Chef d'un gang numérique spécialisé dans le vol de données et de \"textures\" Pokémon. Invisible, introuvable, mais partout dans le réseau.",
-      "statut": "RECHERCHÉ", "prime": "12 🪙", "danger": "EXTRÊME",
+      "statut": "RECHERCHÉ", "prime": "15 🪙", "danger": "EXTRÊME",
       "new": { "nom": "MIMICRIME", "description": "Criminel spécialisé dans l'usurpation de costume. Il porte un déguisement Pikachu fabriqué avec une précision douteuse afin d'attirer l'attention des dresseurs naïfs. Responsable de nombreux vols de baie, de PokeBalls et de sac à dos, très recherché pour avoir tenté de rejoindre plusieurs équipes Pokémon en prétendant être 'le Pikachu officiel'. ", "prime": "16 🪙", "danger": "EXTRÊME" }
     },
     {
       "id": 10, "nom": "\"LE CENDRIER\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg",
       "description": "Spécialiste de la disparition totale des preuves. Quand il passe, il reste plus rien… juste des cendres et des dossiers vides.",
-      "statut": "RECHERCHÉE", "prime": "12 🪙", "danger": "EXTRÊME",
+      "statut": "RECHERCHÉE", "prime": "15 🪙", "danger": "EXTRÊME",
       "new": { "nom": "CIAO POUSSA KATCHAWWW", "description": "Il se déplace à une vitesse impossible à suivre et vole les objets des dresseurs pendant les combats ou dans les sacs, il disparaît avant même que tu aies compris ce qui s'est passé. Est-ce que c'est bon pour vous ?", "prime": "16 🪙", "danger": "EXTRÊME" }
     }
   ],
@@ -132,6 +132,5 @@
     { "nom": "Ayssixxx", "role": "Chef du projet D.P.C - Secteur opérationnel", "image": "profile2.jpg", "description": "Chef du projet du secteur opérationnel de la D.P.C. Grâce à lui, de nombreuses constructions ont pu voir le jour... enfin, quand il est là. Car la moitié du temps, il est introuvable et impossible à joindre, sûrement parti acheter des boosters Pokémon.", "tags": ["Voyageur Japoonais", "Pro pour s'auto doxx", "Présentateur à mi-temps"] },
     { "nom": "InjuriousMess_", "role": "Designeuse remplaçante / Buildeuse remplaçante / Remplaçante de tout", "image": "profile3.jpg", "description": "Ancienne fermière, elle s'est reconvertie pour devenir la secrétaire principale de l'accueil de la D.P.C. Très efficace lorsque le travail l'intéresse... mais elle passe surtout son temps à jouer discrètement sur son ordinateur dès que personne ne regarde.", "tags": ["Bouffeuse de graine", "Muette à temps partiel", "Fan de Mimiqui"] },
     { "nom": "LarkAvery_", "role": "Agent de Maintenance", "image": "profile4.jpg", "description": "Agent de maintenance de la D.P.C. Il regarde des séries et s'adresse aux personnages comme s'ils étaient réels. Il leur parle, s'énerve avec eux, et il lui arrive même de crier sans raison au beau milieu de son service.", "tags": ["Addict au jeu de tir", "Tagueur", "Fan de Forgelina"] },
-    { "nom": "SOOYU", "role": "Agent de Terrain", "image": "profile5.jpg", "description": "Agent de terrain de la D.P.C. Affectée à la base principale contre son gré, elle déteste rester enfermée entre quatre murs et préfère largement partir en mission. Elle ne fais pas la vaisselle.", "tags": ["Hackeuse Pro", "Tomodachi Life Playeuse", "Fan de Moustillon", "Pro des Casquettes"] }
   ]
 }
