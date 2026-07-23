@@ -4,7 +4,7 @@
     "tagline": "☢ Département des Pokémons Corrompus ☢",
     "description": "Le Département des Pokémon Corrompus (D.P.C) consacre ses efforts à la capture des Pokémon corrompus les plus dangereux. Afin de renforcer son action, il propose des récompenses à toute personne contribuant à leur arrestation.",
     "statut": "RECHERCHÉE",
-    "niveau_menace": "CRITIQUE",
+    "niveau_menace": "NEUTRE",
     "date_creation": "2020.02.14"
   },
 
