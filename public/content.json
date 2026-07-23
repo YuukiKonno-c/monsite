@@ -33,9 +33,9 @@
   },
 
   "anecdotes": [
-    { "date": "2024.03.15", "texte": "La D.P.C rejoint officiellement la D.P.P : La D.P.C s'associe à la D.P.P afin de combattre le mal et de contribuer à la création d'un monde meilleur. " },
-    { "date": "2025.07.08", "texte": "Succès de la collaboration avec la D.P.P : La D.P.P a accompli un véritable exploit. De nombreux Pokémon corrompus ont été arrêtés, et la D.P.C a réussi à comprendre l'origine du problème." },
-    { "date": "2025.11.25", "texte": "Fin du partenariat avec la D.P.P : La D.P.C prend officiellement son indépendance et n'a désormais plus besoin d'accompagnement pour lutter contre les Pokémon corrompus." }
+    { "date": "2026.07.22", "texte": "Ouverture officielle du Département des Pokémon Corrompus (D.P.C.) au sein du serveur CobbleGems. De nombreux chasseurs se sont déjà portés volontaires pour participer à la mission de récupération des Pokémon Corrompus." },
+    { "date": "2026.07.22", "texte": "Nos équipes ont reçu un nombre exceptionnel de KEUN A TOR au cours de la journée. Face à cet afflux important et en attendant de leur attribuer une place au sein de nos installations, leur valeur de rachat a temporairement été revue à la baisse." },
+    { "date": "2026.07.23", "texte": "Les chasseurs continuent leur excellent travail. Un très grand nombre de PORYGANG ont été récupérés et transférés au D.P.C. En raison de cette arrivée massive, leur valeur de rachat est également réduite temporairement, le temps que nos équipes puissent les accueillir dans de bonnes conditions." }
   ],
 
   "rapports": [
@@ -50,7 +50,7 @@
     {
       "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg",
       "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.",
-      "statut": "RECHERCHÉ", "prime": "2 🪙", "danger": "FAIBLE",
+      "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
       "new": { "nom": "STARIGOLEPA", "description": "Il assiste aux spectacles du /warp AFK sans jamais réagir, immobile et impassible, même face aux performances les plus absurdes, ce qui casse complètement l'ambiance et démoralise les organisateurs.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
@@ -98,7 +98,7 @@
     {
       "id": 9, "nom": "\"PORYGANG\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
       "description": "Chef d'un gang numérique spécialisé dans le vol de données et de \"textures\" Pokémon. Invisible, introuvable, mais partout dans le réseau.",
-      "statut": "RECHERCHÉ", "prime": "15 🪙", "danger": "EXTRÊME",
+      "statut": "RECHERCHÉ", "prime": "7 🪙", "danger": "EXTRÊME",
       "new": { "nom": "MIMICRIME", "description": "Criminel spécialisé dans l'usurpation de costume. Il porte un déguisement Pikachu fabriqué avec une précision douteuse afin d'attirer l'attention des dresseurs naïfs. Responsable de nombreux vols de baie, de PokeBalls et de sac à dos, très recherché pour avoir tenté de rejoindre plusieurs équipes Pokémon en prétendant être 'le Pikachu officiel'. ", "prime": "16 🪙", "danger": "EXTRÊME" }
     },
     {
