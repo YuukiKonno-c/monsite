@@ -33,24 +33,24 @@
   },
 
   "anecdotes": [
-    { "date": "2026.07.22", "texte": "Ouverture officielle du Département des Pokémon Corrompus (D.P.C.) au sein du serveur CobbleGems. De nombreux chasseurs se sont déjà portés volontaires pour participer à la mission de récupération des Pokémon Corrompus." },
-    { "date": "2026.07.22", "texte": "Nos équipes ont reçu un nombre exceptionnel de KEUN A TOR au cours de la journée. Face à cet afflux important et en attendant de leur attribuer une place au sein de nos installations, leur valeur de rachat a temporairement été revue à la baisse." },
-    { "date": "2026.07.23", "texte": "Les chasseurs continuent leur excellent travail. Un très grand nombre de PORYGANG ont été récupérés et transférés au D.P.C. En raison de cette arrivée massive, leur valeur de rachat est également réduite temporairement, le temps que nos équipes puissent les accueillir dans de bonnes conditions." }
+    { "date": "2026.07.22", "texte": "Les chasseurs continuent leur excellent travail. Un très grand nombre de PORYGANG ont été récupérés et transférés au D.P.C. En raison de cette arrivée massive, leur valeur de rachat est également réduite temporairement, le temps que nos équipes puissent les accueillir dans de bonnes conditions."},    
+    { "date": "2026.07.24", "texte": "Une importante mission de récupération a été menée à bien. L'ensemble des Pokémon Corrompus qui s'étaient échappés ont pu être retrouvés et ramenés en sécurité au sein du laboratoire du D.P.C. Nos équipes peuvent désormais reprendre les analyses afin de mieux comprendre le phénomène." },
+    { "date": "2026.07.25", "texte": "Suite aux dernières observations de nos équipes, une réévaluation des valeurs de récupération a été effectuée. Le prix de plusieurs spécimens, notamment LE CENDRIER, TIE NEE FLIC, ALCATON et KEUN A TOR, a été augmenté afin de mieux refléter leur intérêt pour nos recherches et encourager leur récupération par les chasseurs." }
   ],
 
   "rapports": [
-    { "date": "2049.05.12", "titre": "Rapport n°01 — Début du projet Delta", "classification": "RESTREINT", "contenu": "Association D.P.C\n\nLes travaux de la nouvelle installation Delta située sur CobbleGems sont officiellement lancés.\n\nCe bâtiment aura pour objectif de réunir les meilleurs chercheurs de la D.P.C afin d'étudier les phénomènes rares observés chez certains Pokémon.\n\nUne section spéciale sera dédiée aux Pokémon présentant des caractéristiques chromatiques inhabituelles.\n\nLe projet associé à cette section portera le nom de Chromalys.\n\nStatut du dossier : Construction en cours." },
-    { "date": "2049.05.26", "titre": "Rapport n°09 — Finalisation des installations", "classification": "RESTREINT", "contenu": "Association D.P.C\n\nL'installation Delta approche de sa finalisation.\n\nLes laboratoires principaux ainsi que les espaces d'analyse énergétique sont désormais opérationnels.\n\nLe secteur dédié au programme Chromalys possède des équipements permettant d'étudier les signatures particulières des Pokémon chromatiques.\n\nLa D.P.C rappelle que l'objectif principal reste la compréhension et la protection de ces phénomènes rares.\n\nStatut du dossier : Validé." },
-    { "date": "2049.06.03", "titre": "Rapport n°15 — Lancement de Chromalys", "classification": "CONFIDENTIEL", "contenu": "Association D.P.C\n\nLe programme Chromalys entre officiellement dans sa première phase d'étude.\n\nLes premiers sujets analysés démontrent que les Pokémon chromatiques possèdent une signature énergétique différente des autres individus.\n\nCette découverte pourrait permettre d'améliorer notre compréhension des mécanismes liés aux variations chromatiques.\n\nDes recherches complémentaires sont nécessaires avant toute utilisation pratique.\n\nStatut du dossier : Recherche active." },
-    { "date": "2049.06.10", "titre": "Rapport n°24 — Premières observations", "classification": "CONFIDENTIEL", "contenu": "Association D.P.C\n\nLes premiers résultats du programme Chromalys sont supérieurs aux prévisions.\n\nCertaines signatures chromatiques semblent réagir entre elles lorsqu'elles sont placées dans des conditions spécifiques.\n\nLes chercheurs étudient actuellement un phénomène nommé ex******** chromatique.\n\nAucune conclusion définitive ne peut encore être tirée.\n\nStatut du dossier : Analyse en cours." },
-    { "date": "2049.06.17", "titre": "Rapport n°28 — Phase expérimentale", "classification": "ÉLEVÉ", "contenu": "Association D.P.C\n\nLes recherches Chromalys progressent conformément aux objectifs établis.\n\nCertains sujets présentent une meilleure stabilité énergétique après exposition aux signatures chromatiques étudiées.\n\nLe comité scientifique étudie désormais la possibilité d'un ****sf*** énergétique contrôlé.\n\nPlusieurs précautions supplémentaires seront appliquées afin de garantir la sécurité des Pokémon concernés.\n\nStatut du dossier : Phase d'étude." }
+    { "date": "2026.05.12", "titre": "Rapport n°01 — Début du projet Delta", "classification": "RESTREINT", "contenu": "Association D.P.C\n\nLes travaux de la nouvelle installation Delta située sur CobbleGems sont officiellement lancés.\n\nCe bâtiment aura pour objectif de réunir les meilleurs chercheurs de la D.P.C afin d'étudier les phénomènes rares observés chez certains Pokémon.\n\nUne section spéciale sera dédiée aux Pokémon présentant des caractéristiques chromatiques inhabituelles.\n\nLe projet associé à cette section portera le nom de Chromalys.\n\nStatut du dossier : Construction en cours." },
+    { "date": "2026.05.26", "titre": "Rapport n°09 — Finalisation des installations", "classification": "RESTREINT", "contenu": "Association D.P.C\n\nL'installation Delta approche de sa finalisation.\n\nLes laboratoires principaux ainsi que les espaces d'analyse énergétique sont désormais opérationnels.\n\nLe secteur dédié au programme Chromalys possède des équipements permettant d'étudier les signatures particulières des Pokémon chromatiques.\n\nLa D.P.C rappelle que l'objectif principal reste la compréhension et la protection de ces phénomènes rares.\n\nStatut du dossier : Validé." },
+    { "date": "2026.06.03", "titre": "Rapport n°15 — Lancement de Chromalys", "classification": "CONFIDENTIEL", "contenu": "Association D.P.C\n\nLe programme Chromalys entre officiellement dans sa première phase d'étude.\n\nLes premiers sujets analysés démontrent que les Pokémon chromatiques possèdent une signature énergétique différente des autres individus.\n\nCette découverte pourrait permettre d'améliorer notre compréhension des mécanismes liés aux variations chromatiques.\n\nDes recherches complémentaires sont nécessaires avant toute utilisation pratique.\n\nStatut du dossier : Recherche active." },
+    { "date": "2026.06.10", "titre": "Rapport n°24 — Premières observations", "classification": "CONFIDENTIEL", "contenu": "Association D.P.C\n\nLes premiers résultats du programme Chromalys sont supérieurs aux prévisions.\n\nCertaines signatures chromatiques semblent réagir entre elles lorsqu'elles sont placées dans des conditions spécifiques.\n\nLes chercheurs étudient actuellement un phénomène nommé ex******** chromatique.\n\nAucune conclusion définitive ne peut encore être tirée.\n\nStatut du dossier : Analyse en cours." },
+    { "date": "2026.06.17", "titre": "Rapport n°28 — Phase expérimentale", "classification": "ÉLEVÉ", "contenu": "Association D.P.C\n\nLes recherches Chromalys progressent conformément aux objectifs établis.\n\nCertains sujets présentent une meilleure stabilité énergétique après exposition aux signatures chromatiques étudiées.\n\nLe comité scientifique étudie désormais la possibilité d'un ****sf*** énergétique contrôlé.\n\nPlusieurs précautions supplémentaires seront appliquées afin de garantir la sécurité des Pokémon concernés.\n\nStatut du dossier : Phase d'étude." }
   ],
 
   "suspects": [
     {
       "id": 1, "nom": "\"KEUN A TOR\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg",
       "description": "Toujours persuadé d'avoir raison… mais en réalité Keu a tort. Chef de chantier illégal, spécialiste des barrages improvisés.",
-      "statut": "RECHERCHÉ", "prime": "1 🪙", "danger": "FAIBLE",
+      "statut": "RECHERCHÉ", "prime": "2 🪙", "danger": "FAIBLE",
       "new": { "nom": "STARIGOLEPA", "description": "Il assiste aux spectacles du /warp AFK sans jamais réagir, immobile et impassible, même face aux performances les plus absurdes, ce qui casse complètement l'ambiance et démoralise les organisateurs.", "prime": "4 🪙", "danger": "FAIBLE" }
     },
     {
@@ -74,7 +74,7 @@
     {
       "id": 5, "nom": "\"ALCATON\"", "vrai_nom": "Inconnu", "image": "suspect5.jpg",
       "description": "Parrain des combines financières. Il transforme les petites arnaques en empire organisé. Toujours enfermé… mais jamais vraiment en prison.",
-      "statut": "RECHERCHÉE", "prime": "5 🪙", "danger": "DANGER",
+      "statut": "RECHERCHÉE", "prime": "10 🪙", "danger": "DANGER",
       "new": { "nom": "MR MYCRIME", "description": "Maître du déguisement Pokémon. Il copie les équipes des autres dresseurs pour voler leurs stratégies et leurs badges. Certains pensent qu'il a déjà gagné plusieurs Ligues… sous de fausses identités.", "prime": "8 🪙", "danger": "DANGER" }
     },
     {
@@ -92,19 +92,19 @@
     {
       "id": 8, "nom": "\"TIÉ NÉE FLIC\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg",
       "description": "Un ancien du système devenu magouilleur marseillais sur les bords. Il connaît les lois… et surtout toutes les façons de les contourner.",
-      "statut": "RECHERCHÉE", "prime": "9 🪙", "danger": "ÉLEVÉ",
+      "statut": "RECHERCHÉE", "prime": "13 🪙", "danger": "ÉLEVÉ",
       "new": { "nom": "SECA ALEURE", "description": "Il coupe les chaînes de capture et les dispositifs de maintien des Pokéballs pendant les combats, ce qui provoque l'évasion systématique des Pokémon sauvages au pire moment pour les dresseurs.", "prime": "12 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 9, "nom": "\"PORYGANG\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
       "description": "Chef d'un gang numérique spécialisé dans le vol de données et de \"textures\" Pokémon. Invisible, introuvable, mais partout dans le réseau.",
-      "statut": "RECHERCHÉ", "prime": "7 🪙", "danger": "EXTRÊME",
+      "statut": "RECHERCHÉ", "prime": "5 🪙", "danger": "EXTRÊME",
       "new": { "nom": "MIMICRIME", "description": "Criminel spécialisé dans l'usurpation de costume. Il porte un déguisement Pikachu fabriqué avec une précision douteuse afin d'attirer l'attention des dresseurs naïfs. Responsable de nombreux vols de baie, de PokeBalls et de sac à dos, très recherché pour avoir tenté de rejoindre plusieurs équipes Pokémon en prétendant être 'le Pikachu officiel'. ", "prime": "16 🪙", "danger": "EXTRÊME" }
     },
     {
       "id": 10, "nom": "\"LE CENDRIER\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg",
       "description": "Spécialiste de la disparition totale des preuves. Quand il passe, il reste plus rien… juste des cendres et des dossiers vides.",
-      "statut": "RECHERCHÉE", "prime": "15 🪙", "danger": "EXTRÊME",
+      "statut": "RECHERCHÉE", "prime": "18 🪙", "danger": "EXTRÊME",
       "new": { "nom": "CIAO POUSSA KATCHAWWW", "description": "Il se déplace à une vitesse impossible à suivre et vole les objets des dresseurs pendant les combats ou dans les sacs, il disparaît avant même que tu aies compris ce qui s'est passé. Est-ce que c'est bon pour vous ?", "prime": "16 🪙", "danger": "EXTRÊME" }
     }
   ],
