@@ -124,7 +124,7 @@
     { "image": "galerie2.jpg", "titre": "Réunion d'équipe", "description": "L'équipe discute des dernières avancées du projet avec un rafraîchissement." },
     { "image": "galerie3.jpg", "titre": "Préparation à la mission", "description": "Les chefs de projet se réunissent pour planifier leur prochaine mission." },
     { "image": "galerie4.jpg", "titre": "Incendie sur les serveurs", "description": "L'équipe est soudainement confrontée à un incendie." },
-    { "image": "galerie5.jpg", "titre": "Célébration du succès", "description": "L'équipe célèbre la réussite d'une mission importante." }
+    { "image": "galerie5.jpg", "titre": "", "description": "" }
   ],
 
   "membres": [
