@@ -52,7 +52,10 @@
     { "date": "2049.07.12", "titre": "Rapport n°50 — Incident du sous-sol Delta", "classification": "CLASSIFICATION NOIRE", "contenu": "Association D.P.C\n\nLes anomalies détectées dans le sous-sol Delta se poursuivent.\n\nUne nouvelle inspection de la zone expérimentale a été effectuée afin de déterminer l'origine des perturbations.\n\nPlusieurs équipements présentent des dommages inexpliqués.\n\nLes trois individus présents dans la zone d'observation maintiennent leurs déclarations concernant une expérience ayant dépassé les limites prévues.\n\nUne partie des données du programme Chromalys a été rendue inaccessible.\n\nStatut du dossier : Incident en cours." },
     { "date": "2049.07.17", "titre": "Rapport n°52 — Révision des protocoles", "classification": "CLASSIFICATION NOIRE", "contenu": "Association D.P.C\n\nAprès analyse des archives internes, plusieurs incohérences ont été découvertes dans les anciennes phases du programme Chromalys.\n\nCertains protocoles utilisés ne correspondent pas aux procédures officiellement validées.\n\nUne mention concernant une Ex******* complète des signatures chromatiques apparaît dans plusieurs documents supprimés.\n\nLa direction demande la suppression immédiate de toute référence à ces fichiers.\n\nLes recherches doivent continuer malgré les événements récents.\n\nStatut du dossier : Archives sécurisées." },
     { "date": "2049.07.22", "titre": "Rapport n°55 — Témoignages Delta", "classification": "SECRET ABSOLU", "contenu": "Association D.P.C\n\nLes trois individus présents dans le sous-sol Delta ont fourni de nouvelles informations concernant les dernières phases du projet.\n\nSelon leurs témoignages, certains Pokémon utilisés durant les expériences auraient subi des modifications irréversibles.\n\nLe comité scientifique refuse actuellement de confirmer ces déclarations.\n\nCependant, plusieurs relevés énergétiques semblent correspondre aux événements décrits.\n\nUne enquête interne est ouverte concernant le protocole *****fe**.\n\nStatut du dossier : Vérification nécessaire." },
-    { "date": "2049.07.26", "titre": "Rapport n°58 — Première rupture de confinement", "classification": "SECRET ABSOLU", "contenu": "Association D.P.C\n\nUne instabilité majeure a été détectée dans la zone expérimentale du sous-sol Delta.\n\nLes systèmes de sécurité ont été activés automatiquement après une augmentation brutale de l'énergie présente.\n\nAucun membre du personnel n'était autorisé dans cette section au moment de l'incident.\n\nLes équipes scientifiques suspectent une réaction imprévue liée au dernier sujet étudié.\n\nLa désignation temporaire du sujet est Er**** *6.\n\nStatut du dossier : Risque élevé." }
+    { "date": "2049.07.26", "titre": "Rapport n°58 — Première rupture de confinement", "classification": "SECRET ABSOLU", "contenu": "Association D.P.C\n\nUne instabilité majeure a été détectée dans la zone expérimentale du sous-sol Delta.\n\nLes systèmes de sécurité ont été activés automatiquement après une augmentation brutale de l'énergie présente.\n\nAucun membre du personnel n'était autorisé dans cette section au moment de l'incident.\n\nLes équipes scientifiques suspectent une réaction imprévue liée au dernier sujet étudié.\n\nLa désignation temporaire du sujet est Er**** *6.\n\nStatut du dossier : Risque élevé." },
+    { "date": "2049.07.30", "titre": "Rapport n°64 — Sujet expérimental", "classification": "INTERDIT", "contenu": "Association D.P.C\n\nLes analyses confirment que l'incident du sous-sol Delta est lié au dernier sujet du programme Chromalys.\n\nLe sujet présente des capacités dépassant largement les prévisions établies.\n\nLes signatures chromatiques présentes dans son organisme semblent provenir de plusieurs sources différentes.\n\nLes chercheurs demandent l'arrêt immédiat des expérimentations.\n\nLa direction refuse toute interruption avant récupération des données restantes.\n\nStatut du dossier : Contrôle impossible." },
+    { "date": "2049.08.02", "titre": "Rapport n°67 — Erreur 76", "classification": "INTERDIT", "contenu": "Association D.P.C\n\nLe sujet expérimental est désormais officiellement désigné sous le nom d'Erreur 76.\n\nLes tentatives de communication avec le sujet ont échoué.\n\nLes systèmes de confinement montrent des signes de faiblesse.\n\nLes chercheurs confirment que l'Erreur 76 n'est pas une simple anomalie mais le résultat direct des dernières phases du programme Chromalys.\n\nLes rapports précédents concernant la ** des signatures chromatiques ont été confirmés.\n\nStatut du dossier : Menace active." },
+    { "date": "2049.08.03", "titre": "Rapport n°72 — Perte du contrôle Delta", "classification": "SUPPRESSION OBLIGATOIRE", "contenu": "Association D.P.C\n\nLe sous-sol Delta n'est plus considéré comme une zone sécurisée.\n\nPlusieurs systèmes de surveillance sont hors service.\n\nLes communications avec les équipes présentes dans la zone expérimentale sont interrompues.\n\nLes trois individus placés sous observation n'ont plus répondu depuis plusieurs heures.\n\nL'Erreur 76 n'est plus sous contrôle.\n\nLe programme Chromalys est suspendu jusqu'à nouvel ordre.\n\nStatut du dossier : Crise active." }
   ],
 
   "suspects": [
@@ -60,61 +63,61 @@
       "id": 1, "nom": "\"STARIGOLEPA\"", "vrai_nom": "Inconnu", "image": "suspect1.jpg",
       "description": "Il assiste aux spectacles du /warp AFK sans jamais réagir, immobile et impassible, même face aux performances les plus absurdes, ce qui casse complètement l'ambiance et démoralise les organisateurs.",
       "statut": "RECHERCHÉ", "prime": "4 🪙", "danger": "FAIBLE",
-      "new": { "nom": "Tentacool", "description": "Il assiste aux spectacles du /warp AFK sans jamais réagir, immobile et impassible, même face aux performances les plus absurdes, ce qui casse complètement l'ambiance et démoralise les organisateurs.", "prime": "4 🪙", "danger": "FAIBLE" }
+      "new": { "nom": "Tentacool", "description": "Err", "prime": "6 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 2, "nom": "\"MYSTHERE\"", "vrai_nom": "Inconnu", "image": "suspect2.jpg",
       "description": "Voleur de baies rares et de plantes de collection. On dit qu'il échange de vraies baies contre des versions “bizarres” qui dérèglent les Pokémon. Toujours repéré près des forêts et des centres de recherche botanique.",
       "statut": "RECHERCHÉ", "prime": "4 🪙", "danger": "FAIBLE",
-      "new": { "nom": "Chenipan", "description": "Voleur de baies rares et de plantes de collection. On dit qu'il échange de vraies baies contre des versions “bizarres” qui dérèglent les Pokémon. Toujours repéré près des forêts et des centres de recherche botanique.", "prime": "4 🪙", "danger": "FAIBLE" }
+      "new": { "nom": "Chenipan", "description": "Err", "prime": "6 🪙", "danger": "FAIBLE" }
     },
     {
       "id": 3, "nom": "\"FORGESCROC\"", "vrai_nom": "Inconnu", "image": "suspect3.jpg",
       "description": "Spécialiste des faux badges d'arène et des Pokéballs contrefaites. Il “forge” des objets officiels du monde Pokémon pour tromper les dresseurs débutants. Très recherché par les Ligues régionales.",
       "statut": "RECHERCHÉE", "prime": "9 🪙", "danger": "DANGER",
-      "new": { "nom": "Arcanin", "description": "Spécialiste des faux badges d'arène et des Pokéballs contrefaites. Il “forge” des objets officiels du monde Pokémon pour tromper les dresseurs débutants. Très recherché par les Ligues régionales.", "prime": "9 🪙", "danger": "DANGER" }
+      "new": { "nom": "Arcanin", "description": "Err", "prime": "14 🪙", "danger": "DANGER" }
     },
     {
       "id": 4, "nom": "\"FUNÉCRIME\"", "vrai_nom": "Inconnu", "image": "suspect4.jpg",
       "description": "Maître du crime Pokémon. Il orchestre des opérations criminelles dans les rues et les toits. Très recherché par les forces de l'ordre.",
-      "statut": "RECHERCHÉ", "prime": "9 🪙", "danger": "DANGER",
-      "new": { "nom": "Girafarig", "description": "Maître du crime Pokémon. Il orchestre des opérations criminelles dans les rues et les toits. Très recherché par les forces de l'ordre.", "prime": "9 🪙", "danger": "DANGER" }
+      "statut": "RECHERCHÉ", "prime": "13 🪙", "danger": "DANGER",
+      "new": { "nom": "Girafarig", "description": "Err", "prime": "14 🪙", "danger": "DANGER" }
     },
     {
       "id": 5, "nom": "\"MR MYCRIME\"", "vrai_nom": "Inconnu", "image": "suspect5.jpg",
       "description": "Maître du déguisement Pokémon. Il copie les équipes des autres dresseurs pour voler leurs stratégies et leurs badges. Certains pensent qu'il a déjà gagné plusieurs Ligues… sous de fausses identités.",
-      "statut": "RECHERCHÉE", "prime": "9 🪙", "danger": "DANGER",
-      "new": { "nom": "Pharamp", "description": "Maître du déguisement Pokémon. Il copie les équipes des autres dresseurs pour voler leurs stratégies et leurs badges. Certains pensent qu'il a déjà gagné plusieurs Ligues… sous de fausses identités.", "prime": "9 🪙", "danger": "DANGER" }
+      "statut": "RECHERCHÉE", "prime": "13 🪙", "danger": "DANGER",
+      "new": { "nom": "Pharamp", "description": "Err", "prime": "14 🪙", "danger": "DANGER" }
     },
     {
       "id": 6, "nom": "\"ZORU PULA\"", "vrai_nom": "Inconnu", "image": "suspect6.jpg",
       "description": "Escroc de terrain spécialisé dans les illusions. Il imite des Pokémon sauvages rares pour attirer les dresseurs et voler leurs Pokéballs. Impossible à distinguer d'un vrai Pokémon tant qu'il n'est pas touché.",
       "statut": "RECHERCHÉ", "prime": "14 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "Griknot", "description": "Escroc de terrain spécialisé dans les illusions. Il imite des Pokémon sauvages rares pour attirer les dresseurs et voler leurs Pokéballs. Impossible à distinguer d'un vrai Pokémon tant qu'il n'est pas touché.", "prime": "14 🪙", "danger": "ÉLEVÉ" }
+      "new": { "nom": "Griknot", "description": "Err", "prime": "20 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 7, "nom": "\"CHARI CHATILLE\"", "vrai_nom": "Inconnu", "image": "suspect7.jpg",
       "description": "Perturbe les combats Pokémon en déclenchant des distractions sonores. Il vole les objets tenus par les Pokémon pendant les combats.",
-      "statut": "RECHERCHÉ", "prime": "14 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "Berasca", "description": "Perturbe les combats Pokémon en déclenchant des distractions sonores. Il vole les objets tenus par les Pokémon pendant les combats.", "prime": "14 🪙", "danger": "ÉLEVÉ" }
+      "statut": "RECHERCHÉ", "prime": "17 🪙", "danger": "ÉLEVÉ",
+      "new": { "nom": "Berasca", "description": "Err", "prime": "20 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 8, "nom": "\"SECA ALEURE\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg",
       "description": "Il coupe les chaînes de capture et les dispositifs de maintien des Pokéballs pendant les combats, ce qui provoque l'évasion systématique des Pokémon sauvages au pire moment pour les dresseurs.",
       "statut": "RECHERCHÉE", "prime": "14 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "Milloelus", "description": "Il coupe les chaînes de capture et les dispositifs de maintien des Pokéballs pendant les combats, ce qui provoque l'évasion systématique des Pokémon sauvages au pire moment pour les dresseurs.", "prime": "14 🪙", "danger": "ÉLEVÉ" }
+      "new": { "nom": "Milloelus", "description": "Err", "prime": "20 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 9, "nom": "\"MIMICRIME\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
       "description": "Criminel spécialisé dans l'usurpation de costume. Il porte un déguisement Pikachu fabriqué avec une précision douteuse afin d'attirer l'attention des dresseurs naïfs. Responsable de nombreux vols de baie, de PokeBalls et de sac à dos, très recherché pour avoir tenté de rejoindre plusieurs équipes Pokémon en prétendant être 'le Pikachu officiel'. ",
       "statut": "RECHERCHÉ", "prime": "19 🪙", "danger": "EXTRÊME",
-      "new": { "nom": "Queulorior", "description": "Criminel spécialisé dans l'usurpation de costume. Il porte un déguisement Pikachu fabriqué avec une précision douteuse afin d'attirer l'attention des dresseurs naïfs. Responsable de nombreux vols de baie, de PokeBalls et de sac à dos, très recherché pour avoir tenté de rejoindre plusieurs équipes Pokémon en prétendant être 'le Pikachu officiel'. ", "prime": "19 🪙", "danger": "EXTRÊME" }
+      "new": { "nom": "Queulorior", "description": "Err", "prime": "25 🪙", "danger": "EXTRÊME" }
     },
     {
       "id": 10, "nom": "\"CIAO POUSSA KATCHAWWW\"", "vrai_nom": "Inconnu", "image": "suspect10.jpg",
       "description": "Il se déplace à une vitesse impossible à suivre et vole les objets des dresseurs pendant les combats ou dans les sacs, il disparaît avant même que tu aies compris ce qui s'est passé. Est-ce que c'est bon pour vous ?",
-      "statut": "RECHERCHÉE", "prime": "19 🪙", "danger": "EXTRÊME",
-      "new": { "nom": "Moustillon", "description": "Il se déplace à une vitesse impossible à suivre et vole les objets des dresseurs pendant les combats ou dans les sacs, il disparaît avant même que tu aies compris ce qui s'est passé. Est-ce que c'est bon pour vous ?", "prime": "19 🪙", "danger": "EXTRÊME" }
+      "statut": "RECHERCHÉE", "prime": "22 🪙", "danger": "EXTRÊME",
+      "new": { "nom": "Moustillon", "description": "Err", "prime": "25 🪙", "danger": "EXTRÊME" }
     }
   ],
 
