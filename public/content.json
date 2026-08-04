@@ -105,7 +105,7 @@
       "id": 8, "nom": "\"SECA ALEURE\"", "vrai_nom": "Inconnu", "image": "suspect8.jpg",
       "description": "Il coupe les chaînes de capture et les dispositifs de maintien des Pokéballs pendant les combats, ce qui provoque l'évasion systématique des Pokémon sauvages au pire moment pour les dresseurs.",
       "statut": "RECHERCHÉE", "prime": "14 🪙", "danger": "ÉLEVÉ",
-      "new": { "nom": "Milloelus", "description": "Err", "prime": "20 🪙", "danger": "ÉLEVÉ" }
+      "new": { "nom": "Millobelus", "description": "Err", "prime": "20 🪙", "danger": "ÉLEVÉ" }
     },
     {
       "id": 9, "nom": "\"MIMICRIME\"", "vrai_nom": "Inconnu", "image": "suspect9.jpg",
